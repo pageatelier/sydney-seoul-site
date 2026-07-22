@@ -1,0 +1,514 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SYDNEY SEOUL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================================================
+     SYDNEY SEOUL — INTRO SPLASH
+================================================== -->
+
+<script>
+(function () {
+  const INTRO_KEY = "sydney-seoul-intro-shown-v2";
+  try {
+    if (sessionStorage.getItem(INTRO_KEY) === "true") {
+      document.documentElement.classList.add("intro-already-seen");
+    }
+  } catch (error) {}
+})();
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link
+  href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500&display=swap"
+  rel="stylesheet"
+>
+
+<style>
+html.intro-already-seen #intro-splash {
+  display: none !important;
+}
+
+#intro-splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  background-color: #f3eee6;
+  background-image: url("images/intro-pc.png");
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size: cover;
+  cursor: pointer;
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transition: opacity 0.8s ease, visibility 0.8s ease;
+}
+
+#intro-splash .intro-logo {
+  position: relative;
+  z-index: 2;
+  margin: 0;
+  padding: 0 30px;
+  font-family: "Cormorant Garamond", Georgia, "Times New Roman", serif !important;
+  font-size: clamp(30px, 5vw, 35px) !important;
+  font-weight: 500 !important;
+  line-height: 1;
+  letter-spacing: 0.12em;
+  color: #28231F !important;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(15px);
+  animation: introLogo 1.2s ease 0.25s forwards;
+}
+
+#intro-splash.is-hidden {
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+}
+
+@keyframes introLogo {
+  from { opacity: 0; transform: translateY(15px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+body.intro-open {
+  overflow: hidden !important;
+}
+
+@media (max-width: 767px) {
+  #intro-splash {
+    background-image: url("images/intro-mobile.png");
+    background-position: center center;
+    background-size: cover;
+  }
+
+  #intro-splash .intro-logo {
+    padding: 0 20px;
+    font-size: clamp(25px, 4vw, 30px) !important;
+    color: #28231F !important;
+    letter-spacing: 0.13em;
+    white-space: nowrap;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #intro-splash,
+  #intro-splash .intro-logo {
+    transition: none;
+    animation: none;
+  }
+  #intro-splash .intro-logo {
+    opacity: 1;
+    transform: none;
+  }
+}
+</style>
+
+<div id="intro-splash" role="button" tabindex="0" aria-label="시드니서울 홈페이지 입장">
+  <h1 class="intro-logo">SYDNEY SEOUL</h1>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const INTRO_KEY = "sydney-seoul-intro-shown-v2";
+  const intro = document.getElementById("intro-splash");
+  if (!intro) return;
+
+  let alreadySeen = false;
+  try {
+    alreadySeen = sessionStorage.getItem(INTRO_KEY) === "true";
+  } catch (error) {
+    alreadySeen = false;
+  }
+
+  if (alreadySeen) {
+    intro.remove();
+    document.body.classList.remove("intro-open");
+    document.documentElement.classList.add("intro-already-seen");
+    return;
+  }
+
+  try {
+    sessionStorage.setItem(INTRO_KEY, "true");
+  } catch (error) {}
+
+  document.body.classList.add("intro-open");
+
+  let isClosing = false;
+
+  function closeIntro() {
+    if (isClosing) return;
+    isClosing = true;
+
+    intro.classList.add("is-hidden");
+    document.body.classList.remove("intro-open");
+    document.documentElement.classList.add("intro-already-seen");
+
+    setTimeout(function () {
+      if (intro && intro.parentNode) {
+        intro.remove();
+      }
+    }, 900);
+  }
+
+  intro.addEventListener("click", closeIntro);
+
+  intro.addEventListener("keydown", function (event) {
+    if (event.key === "Enter" || event.key === " " || event.key === "Escape") {
+      event.preventDefault();
+      closeIntro();
+    }
+  });
+});
+</script>
+
+
+<!-- ==================================================
+     HEADER (header.html에서 자동으로 불러옴)
+================================================== -->
+
+<div id="header-placeholder"></div>
+
+
+<!-- ==================================================
+     HERO SLIDER
+================================================== -->
+
+<style>
+  html, body {
+    margin: 0 !important;
+    padding: 0 !important;
+    width: 100%;
+    overflow-x: hidden !important;
+  }
+
+  * { box-sizing: border-box; }
+
+  .ss-crossfade-wrap {
+    position: relative !important;
+    left: 50% !important;
+    width: var(--ss-slider-width, 100vw) !important;
+    max-width: none !important;
+    height: var(--ss-slider-height, 100vh);
+    min-height: 650px;
+    margin: 0 !important;
+    padding: 0 !important;
+    transform: translateX(-50%) translateZ(0) !important;
+    overflow: hidden;
+    background: #111;
+    backface-visibility: hidden;
+    contain: layout paint;
+    isolation: isolate;
+  }
+
+  .ss-crossfade-wrap::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.18);
+    z-index: 10;
+    pointer-events: none;
+  }
+
+  .ss-crossfade-slider {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .ss-crossfade-slide {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    z-index: 1;
+    pointer-events: none;
+    transition: opacity 2.2s ease-in-out;
+    will-change: opacity;
+    transform: translateZ(0);
+    backface-visibility: hidden;
+  }
+
+  .ss-crossfade-slide.is-current { opacity: 1; z-index: 2; }
+  .ss-crossfade-slide.is-incoming { opacity: 1; z-index: 3; }
+  .ss-crossfade-slide.is-outgoing { opacity: 0; z-index: 2; }
+
+  .ss-crossfade-bg {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+    transform: scale(1) translateZ(0);
+    will-change: transform;
+    backface-visibility: hidden;
+  }
+
+  .ss-crossfade-slide:nth-child(1) .ss-crossfade-bg {
+    background-image: url("images/hero-pc-1.png");
+  }
+  .ss-crossfade-slide:nth-child(2) .ss-crossfade-bg {
+    background-image: url("images/hero-pc-2.png");
+  }
+  .ss-crossfade-slide:nth-child(3) .ss-crossfade-bg {
+    background-image: url("images/hero-pc-3.png");
+  }
+
+  @keyframes ssSoftZoom {
+    from { transform: scale(1) translateZ(0); }
+    to { transform: scale(1.03) translateZ(0); }
+  }
+
+  @media (max-width: 767px) {
+    .ss-crossfade-wrap {
+      height: var(--ss-slider-height, 100vh);
+      min-height: 580px;
+    }
+
+    .ss-crossfade-slide:nth-child(1) .ss-crossfade-bg {
+      background-image: url("images/hero-mobile-1.png");
+      background-position: center center;
+    }
+    .ss-crossfade-slide:nth-child(2) .ss-crossfade-bg {
+      background-image: url("images/hero-mobile-2.jpg");
+      background-position: center center;
+    }
+    .ss-crossfade-slide:nth-child(3) .ss-crossfade-bg {
+      background-image: url("images/hero-mobile-3.png");
+      background-position: center center;
+    }
+
+    @keyframes ssSoftZoom {
+      from { transform: scale(1) translateZ(0); }
+      to { transform: scale(1.07) translateZ(0); }
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    .ss-crossfade-slide { transition: none; }
+    .ss-crossfade-bg {
+      animation: none !important;
+      transform: scale(1) translateZ(0) !important;
+    }
+  }
+</style>
+
+<div class="ss-crossfade-wrap">
+  <section class="ss-crossfade-slider" id="ssCrossfadeSlider" aria-label="시드니서울 메인 이미지 슬라이드">
+    <div class="ss-crossfade-slide is-current"><div class="ss-crossfade-bg"></div></div>
+    <div class="ss-crossfade-slide"><div class="ss-crossfade-bg"></div></div>
+    <div class="ss-crossfade-slide"><div class="ss-crossfade-bg"></div></div>
+  </section>
+</div>
+
+<script>
+  (function () {
+    const slider = document.getElementById("ssCrossfadeSlider");
+    if (!slider) return;
+
+    const sliderWrap = slider.closest(".ss-crossfade-wrap");
+
+    function releaseAncestorClipping(el) {
+      let node = el ? el.parentElement : null;
+      while (node && node !== document.body) {
+        const computed = window.getComputedStyle(node);
+        if (computed.overflowX === "hidden" || computed.overflow === "hidden") {
+          node.style.overflowX = "visible";
+          node.style.overflow = "visible";
+        }
+        if (computed.maxWidth && computed.maxWidth !== "none") {
+          node.style.maxWidth = "none";
+        }
+        node = node.parentElement;
+      }
+    }
+
+    releaseAncestorClipping(sliderWrap);
+
+    function setStableSliderHeight() {
+      if (!sliderWrap) return;
+      let viewportHeight;
+      if (window.visualViewport && window.visualViewport.height) {
+        viewportHeight = window.visualViewport.height;
+      } else {
+        viewportHeight = window.innerHeight;
+      }
+      sliderWrap.style.setProperty("--ss-slider-height", Math.round(viewportHeight) + "px");
+    }
+
+    function setStableSliderWidth() {
+      if (!sliderWrap) return;
+      const viewportWidth = document.documentElement.clientWidth || window.innerWidth;
+      sliderWrap.style.setProperty("--ss-slider-width", Math.round(viewportWidth) + "px");
+    }
+
+    function setStableSliderSize() {
+      setStableSliderHeight();
+      setStableSliderWidth();
+    }
+
+    setStableSliderSize();
+
+    let resizeFrame = null;
+
+    function requestSizeUpdate() {
+      if (resizeFrame !== null) return;
+      resizeFrame = window.requestAnimationFrame(function () {
+        resizeFrame = null;
+        setStableSliderSize();
+      });
+    }
+
+    window.addEventListener("resize", requestSizeUpdate, { passive: true });
+    window.addEventListener("orientationchange", function () {
+      window.setTimeout(setStableSliderSize, 500);
+    });
+
+    const slides = Array.from(slider.querySelectorAll(".ss-crossfade-slide"));
+    if (slides.length < 2) return;
+
+    let currentIndex = 0;
+    let slideTimer = null;
+    let transitionTimer = null;
+    let isTransitioning = false;
+
+    const slideInterval = 6000;
+    const fadeDuration = 2200;
+    const zoomDuration = 6000;
+
+    function startZoom(slide) {
+      const background = slide.querySelector(".ss-crossfade-bg");
+      if (!background) return;
+      background.style.animation = "none";
+      background.style.transform = "scale(1) translateZ(0)";
+      void background.offsetWidth;
+      background.style.animation = "ssSoftZoom " + zoomDuration + "ms linear forwards";
+    }
+
+    function resetSlide(slide) {
+      const background = slide.querySelector(".ss-crossfade-bg");
+      slide.classList.remove("is-current", "is-incoming", "is-outgoing");
+      if (background) {
+        background.style.animation = "none";
+        background.style.transform = "scale(1) translateZ(0)";
+      }
+    }
+
+    function changeSlide() {
+      if (isTransitioning) return;
+      isTransitioning = true;
+
+      const currentSlide = slides[currentIndex];
+      const nextIndex = (currentIndex + 1) % slides.length;
+      const nextSlide = slides[nextIndex];
+
+      nextSlide.classList.remove("is-current", "is-outgoing");
+      nextSlide.classList.add("is-incoming");
+      startZoom(nextSlide);
+
+      currentSlide.classList.remove("is-current");
+      currentSlide.classList.add("is-outgoing");
+
+      transitionTimer = window.setTimeout(function () {
+        resetSlide(currentSlide);
+        nextSlide.classList.remove("is-incoming");
+        nextSlide.classList.add("is-current");
+        currentIndex = nextIndex;
+        isTransitioning = false;
+      }, fadeDuration + 100);
+    }
+
+    function startSlider() {
+      stopSlider();
+      slideTimer = window.setInterval(changeSlide, slideInterval);
+    }
+
+    function stopSlider() {
+      if (slideTimer) {
+        window.clearInterval(slideTimer);
+        slideTimer = null;
+      }
+    }
+
+    startZoom(slides[0]);
+
+    document.addEventListener("visibilitychange", function () {
+      if (document.hidden) {
+        stopSlider();
+      } else {
+        startSlider();
+      }
+    });
+
+    startSlider();
+  })();
+</script>
+
+
+<!-- ==================================================
+     이 아래로 나머지 홈 섹션들이 들어갑니다
+     (Brand Story, Menu 미리보기, Explore Our Story 등)
+     → 아직 소스코드를 안 주셨어요, 주시면 이어서 넣어드릴게요
+================================================== -->
+
+
+<!-- ==================================================
+     FOOTER (footer.html에서 자동으로 불러옴)
+================================================== -->
+
+<div id="footer-placeholder"></div>
+
+
+<!-- ==================================================
+     header.html / footer.html 불러오기
+     (스크립트도 정상 작동하도록 재실행 처리)
+================================================== -->
+
+<script>
+  function loadPartial(url, targetId) {
+    fetch(url)
+      .then(res => res.text())
+      .then(html => {
+        const target = document.getElementById(targetId);
+        target.innerHTML = html;
+
+        target.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      });
+  }
+
+  loadPartial('header.html', 'header-placeholder');
+  loadPartial('footer.html', 'footer-placeholder');
+</script>
+
+</body>
+</html>

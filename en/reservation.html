@@ -1,0 +1,1539 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reservation | SYDNEY SEOUL</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<script>
+(function () {
+  var path = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  var isEnglish =
+    path === "/en" ||
+    path === "/en/index.html" ||
+    path.indexOf("/en-") === 0 ||
+    path.indexOf("/en/") === 0;
+
+  var isHome =
+    path === "/" ||
+    path === "/home" ||
+    path === "/index" ||
+    path === "/index.html" ||
+    path === "/en" ||
+    path === "/en/index.html";
+
+  document.documentElement.classList.toggle("ss-en-page", isEnglish);
+  document.documentElement.classList.toggle("ss-kr-page", !isEnglish);
+
+  if (!isHome) {
+    document.documentElement.classList.add("ss-sub-page");
+  }
+})();
+</script>
+
+<header class="ss-site-header" id="ssSiteHeader">
+
+  <div class="ss-pc-header">
+    <a class="ss-pc-logo" href="/" data-ss-page="home" aria-label="Sydney Seoul Home">SYDNEY SEOUL</a>
+    <nav class="ss-pc-menu" aria-label="Main menu">
+      <a href="/" data-ss-page="home">Home</a>
+      <a href="/about" data-ss-page="about">About</a>
+      <a href="/menu" data-ss-page="menu">Menu</a>
+      <a href="/visit" data-ss-page="visit">Visit</a>
+      <a href="/reservation" data-ss-page="reservation">Reservation</a>
+    </nav>
+    <div class="ss-pc-actions">
+      <div class="ss-pc-language" aria-label="Language selection">
+        <a class="ss-pc-language-link" href="/" data-ss-language="kr">KR</a>
+        <a class="ss-pc-language-link" href="/en" data-ss-language="en">EN</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="ss-mobile-header">
+    <a class="ss-mobile-logo" href="/" data-ss-page="home" aria-label="Sydney Seoul Home">SYDNEY SEOUL</a>
+  </div>
+
+</header>
+
+<div class="ss-mobile-nav">
+  <button class="ss-menu-open" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ssMenuOverlay">
+    <span class="ss-menu-star" aria-hidden="true"></span>
+  </button>
+
+  <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+    <button class="ss-menu-close" type="button" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+
+    <div class="ss-menu-panel">
+      <nav class="ss-menu-nav" aria-label="Mobile menu">
+        <ul class="ss-menu-list">
+          <li><a href="/" data-ss-page="home">Home</a></li>
+          <li><a href="/about" data-ss-page="about">About</a></li>
+          <li><a href="/menu" data-ss-page="menu">Menu</a></li>
+          <li><a href="/visit" data-ss-page="visit">Visit</a></li>
+          <li><a href="/reservation" data-ss-page="reservation">Reservation</a></li>
+        </ul>
+      </nav>
+
+      <div class="ss-menu-section-title">BOOK A TABLE</div>
+
+      <div class="ss-menu-reservation-wrap">
+        <a class="ss-menu-reservation" href="https://app.catchtable.co.kr/ct/shop/ahknPViXvZ72eNRDs1IQ6Q" target="_blank" rel="noopener">
+          <span>한국어로 예약하기</span>
+        </a>
+        <a class="ss-menu-reservation" href="https://www.catchtable.net/explore/shop/sydneyseoul" target="_blank" rel="noopener">
+          <span>Reserve in English</span>
+        </a>
+        <div class="ss-language-wrap">
+          <a class="ss-language-circle" href="/" data-ss-language="kr">KR</a>
+          <a class="ss-language-circle" href="/en" data-ss-language="en">EN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.ss-site-header, .ss-mobile-nav {
+  --ss-warm-ivory: #F5EBE1; --ss-soft-ivory: #FCF3E9; --ss-beige: #E2D6CC;
+  --ss-gold: #A18765; --ss-deep-bronze: #6F5636; --ss-espresso: #28231F; --ss-warm-gray: #756D66;
+}
+.ss-site-header, .ss-site-header *, .ss-mobile-nav, .ss-mobile-nav * { box-sizing: border-box; }
+.ss-site-header a, .ss-mobile-nav a { text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.ss-site-header {
+  position: absolute; top: 0; left: 0; width: 100%; z-index: 9997; color: #ffffff;
+  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+.ss-site-header.is-scrolled {
+  height: 0; overflow: visible; border-bottom: 0; background: transparent;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.ss-site-header.is-scrolled .ss-pc-header,
+.ss-site-header.is-scrolled .ss-mobile-header {
+  opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transform: translateY(-10px) !important;
+}
+
+.ss-pc-header {
+  position: relative; width: 100%; height: 96px; padding: 0 7.5vw;
+  display: grid; grid-template-columns: minmax(200px, 1fr) auto minmax(280px, 1fr); align-items: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.ss-pc-logo {
+  justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
+}
+.ss-pc-menu {
+  display: flex; align-items: center; justify-content: center; gap: clamp(26px, 2.7vw, 50px);
+  opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
+}
+.ss-pc-menu a {
+  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
+}
+.ss-pc-menu a::after {
+  content: ""; position: absolute; left: 0; bottom: 6px; width: 100%; height: 1px; background: var(--ss-gold);
+  transform: scaleX(0); transform-origin: right center; transition: transform 0.35s ease;
+}
+.ss-pc-menu a:hover { color: var(--ss-soft-ivory); }
+.ss-pc-menu a:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+.ss-pc-actions {
+  justify-self: end; display: flex; align-items: center; gap: 28px;
+  opacity: 0; animation: ssHeaderReveal 0.8s ease 0.34s forwards;
+}
+.ss-pc-language {
+  display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
+  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+}
+.ss-pc-language-link {
+  width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid transparent; border-radius: 50%; color: rgba(255, 255, 255, 0.46) !important; background: transparent;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.ss-pc-language-link:hover { color: var(--ss-soft-ivory) !important; border-color: rgba(252, 243, 233, 0.3); }
+.ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
+.ss-pc-language-link:active { transform: scale(0.94); }
+
+@keyframes ssHeaderReveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 1101px) {
+  .ss-pc-header { display: flex; justify-content: space-between; }
+  .ss-pc-menu { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); animation-name: ssPcMenuReveal; }
+}
+@keyframes ssPcMenuReveal { from { opacity: 0; transform: translate(-50%, calc(-50% - 5px)); } to { opacity: 1; transform: translate(-50%, -50%); } }
+
+.ss-mobile-header, .ss-mobile-nav { display: none; }
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
+  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-menu { gap: 22px; }
+  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-actions { gap: 14px; }
+  .ss-pc-language { gap: 6px; font-size: 9px; }
+}
+
+@media (max-width: 767px) {
+  .ss-pc-header { display: none; }
+  .ss-mobile-header {
+    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+  .ss-mobile-logo {
+    position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
+    font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+    letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -50%);
+  }
+  .ss-mobile-nav { display: block; }
+  .ss-menu-open {
+    position: fixed; top: 19px; right: 18px; z-index: 99998; width: 30px; height: 30px; padding: 0; border: 0;
+    border-radius: 50%; background: rgba(161, 135, 101, 0.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 6px 18px rgba(40, 35, 31, 0.12); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; appearance: none; -webkit-appearance: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s ease, background-color 0.3s ease;
+  }
+  .ss-menu-star {
+    display: block; width: 16px; height: 16px; background: var(--ss-soft-ivory);
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    -webkit-clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    transform: rotate(0deg); transition: transform 0.4s ease, opacity 0.3s ease;
+  }
+  .ss-menu-open:hover { background: var(--ss-deep-bronze); }
+  .ss-menu-open:hover .ss-menu-star { transform: rotate(45deg); }
+  .ss-menu-open:active { transform: scale(0.92); }
+  .ss-menu-open:active .ss-menu-star { transform: rotate(45deg) scale(0.88); }
+  .ss-menu-open.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .ss-menu-overlay {
+    position: fixed; inset: 0; z-index: 99999; width: 100%; height: 100vh; height: 100dvh; color: var(--ss-espresso);
+    background: linear-gradient(180deg, rgba(245, 235, 225, 0.86) 0%, rgba(245, 235, 225, 0.92) 52%, rgba(226, 214, 204, 0.94) 100%);
+    backdrop-filter: blur(18px) saturate(0.82); -webkit-backdrop-filter: blur(18px) saturate(0.82);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-10px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; overflow: hidden;
+  }
+  .ss-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  .ss-menu-close {
+    position: absolute; top: 21px; right: 18px; z-index: 4; width: 30px; height: 30px; padding: 0; border: 0;
+    border-radius: 50%; background: var(--ss-gold); box-shadow: 0 8px 24px rgba(111, 86, 54, 0.18);
+    cursor: pointer; appearance: none; -webkit-appearance: none; transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+  .ss-menu-close span { position: absolute; top: 50%; left: 50%; display: block; width: 17px; height: 1px; background: var(--ss-soft-ivory); }
+  .ss-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
+  .ss-menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
+  .ss-menu-close:hover { background: var(--ss-deep-bronze); }
+  .ss-menu-close:active { transform: scale(0.92); }
+
+  .ss-menu-panel {
+    position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
+    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .ss-menu-panel::-webkit-scrollbar { display: none; }
+
+  .ss-menu-list { margin: 0; padding: 0; list-style: none; }
+  .ss-menu-list li { margin: 0; padding: 0; }
+  .ss-menu-list a {
+    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
+  .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
+
+  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-circle {
+    width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
+    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+  }
+  .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
+  .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
+
+  .ss-menu-section-title {
+    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+  }
+  .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .ss-menu-reservation {
+    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
+    text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
+  .ss-menu-reservation:active { transform: scale(0.985); }
+
+  body.ss-menu-lock { overflow: hidden !important; touch-action: none; }
+}
+
+@media (max-width: 380px) {
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
+  .ss-menu-list a { min-height: 49px; font-size: 11px; }
+  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
+  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
+  .ss-menu-reservation span { font-size: 11px; }
+}
+
+html.ss-sub-page .ss-pc-logo,
+html.ss-sub-page .ss-pc-menu a,
+html.ss-sub-page .ss-pc-language,
+html.ss-sub-page .ss-mobile-logo {
+  color: #28231F !important;
+}
+html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important; }
+html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
+html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
+html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
+html.ss-sub-page body { padding-top: 96px; }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+</style>
+
+<script>
+(function () {
+  const routes = {
+    kr: { home: "/", about: "/about", menu: "/menu", visit: "/visit", reservation: "/reservation" },
+    en: { home: "/en", about: "/en-about", menu: "/en-menu", visit: "/en-visit", reservation: "/en-reservation" }
+  };
+
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isEnglishPage =
+    currentPath === routes.en.home ||
+    currentPath === "/en/index.html" ||
+    currentPath.indexOf("/en-") === 0 ||
+    currentPath.indexOf("/en/") === 0;
+
+  const currentLanguage = isEnglishPage ? "en" : "kr";
+
+  function findCurrentPageKey(path) {
+    const normalizedPath = (path === "/home" || path === "/index" || path === "/index.html") ? "/" : path;
+    const languages = ["kr", "en"];
+    const pageKeys = Object.keys(routes.kr);
+    for (let i = 0; i < languages.length; i += 1) {
+      const language = languages[i];
+      for (let j = 0; j < pageKeys.length; j += 1) {
+        const pageKey = pageKeys[j];
+        if (routes[language][pageKey] === normalizedPath) return pageKey;
+      }
+    }
+    return "home";
+  }
+
+  const currentPageKey = findCurrentPageKey(currentPath);
+
+  document.querySelectorAll("[data-ss-page]").forEach(function (link) {
+    const pageKey = link.getAttribute("data-ss-page");
+    const destination = routes[currentLanguage][pageKey];
+    if (destination) link.setAttribute("href", destination);
+  });
+
+  document.querySelectorAll("[data-ss-language]").forEach(function (link) {
+    const language = link.getAttribute("data-ss-language");
+    const destination = routes[language][currentPageKey];
+    link.setAttribute("href", destination);
+    const isActive = language === currentLanguage;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
+  const header = document.getElementById("ssSiteHeader");
+  const openButton = document.querySelector(".ss-menu-open");
+  const closeButton = document.querySelector(".ss-menu-close");
+  const overlay = document.querySelector(".ss-menu-overlay");
+  const panel = document.querySelector(".ss-menu-panel");
+  const menuLinks = document.querySelectorAll(".ss-menu-overlay a");
+
+  var SCROLL_THRESHOLD = 30;
+  var scrollTicking = false;
+
+  function getScrollTop(target) {
+    if (!target || target === document || target === window) {
+      return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    }
+    return target.scrollTop || 0;
+  }
+
+  function applyScrollState(scrollTop) {
+    if (!header) return;
+    if (scrollTop > SCROLL_THRESHOLD) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  }
+
+  function handleScroll(event) {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    var target = event ? event.target : null;
+    requestAnimationFrame(function () {
+      applyScrollState(getScrollTop(target));
+      scrollTicking = false;
+    });
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+  applyScrollState(getScrollTop(window));
+
+  if (!openButton || !closeButton || !overlay) return;
+
+  function openMenu() {
+    overlay.classList.add("is-open");
+    openButton.classList.add("is-hidden");
+    document.body.classList.add("ss-menu-lock");
+    openButton.setAttribute("aria-expanded", "true");
+    overlay.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    overlay.classList.remove("is-open");
+    openButton.classList.remove("is-hidden");
+    document.body.classList.remove("ss-menu-lock");
+    openButton.setAttribute("aria-expanded", "false");
+    overlay.setAttribute("aria-hidden", "true");
+  }
+
+  openButton.addEventListener("click", openMenu);
+  closeButton.addEventListener("click", closeMenu);
+  menuLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay && !panel.contains(event.target)) closeMenu();
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeMenu();
+  });
+})();
+</script>
+
+
+<!-- ==================================================
+     RESERVATION BOOKING
+================================================== -->
+
+<section class="ss-reservation-booking-section">
+
+  <div class="ss-reservation-booking-inner">
+
+    <header class="ss-reservation-booking-header">
+      <p class="ss-reservation-booking-eyebrow ss-booking-reveal" style="--ss-booking-delay: 0s;">
+        RESERVATION
+      </p>
+      <h1 class="ss-reservation-booking-title ss-booking-reveal" style="--ss-booking-delay: 0.08s;">
+        Reserve Your Table
+      </h1>
+    </header>
+
+    <section class="ss-online-booking" aria-label="Online reservation">
+
+      <div class="ss-online-booking-grid">
+
+       <article class="ss-online-booking-item ss-booking-separator-reveal">
+  <h3 class="ss-online-booking-item-title ss-booking-reveal" style="--ss-booking-delay: 0.2s;">
+    International Guests
+          </h3>
+
+          <p class="ss-online-booking-description ss-booking-reveal" style="--ss-booking-delay: 0.28s;" lang="en">
+            International guests can make a reservation<br>
+            through our English booking system.
+          </p>
+
+          <div class="ss-online-booking-button-wrap ss-booking-reveal" style="--ss-booking-delay: 0.36s;">
+            <a
+              class="ss-online-booking-button"
+              href="https://www.catchtable.net/explore/shop/sydneyseoul"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Go to English reservation page"
+            >
+              <span>Reserve in English</span>
+              <span class="ss-online-booking-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+        <article class="ss-online-booking-item ss-booking-separator-reveal">
+          <h3 class="ss-online-booking-item-title ss-booking-reveal" style="--ss-booking-delay: 0.12s;">
+            Korean Guests
+          </h3>
+
+          <p class="ss-online-booking-description ss-booking-reveal" style="--ss-booking-delay: 0.2s;">
+            국내 고객께서는 캐치테이블을 통해<br>
+            편리하게 예약하실 수 있습니다.
+          </p>
+
+          <div class="ss-online-booking-button-wrap ss-booking-reveal" style="--ss-booking-delay: 0.28s;">
+            <a
+              class="ss-online-booking-button"
+              href="https://app.catchtable.co.kr/ct/shop/ahknPViXvZ72eNRDs1IQ6Q"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Go to CatchTable reservation page"
+            >
+              <span>한국어로 예약하기</span>
+              <span class="ss-online-booking-arrow" aria-hidden="true">→</span>
+            </a>
+          </div>
+        </article>
+
+      </div>
+
+    </section>
+
+  </div>
+
+</section>
+
+<style>
+.ss-reservation-booking-section, .ss-reservation-booking-section * { box-sizing: border-box; }
+
+.ss-reservation-booking-section {
+  --ss-booking-ink: #28231f;
+  --ss-booking-muted: rgba(40, 35, 31, 0.64);
+  --ss-booking-line: rgba(40, 35, 31, 0.16);
+  --ss-booking-gold: #9b7944;
+  --ss-booking-bronze: #6f5636;
+  --ss-booking-bg: #f7f0ea;
+
+  width: 100%;
+  padding: clamp(35px, 4vw, 60px) 6vw clamp(35px, 4vw, 55px);
+  overflow: hidden;
+  background: var(--ss-booking-bg);
+  color: var(--ss-booking-ink);
+}
+
+.ss-reservation-booking-inner {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+}
+
+.ss-reservation-booking-section h1,
+.ss-reservation-booking-section h2,
+.ss-reservation-booking-section h3,
+.ss-reservation-booking-section p {
+  margin-top: 0;
+}
+
+.ss-reservation-booking-header {
+  width: 100%;
+  margin-bottom: clamp(58px, 7vw, 88px);
+  text-align: center;
+}
+
+.ss-reservation-booking-eyebrow {
+  margin: 0 0 26px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  color: var(--ss-booking-gold);
+}
+
+.ss-reservation-booking-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px) !important;
+  font-weight: 500;
+  font-style: italic !important;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ss-booking-ink);
+}
+
+.ss-online-booking {
+  position: relative;
+  top: -18px;
+  width: min(100%, 920px);
+  margin: 0 auto -18px;
+}
+
+.ss-online-booking-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ss-online-booking-item {
+  position: relative;
+  min-width: 0;
+  min-height: 270px;
+  padding: clamp(34px, 3.5vw, 42px) clamp(30px, 4vw, 48px) clamp(32px, 3.5vw, 38px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: transparent;
+  text-align: center;
+}
+
+.ss-online-booking-item:first-child::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1px;
+  height: 100%;
+  background: var(--ss-booking-line);
+  opacity: 0;
+  transform: scaleY(0);
+  transform-origin: center top;
+  transition:
+    opacity 0.8s ease 0.2s,
+    transform 1.05s cubic-bezier(0.22, 1, 0.36, 1) 0.2s;
+}
+
+.ss-online-booking-item:first-child.is-visible::after {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.ss-online-booking-item-title {
+  margin: 5px 0 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 2.5vw, 31px);
+  font-weight: 400;
+  line-height: 1.1;
+  letter-spacing: 0;
+  color: var(--ss-booking-ink);
+}
+
+.ss-online-booking-description {
+  max-width: 350px;
+  margin: 30px auto 28px;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  line-height: 1.8;
+  letter-spacing: -0.015em;
+  word-break: keep-all;
+  color: var(--ss-booking-muted);
+}
+
+.ss-online-booking-description[lang="en"] {
+  letter-spacing: 0;
+}
+
+.ss-online-booking-button-wrap {
+  width: min(100%, 260px);
+  margin-top: auto;
+}
+
+.ss-online-booking-button {
+  width: 100%;
+  min-height: 50px;
+  padding: 15px 19px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(111, 86, 54, 0.72);
+  border-radius: 0;
+  background: transparent;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--ss-booking-bronze) !important;
+  text-decoration: none !important;
+  transition:
+    background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    color 0.35s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ss-online-booking-arrow {
+  display: inline-block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ss-reservation-booking-section .ss-booking-reveal {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-booking-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-reservation-booking-section .ss-booking-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (hover: hover) {
+  .ss-online-booking-button:hover {
+    border-color: var(--ss-booking-bronze);
+    background: var(--ss-booking-bronze);
+    color: var(--ss-booking-bg) !important;
+  }
+  .ss-online-booking-button:hover .ss-online-booking-arrow {
+    transform: translateX(4px);
+  }
+}
+
+.ss-online-booking-button:active {
+  border-color: var(--ss-booking-bronze);
+  background: var(--ss-booking-bronze);
+  color: var(--ss-booking-bg) !important;
+}
+
+.ss-online-booking-button:active .ss-online-booking-arrow {
+  transform: translateX(3px);
+}
+
+.ss-online-booking-button:focus-visible {
+  outline: 1px solid var(--ss-booking-gold);
+  outline-offset: 6px;
+}
+
+@media (max-width: 767px) {
+  .ss-reservation-booking-section { padding: 10px 22px 30px; }
+  .ss-reservation-booking-header { margin-bottom: 46px; }
+  .ss-reservation-booking-eyebrow { margin-bottom: 18px; font-size: 12px; line-height: 1; letter-spacing: 0.19em; }
+  .ss-reservation-booking-title { font-size: 28px !important; }
+  .ss-online-booking { top: -12px; margin-bottom: -12px; }
+  .ss-online-booking-grid { grid-template-columns: 1fr; }
+  .ss-online-booking-item { min-height: 0; padding: 27px 4px 30px; }
+
+  .ss-online-booking-item:first-child::after {
+    top: auto; right: auto; bottom: 0; left: 0;
+    width: 100%; height: 1px;
+    transform: scaleX(0);
+    transform-origin: left center;
+  }
+  .ss-online-booking-item:first-child.is-visible::after { transform: scaleX(1); }
+
+  .ss-online-booking-item-title { font-size: 27px; }
+  .ss-online-booking-description { margin-top: 14px; margin-bottom: 24px; font-size: 12.5px; line-height: 1.75; }
+  .ss-online-booking-button-wrap { width: min(100%, 260px); }
+  .ss-online-booking-button { min-height: 50px; }
+
+  .ss-reservation-booking-section .ss-booking-reveal { transform: translate3d(0, 26px, 0); }
+  .ss-reservation-booking-section .ss-booking-reveal.is-visible { transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 374px) {
+  .ss-reservation-booking-section { padding-left: 18px; padding-right: 18px; }
+  .ss-reservation-booking-title { font-size: 32px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-reservation-booking-section .ss-booking-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ss-online-booking-item:first-child::after {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ss-online-booking-button, .ss-online-booking-arrow {
+    transition: none !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initializeReservationReveal() {
+    var sections = document.querySelectorAll(".ss-reservation-booking-section:not([data-booking-reveal-ready])");
+    if (!sections.length) return;
+
+    sections.forEach(function (section) {
+      section.setAttribute("data-booking-reveal-ready", "true");
+
+      var revealItems = section.querySelectorAll(".ss-booking-reveal, .ss-booking-separator-reveal");
+      if (!revealItems.length) return;
+
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+        return;
+      }
+
+      var revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
+      );
+
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          revealItems.forEach(function (item) { revealObserver.observe(item); });
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeReservationReveal, { once: true });
+  } else {
+    initializeReservationReveal();
+  }
+})();
+</script>
+
+
+<!-- ==================================================
+     PRIVATE DINING
+================================================== -->
+
+<section class="ss-private-dining-section">
+
+  <div class="ss-private-dining-inner">
+
+    <div class="ss-private-dining-visual ss-private-reveal" data-ss-private-reveal style="--ss-private-delay: 0s;">
+      <img
+        class="ss-private-dining-image"
+        src="../images/private-room.png"
+        alt="Sydney Seoul private dining room"
+        loading="lazy"
+        decoding="async"
+      >
+    </div>
+
+    <div class="ss-private-dining-content">
+
+      <p class="ss-private-dining-eyebrow ss-private-reveal" style="--ss-private-delay: 0.08s;">
+        PRIVATE DINING
+      </p>
+
+      <h2 class="ss-private-dining-title ss-private-reveal" style="--ss-private-delay: 0.16s;">
+        A Private Table
+      </h2>
+
+      <p class="ss-private-dining-lead ss-private-reveal" style="--ss-private-delay: 0.24s;">
+        Private dining<br>
+        for your special moments
+      </p>
+
+      <p class="ss-private-dining-copy ss-private-reveal" style="--ss-private-delay: 0.32s;">
+        The private room accommodates 2–6 guests,<br>
+        while group reservations for 7–14 guests are held in the main dining hall.
+      </p>
+
+      <div class="ss-private-dining-details">
+
+        <div class="ss-private-dining-detail">
+          <span class="ss-private-dining-detail-label ss-private-reveal" style="--ss-private-delay: 0.4s;">
+            ROOM
+          </span>
+          <span class="ss-private-dining-detail-value ss-private-reveal" style="--ss-private-delay: 0.46s;">
+            2–6 Guests
+          </span>
+        </div>
+
+        <div class="ss-private-dining-detail">
+          <span class="ss-private-dining-detail-label ss-private-reveal" style="--ss-private-delay: 0.48s;">
+            GROUP DINING
+          </span>
+          <span class="ss-private-dining-detail-value ss-private-reveal" style="--ss-private-delay: 0.54s;">
+            7–14 Guests
+          </span>
+        </div>
+
+      </div>
+
+      <div class="ss-private-dining-link-wrap ss-private-reveal" style="--ss-private-delay: 0.62s;">
+        <a class="ss-private-dining-link" href="tel:02-545-7772" aria-label="Call for private dining inquiries">
+          <span>Call for Inquiries</span>
+          <span class="ss-private-dining-link-arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.ss-private-dining-section, .ss-private-dining-section * { box-sizing: border-box; }
+
+.ss-private-dining-section {
+  --ss-private-ink: #28231f;
+  --ss-private-muted: rgba(40, 35, 31, 0.67);
+  --ss-private-line: rgba(40, 35, 31, 0.16);
+  --ss-private-gold: #9b7944;
+  --ss-private-bronze: #6f5636;
+  --ss-private-bg: #f7f0ea;
+
+  width: 100%;
+  padding: clamp(50px, 5vw, 70px) 6vw clamp(90px, 10vw, 140px);
+  overflow: hidden;
+  background: var(--ss-private-bg);
+  color: var(--ss-private-ink);
+}
+
+.ss-private-dining-inner {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+  align-items: center;
+  gap: clamp(62px, 7vw, 100px);
+  padding-top: clamp(40px, 5vw, 50px);
+}
+
+.ss-private-dining-visual {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #a18765;
+}
+
+.ss-private-dining-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.055);
+  transition:
+    opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ss-private-dining-visual.is-visible .ss-private-dining-image {
+  opacity: 1;
+  transform: scale(1.001);
+}
+
+.ss-private-dining-visual.is-image-error .ss-private-dining-image {
+  visibility: hidden;
+}
+
+.ss-private-dining-content {
+  width: 100%;
+  max-width: 455px;
+}
+
+.ss-private-dining-eyebrow {
+  margin: 0 0 26px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  color: var(--ss-private-gold);
+}
+
+.ss-private-dining-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px) !important;
+  font-weight: 500;
+  font-style: italic !important;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ss-private-ink);
+}
+
+.ss-private-dining-lead {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-style: italic;
+  font-size: clamp(19px, 1.75vw, 22px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: 0;
+  word-break: keep-all;
+  color: var(--ss-private-ink);
+}
+
+.ss-private-dining-copy {
+  margin: 20px 0 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 13.5px;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: 0;
+  word-break: keep-all;
+  color: var(--ss-private-muted);
+}
+
+.ss-private-dining-details { margin-top: 30px; }
+
+.ss-private-dining-detail {
+  min-height: 52px;
+  padding: 0 2px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.ss-private-dining-detail-label {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.17em;
+  color: var(--ss-private-gold);
+}
+
+.ss-private-dining-detail-value {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.01em;
+  color: var(--ss-private-ink);
+}
+
+.ss-private-dining-link-wrap {
+  width: min(100%, 260px);
+  margin: 35px auto 0;
+}
+
+.ss-private-dining-link {
+  width: 100%;
+  min-height: 50px;
+  margin: 0;
+  padding: 15px 19px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+  border: 1px solid rgba(111, 86, 54, 0.72);
+  border-radius: 0;
+  background: transparent;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.11em;
+  color: var(--ss-private-bronze) !important;
+  text-decoration: none !important;
+  transition:
+    background-color 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+    border-color 0.35s ease,
+    color 0.35s ease;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.ss-private-dining-link > span:first-child { white-space: nowrap; }
+
+.ss-private-dining-link-arrow {
+  display: inline-block;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 18px;
+  line-height: 1;
+  transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+  .ss-private-dining-link:hover {
+    border-color: var(--ss-private-bronze);
+    background: var(--ss-private-bronze);
+    color: var(--ss-private-bg) !important;
+  }
+  .ss-private-dining-link:hover .ss-private-dining-link-arrow {
+    transform: translateX(4px);
+  }
+}
+
+.ss-private-dining-link:active {
+  border-color: var(--ss-private-bronze);
+  background: var(--ss-private-bronze);
+  color: var(--ss-private-bg) !important;
+}
+
+.ss-private-dining-link:active .ss-private-dining-link-arrow {
+  transform: translateX(3px);
+}
+
+.ss-private-dining-link:focus-visible {
+  outline: 1px solid var(--ss-private-gold);
+  outline-offset: 6px;
+}
+
+.ss-private-dining-section .ss-private-reveal {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-private-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-private-dining-section .ss-private-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 980px) {
+  .ss-private-dining-inner {
+    grid-template-columns: minmax(0, 1fr) minmax(330px, 0.92fr);
+    gap: 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ss-private-dining-section { padding: 40px 22px 82px; }
+  .ss-private-dining-inner { grid-template-columns: 1fr; gap: 39px; padding-top: 38px; }
+  .ss-private-dining-visual { aspect-ratio: 4 / 3.25; }
+  .ss-private-dining-content { max-width: none; }
+  .ss-private-dining-eyebrow { margin-bottom: 18px; font-size: 12px; letter-spacing: 0.19em; }
+  .ss-private-dining-title { font-size: 28px !important; }
+  .ss-private-dining-lead { margin-top: 25px; font-size: 18px; line-height: 1.5; }
+  .ss-private-dining-copy { margin-top: 17px; font-size: 12.5px; line-height: 1.8; }
+  .ss-private-dining-details { margin-top: 26px; }
+  .ss-private-dining-detail { min-height: 49px; }
+  .ss-private-dining-detail-label { font-size: 10px; }
+  .ss-private-dining-detail-value { font-size: 15px; }
+  .ss-private-dining-link-wrap { margin: 30px auto 0; width: min(100%, 260px); }
+  .ss-private-dining-link { min-height: 50px; font-size: 13px; }
+  .ss-private-dining-section .ss-private-reveal { transform: translate3d(0, 26px, 0); }
+  .ss-private-dining-section .ss-private-reveal.is-visible { transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 374px) {
+  .ss-private-dining-section { padding-left: 18px; padding-right: 18px; }
+  .ss-private-dining-title { font-size: 27px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-private-dining-section .ss-private-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ss-private-dining-image {
+    opacity: 1 !important;
+    transform: scale(1.001) !important;
+    transition: none !important;
+  }
+  .ss-private-dining-link, .ss-private-dining-link-arrow {
+    transition: none !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initializePrivateDiningReveal() {
+    var sections = document.querySelectorAll(".ss-private-dining-section:not([data-ss-motion-bound])");
+    if (!sections.length) return;
+
+    sections.forEach(function (section) {
+      section.setAttribute("data-ss-motion-bound", "true");
+
+      var revealItems = section.querySelectorAll(".ss-private-reveal");
+      var visual = section.querySelector("[data-ss-private-reveal]");
+      var image = section.querySelector(".ss-private-dining-image");
+
+      if (!revealItems.length) return;
+
+      if (image && visual) {
+        image.addEventListener("error", function () {
+          visual.classList.add("is-image-error");
+        }, { once: true });
+      }
+
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+        return;
+      }
+
+      var observer = new IntersectionObserver(
+        function (entries, revealObserver) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            revealObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      );
+
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          revealItems.forEach(function (item) { observer.observe(item); });
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializePrivateDiningReveal, { once: true });
+  } else {
+    initializePrivateDiningReveal();
+  }
+})();
+</script>
+
+
+<!-- ==================================================
+     SPACE GALLERY
+================================================== -->
+
+<section class="ss-space-gallery">
+
+  <div class="ss-space-gallery-inner">
+
+    <header class="ss-space-gallery-header">
+      <div class="ss-space-gallery-heading">
+        <p class="ss-space-gallery-eyebrow ss-space-reveal" style="--ss-space-delay: 0s;">
+          THE SPACE
+        </p>
+        <h2 class="ss-space-gallery-title ss-space-reveal" style="--ss-space-delay: 0.08s;">
+          A Table in Cheongdam
+        </h2>
+      </div>
+    </header>
+
+    <div class="ss-space-gallery-grid">
+
+      <figure class="ss-space-gallery-item ss-space-gallery-item-main">
+        <div class="ss-space-gallery-image-wrap ss-space-reveal" style="--ss-space-delay: 0.12s;">
+          <img class="ss-space-gallery-image" src="../images/space-main.png" alt="Sydney Seoul main dining area" loading="lazy">
+        </div>
+        <figcaption class="ss-space-gallery-caption ss-space-reveal" style="--ss-space-delay: 0.2s;">
+          <span>Main Dining</span>
+        </figcaption>
+      </figure>
+
+      <div class="ss-space-gallery-side">
+
+        <figure class="ss-space-gallery-item">
+          <div class="ss-space-gallery-image-wrap ss-space-reveal" style="--ss-space-delay: 0.2s;">
+            <img class="ss-space-gallery-image" src="../images/space-private.png" alt="Sydney Seoul private dining area" loading="lazy">
+          </div>
+          <figcaption class="ss-space-gallery-caption ss-space-reveal" style="--ss-space-delay: 0.28s;">
+            <span>Private Table</span>
+          </figcaption>
+        </figure>
+
+        <figure class="ss-space-gallery-item">
+          <div class="ss-space-gallery-image-wrap ss-space-reveal" style="--ss-space-delay: 0.28s;">
+            <img class="ss-space-gallery-image" src="../images/space-details.png" alt="Sydney Seoul table detail" loading="lazy">
+          </div>
+          <figcaption class="ss-space-gallery-caption ss-space-reveal" style="--ss-space-delay: 0.36s;">
+            <span>Details</span>
+          </figcaption>
+        </figure>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.ss-space-gallery, .ss-space-gallery * { box-sizing: border-box; }
+
+.ss-space-gallery {
+  --ss-space-ink: #28231f;
+  --ss-space-muted: rgba(40, 35, 31, 0.6);
+  --ss-space-line: rgba(40, 35, 31, 0.15);
+  --ss-space-gold: #9b7944;
+  --ss-space-bronze: #6f5636;
+  --ss-space-bg: #f7f0ea;
+
+  width: 100%;
+  padding: clamp(50px, 6vw, 80px) 6vw clamp(90px, 9vw, 140px);
+  overflow: hidden;
+  background: var(--ss-space-bg);
+  color: var(--ss-space-ink);
+}
+
+.ss-space-gallery-inner {
+  width: 100%;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.ss-space-gallery-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(320px, 0.7fr);
+  align-items: end;
+  gap: clamp(50px, 7vw, 100px);
+  margin-bottom: clamp(50px, 6vw, 78px);
+}
+
+.ss-space-gallery-eyebrow {
+  margin: 0 0 24px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.23em;
+  color: var(--ss-space-gold);
+}
+
+.ss-space-gallery-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px) !important;
+  font-weight: 500;
+  font-style: italic !important;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #28231f;
+}
+
+.ss-space-gallery-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(330px, 0.8fr);
+  align-items: stretch;
+  gap: clamp(22px, 2.6vw, 38px);
+  height: clamp(560px, 54vw, 720px);
+}
+
+.ss-space-gallery-item {
+  min-width: 0;
+  min-height: 0;
+  margin: 0;
+}
+
+.ss-space-gallery-item-main {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.ss-space-gallery-side {
+  display: grid;
+  grid-template-rows: repeat(2, minmax(0, 1fr));
+  min-width: 0;
+  min-height: 0;
+  gap: clamp(24px, 2.8vw, 36px);
+}
+
+.ss-space-gallery-side .ss-space-gallery-item {
+  display: grid;
+  grid-template-rows: minmax(0, 1fr) auto;
+}
+
+.ss-space-gallery-image-wrap {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+  background: #e8ddd2;
+}
+
+.ss-space-gallery-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 0;
+  transform: scale(1.055);
+  transition:
+    opacity 1.1s cubic-bezier(.22, 1, .36, 1),
+    transform 1.5s cubic-bezier(.22, 1, .36, 1);
+}
+
+.ss-space-gallery-image-wrap.is-visible .ss-space-gallery-image {
+  opacity: 1;
+  transform: scale(1.001);
+}
+
+.ss-space-gallery .ss-space-reveal {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-space-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-space-gallery .ss-space-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+.ss-space-gallery-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 12px;
+  padding-bottom: 12px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 1;
+  letter-spacing: 0.02em;
+  color: #6F5636;
+}
+
+@media (hover: hover) {
+  .ss-space-gallery-item:hover .ss-space-gallery-image-wrap.is-visible .ss-space-gallery-image {
+    transform: scale(1.035);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .ss-space-gallery-header {
+    grid-template-columns: minmax(0, 1fr) minmax(280px, 0.75fr);
+    gap: 48px;
+  }
+  .ss-space-gallery-grid {
+    grid-template-columns: minmax(0, 1.12fr) minmax(290px, 0.88fr);
+    height: clamp(520px, 63vw, 650px);
+  }
+  .ss-space-gallery-side { gap: 26px; }
+}
+
+@media (max-width: 767px) {
+  .ss-space-gallery { padding: 76px 22px 78px; }
+  .ss-space-gallery-header { display: block; margin-bottom: 42px; }
+  .ss-space-gallery-eyebrow { margin-bottom: 18px; font-size: 12px; letter-spacing: 0.19em; }
+  .ss-space-gallery-title { font-size: 30px !important; line-height: 1.1; }
+  .ss-space-gallery-grid { display: block; height: auto; }
+  .ss-space-gallery-item-main { display: block; margin-bottom: 36px; }
+  .ss-space-gallery-item-main .ss-space-gallery-image-wrap { height: auto; aspect-ratio: 4 / 5; }
+  .ss-space-gallery-side { display: grid; grid-template-rows: none; gap: 36px; }
+  .ss-space-gallery-side .ss-space-gallery-item { display: block; }
+  .ss-space-gallery-side .ss-space-gallery-image-wrap { height: auto; aspect-ratio: 4 / 3; }
+  .ss-space-gallery-caption { margin-top: 10px; padding-bottom: 10px; font-size: 13px; letter-spacing: 0.02em; }
+  .ss-space-gallery .ss-space-reveal { transform: translate3d(0, 26px, 0); }
+  .ss-space-gallery .ss-space-reveal.is-visible { transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 390px) {
+  .ss-space-gallery { padding-left: 18px; padding-right: 18px; }
+  .ss-space-gallery-title { font-size: 28px !important; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-space-gallery .ss-space-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ss-space-gallery-image {
+    transition: none !important;
+    opacity: 1;
+    transform: scale(1.001);
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initSpaceGalleryReveal() {
+    var sections = document.querySelectorAll(".ss-space-gallery:not([data-space-gallery-ready])");
+    if (!sections.length) return;
+
+    sections.forEach(function (section) {
+      section.setAttribute("data-space-gallery-ready", "true");
+
+      var revealItems = section.querySelectorAll(".ss-space-reveal");
+      if (!revealItems.length) return;
+
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (reducedMotion || !("IntersectionObserver" in window)) {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+        return;
+      }
+
+      var revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.1, rootMargin: "0px 0px -6% 0px" }
+      );
+
+      window.requestAnimationFrame(function () {
+        window.requestAnimationFrame(function () {
+          revealItems.forEach(function (item) { revealObserver.observe(item); });
+        });
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initSpaceGalleryReveal, { once: true });
+  } else {
+    initSpaceGalleryReveal();
+  }
+})();
+</script>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadPartial(url, targetId) {
+    fetch(url)
+      .then(res => res.text())
+      .then(html => {
+        const target = document.getElementById(targetId);
+        target.innerHTML = html;
+
+        target.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      });
+  }
+
+  loadPartial('../header.html', 'header-placeholder');
+  loadPartial('../footer.html', 'footer-placeholder');
+</script>
+
+</body>
+</html>

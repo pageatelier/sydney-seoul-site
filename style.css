@@ -1,0 +1,110 @@
+/* ==================================================
+   SYDNEY SEOUL — GLOBAL STYLES
+   (모든 페이지 공통 스타일)
+================================================== */
+
+/* 폰트 불러오기 (한 번만, 모든 페이지에서 공통 사용) */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=Noto+Serif+KR:wght@400&display=swap");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css");
+
+
+/* ==================================================
+   DESIGN TOKENS (색상 변수)
+   페이지 어디서든 var(--ss-gold) 이런 식으로 사용 가능
+================================================== */
+
+:root {
+  --ss-ivory-light: #f7f0ea;   /* 배경 통일: fcf3e9 → f7f0ea */
+  --ss-ivory: #f5ebe1;
+  --ss-warm-ivory: #F5EBE1;
+  --ss-soft-ivory: #FCF3E9;
+  --ss-beige: #e2d6cc;
+  --ss-gold: #a18765;
+  --ss-bronze: #6f5636;
+  --ss-deep-bronze: #6F5636;
+  --ss-espresso: #28231F;
+  --ss-text: #28231f;
+  --ss-text-sub: #756d66;
+  --ss-warm-gray: #756D66;
+}
+
+
+/* ==================================================
+   기본 리셋
+================================================== */
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden;
+
+  font-family:
+    Pretendard,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Apple SD Gothic Neo",
+    "Noto Sans KR",
+    sans-serif;
+
+  color: var(--ss-text);
+  background-color: var(--ss-ivory-light);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6, p {
+  margin: 0;
+}
+
+
+/* ==================================================
+   서브페이지 헤더 배경 통일
+   (홈은 히어로 이미지 위라 투명 유지,
+    서브페이지는 본문과 같은 배경색으로 고정)
+================================================== */
+
+html.ss-sub-page .ss-site-header {
+  background-color: var(--ss-ivory-light);
+}
+
+
+/* ==================================================
+   접근성: 모션 최소화 설정 시 전역 대응
+================================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About | SYDNEY SEOUL</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<script>
+(function () {
+  var path = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  var isEnglish =
+    path === "/en" ||
+    path === "/en/index.html" ||
+    path.indexOf("/en-") === 0 ||
+    path.indexOf("/en/") === 0;
+
+  var isHome =
+    path === "/" ||
+    path === "/home" ||
+    path === "/index" ||
+    path === "/index.html" ||
+    path === "/en" ||
+    path === "/en/index.html";
+
+  document.documentElement.classList.toggle("ss-en-page", isEnglish);
+  document.documentElement.classList.toggle("ss-kr-page", !isEnglish);
+
+  if (!isHome) {
+    document.documentElement.classList.add("ss-sub-page");
+  }
+})();
+</script>
+
+<header class="ss-site-header" id="ssSiteHeader">
+  <div class="ss-pc-header">
+    <a class="ss-pc-logo" href="/" data-ss-page="home" aria-label="시드니서울 홈">SYDNEY SEOUL</a>
+    <nav class="ss-pc-menu" aria-label="PC 메뉴">
+      <a href="/" data-ss-page="home">Home</a>
+      <a href="/about" data-ss-page="about">About</a>
+      <a href="/menu" data-ss-page="menu">Menu</a>
+      <a href="/visit" data-ss-page="visit">Visit</a>
+      <a href="/reservation" data-ss-page="reservation">Reservation</a>
+    </nav>
+    <div class="ss-pc-actions">
+      <div class="ss-pc-language" aria-label="언어 선택">
+        <a class="ss-pc-language-link" href="/" data-ss-language="kr">KR</a>
+        <a class="ss-pc-language-link" href="/en" data-ss-language="en">EN</a>
+      </div>
+    </div>
+  </div>
+  <div class="ss-mobile-header">
+    <a class="ss-mobile-logo" href="/" data-ss-page="home" aria-label="시드니서울 홈">SYDNEY SEOUL</a>
+  </div>
+</header>
+
+<div class="ss-mobile-nav">
+  <button class="ss-menu-open" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="ssMenuOverlay">
+    <span class="ss-menu-star" aria-hidden="true"></span>
+  </button>
+
+  <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="사이트 메뉴" aria-hidden="true">
+    <button class="ss-menu-close" type="button" aria-label="메뉴 닫기">
+      <span></span><span></span>
+    </button>
+
+    <div class="ss-menu-panel">
+      <nav class="ss-menu-nav" aria-label="모바일 메뉴">
+        <ul class="ss-menu-list">
+          <li><a href="/" data-ss-page="home">Home</a></li>
+          <li><a href="/about" data-ss-page="about">About</a></li>
+          <li><a href="/menu" data-ss-page="menu">Menu</a></li>
+          <li><a href="/visit" data-ss-page="visit">Visit</a></li>
+          <li><a href="/reservation" data-ss-page="reservation">Reservation</a></li>
+        </ul>
+      </nav>
+
+      <div class="ss-menu-section-title">BOOK A TABLE</div>
+
+      <div class="ss-menu-reservation-wrap">
+        <a class="ss-menu-reservation" href="https://app.catchtable.co.kr/ct/shop/ahknPViXvZ72eNRDs1IQ6Q" target="_blank" rel="noopener">
+          <span>한국어로 예약하기</span>
+        </a>
+        <a class="ss-menu-reservation" href="https://www.catchtable.net/explore/shop/sydneyseoul" target="_blank" rel="noopener">
+          <span>Reserve in English</span>
+        </a>
+        <div class="ss-language-wrap">
+          <a class="ss-language-circle" href="/" data-ss-language="kr">KR</a>
+          <a class="ss-language-circle" href="/en" data-ss-language="en">EN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.ss-site-header, .ss-mobile-nav {
+  --ss-warm-ivory: #F5EBE1; --ss-soft-ivory: #FCF3E9; --ss-beige: #E2D6CC;
+  --ss-gold: #A18765; --ss-deep-bronze: #6F5636; --ss-espresso: #28231F; --ss-warm-gray: #756D66;
+}
+.ss-site-header, .ss-site-header *, .ss-mobile-nav, .ss-mobile-nav * { box-sizing: border-box; }
+.ss-site-header a, .ss-mobile-nav a { text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.ss-site-header {
+  position: absolute; top: 0; left: 0; width: 100%; z-index: 9997; color: #ffffff;
+  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+.ss-site-header.is-scrolled {
+  height: 0; overflow: visible; border-bottom: 0; background: transparent;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.ss-site-header.is-scrolled .ss-pc-header,
+.ss-site-header.is-scrolled .ss-mobile-header {
+  opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transform: translateY(-10px) !important;
+}
+
+.ss-pc-header {
+  position: relative; width: 100%; height: 96px; padding: 0 7.5vw;
+  display: grid; grid-template-columns: minmax(200px, 1fr) auto minmax(280px, 1fr); align-items: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.ss-pc-logo {
+  justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
+}
+.ss-pc-menu {
+  display: flex; align-items: center; justify-content: center; gap: clamp(26px, 2.7vw, 50px);
+  opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
+}
+.ss-pc-menu a {
+  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
+}
+.ss-pc-menu a::after {
+  content: ""; position: absolute; left: 0; bottom: 6px; width: 100%; height: 1px; background: var(--ss-gold);
+  transform: scaleX(0); transform-origin: right center; transition: transform 0.35s ease;
+}
+.ss-pc-menu a:hover { color: var(--ss-soft-ivory); }
+.ss-pc-menu a:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+.ss-pc-actions {
+  justify-self: end; display: flex; align-items: center; gap: 28px;
+  opacity: 0; animation: ssHeaderReveal 0.8s ease 0.34s forwards;
+}
+.ss-pc-language {
+  display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
+  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+}
+.ss-pc-language-link {
+  width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid transparent; border-radius: 50%; color: rgba(255, 255, 255, 0.46) !important; background: transparent;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.ss-pc-language-link:hover { color: var(--ss-soft-ivory) !important; border-color: rgba(252, 243, 233, 0.3); }
+.ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
+.ss-pc-language-link:active { transform: scale(0.94); }
+
+@keyframes ssHeaderReveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 1101px) {
+  .ss-pc-header { display: flex; justify-content: space-between; }
+  .ss-pc-menu { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); animation-name: ssPcMenuReveal; }
+}
+@keyframes ssPcMenuReveal { from { opacity: 0; transform: translate(-50%, calc(-50% - 5px)); } to { opacity: 1; transform: translate(-50%, -50%); } }
+
+.ss-mobile-header, .ss-mobile-nav { display: none; }
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
+  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-menu { gap: 22px; }
+  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-actions { gap: 14px; }
+  .ss-pc-language { gap: 6px; font-size: 9px; }
+}
+
+@media (max-width: 767px) {
+  .ss-pc-header { display: none; }
+  .ss-mobile-header {
+    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+  .ss-mobile-logo {
+    position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
+    font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+    letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -50%);
+  }
+  .ss-mobile-nav { display: block; }
+  .ss-menu-open {
+    position: fixed; top: 19px; right: 18px; z-index: 99998; width: 30px; height: 30px; padding: 0; border: 0;
+    border-radius: 50%; background: rgba(161, 135, 101, 0.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 6px 18px rgba(40, 35, 31, 0.12); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; appearance: none; -webkit-appearance: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s ease, background-color 0.3s ease;
+  }
+  .ss-menu-star {
+    display: block; width: 16px; height: 16px; background: var(--ss-soft-ivory);
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    -webkit-clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    transform: rotate(0deg); transition: transform 0.4s ease, opacity 0.3s ease;
+  }
+  .ss-menu-open:hover { background: var(--ss-deep-bronze); }
+  .ss-menu-open:hover .ss-menu-star { transform: rotate(45deg); }
+  .ss-menu-open:active { transform: scale(0.92); }
+  .ss-menu-open:active .ss-menu-star { transform: rotate(45deg) scale(0.88); }
+  .ss-menu-open.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .ss-menu-overlay {
+    position: fixed; inset: 0; z-index: 99999; width: 100%; height: 100vh; height: 100dvh; color: var(--ss-espresso);
+    background: linear-gradient(180deg, rgba(245, 235, 225, 0.86) 0%, rgba(245, 235, 225, 0.92) 52%, rgba(226, 214, 204, 0.94) 100%);
+    backdrop-filter: blur(18px) saturate(0.82); -webkit-backdrop-filter: blur(18px) saturate(0.82);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-10px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; overflow: hidden;
+  }
+  .ss-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  .ss-menu-close {
+    position: absolute; top: 21px; right: 18px; z-index: 4; width: 30px; height: 30px; padding: 0; border: 0;
+    border-radius: 50%; background: var(--ss-gold); box-shadow: 0 8px 24px rgba(111, 86, 54, 0.18);
+    cursor: pointer; appearance: none; -webkit-appearance: none; transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+  .ss-menu-close span { position: absolute; top: 50%; left: 50%; display: block; width: 17px; height: 1px; background: var(--ss-soft-ivory); }
+  .ss-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
+  .ss-menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
+  .ss-menu-close:hover { background: var(--ss-deep-bronze); }
+  .ss-menu-close:active { transform: scale(0.92); }
+
+  .ss-menu-panel {
+    position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
+    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
+    scrollbar-width: thin; scrollbar-color: rgba(161, 135, 101, 0.42) transparent; -webkit-overflow-scrolling: touch;
+  }
+  .ss-menu-panel::-webkit-scrollbar { width: 4px; }
+  .ss-menu-panel::-webkit-scrollbar-track { background: transparent; }
+  .ss-menu-panel::-webkit-scrollbar-thumb { border-radius: 0; background: rgba(161, 135, 101, 0.42); }
+
+  .ss-menu-list { margin: 0; padding: 0; list-style: none; }
+  .ss-menu-list li { margin: 0; padding: 0; }
+  .ss-menu-list a {
+    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
+  .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
+
+  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-circle {
+    width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
+    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+  }
+  .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
+  .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
+
+  .ss-menu-section-title {
+    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+  }
+  .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .ss-menu-reservation {
+    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
+    text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
+  .ss-menu-reservation:active { transform: scale(0.985); }
+
+  body.ss-menu-lock { overflow: hidden !important; touch-action: none; }
+}
+
+@media (max-width: 380px) {
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
+  .ss-menu-list a { min-height: 49px; font-size: 11px; }
+  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
+  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
+  .ss-menu-reservation span { font-size: 11px; }
+}
+
+html.ss-sub-page .ss-pc-logo,
+html.ss-sub-page .ss-pc-menu a,
+html.ss-sub-page .ss-pc-language,
+html.ss-sub-page .ss-mobile-logo {
+  color: #28231F !important;
+}
+html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important; }
+html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
+html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
+html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
+html.ss-sub-page body { padding-top: 96px; }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+</style>
+
+<script>
+(function () {
+  const routes = {
+    kr: { home: "/", about: "/about", menu: "/menu", visit: "/visit", reservation: "/reservation" },
+    en: { home: "/en", about: "/en-about", menu: "/en-menu", visit: "/en-visit", reservation: "/en-reservation" }
+  };
+
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isEnglishPage =
+    currentPath === routes.en.home ||
+    currentPath === "/en/index.html" ||
+    currentPath.indexOf("/en-") === 0 ||
+    currentPath.indexOf("/en/") === 0;
+
+  const currentLanguage = isEnglishPage ? "en" : "kr";
+
+  function findCurrentPageKey(path) {
+    const normalizedPath = (path === "/home" || path === "/index" || path === "/index.html") ? "/" : path;
+    const languages = ["kr", "en"];
+    const pageKeys = Object.keys(routes.kr);
+    for (let i = 0; i < languages.length; i += 1) {
+      const language = languages[i];
+      for (let j = 0; j < pageKeys.length; j += 1) {
+        const pageKey = pageKeys[j];
+        if (routes[language][pageKey] === normalizedPath) return pageKey;
+      }
+    }
+    return "home";
+  }
+
+  const currentPageKey = findCurrentPageKey(currentPath);
+
+  document.querySelectorAll("[data-ss-page]").forEach(function (link) {
+    const pageKey = link.getAttribute("data-ss-page");
+    const destination = routes[currentLanguage][pageKey];
+    if (destination) link.setAttribute("href", destination);
+  });
+
+  document.querySelectorAll("[data-ss-language]").forEach(function (link) {
+    const language = link.getAttribute("data-ss-language");
+    const destination = routes[language][currentPageKey];
+    link.setAttribute("href", destination);
+    const isActive = language === currentLanguage;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
+  const header = document.getElementById("ssSiteHeader");
+  const openButton = document.querySelector(".ss-menu-open");
+  const closeButton = document.querySelector(".ss-menu-close");
+  const overlay = document.querySelector(".ss-menu-overlay");
+  const panel = document.querySelector(".ss-menu-panel");
+  const menuLinks = document.querySelectorAll(".ss-menu-overlay a");
+
+  var SCROLL_THRESHOLD = 30;
+  var scrollTicking = false;
+
+  function getScrollTop(target) {
+    if (!target || target === document || target === window) {
+      return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    }
+    return target.scrollTop || 0;
+  }
+
+  function applyScrollState(scrollTop) {
+    if (!header) return;
+    if (scrollTop > SCROLL_THRESHOLD) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  }
+
+  function handleScroll(event) {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    var target = event ? event.target : null;
+    requestAnimationFrame(function () {
+      applyScrollState(getScrollTop(target));
+      scrollTicking = false;
+    });
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+  applyScrollState(getScrollTop(window));
+
+  if (!openButton || !closeButton || !overlay) return;
+
+  function openMenu() {
+    overlay.classList.add("is-open");
+    openButton.classList.add("is-hidden");
+    document.body.classList.add("ss-menu-lock");
+    openButton.setAttribute("aria-expanded", "true");
+    overlay.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    overlay.classList.remove("is-open");
+    openButton.classList.remove("is-hidden");
+    document.body.classList.remove("ss-menu-lock");
+    openButton.setAttribute("aria-expanded", "false");
+    overlay.setAttribute("aria-hidden", "true");
+  }
+
+  openButton.addEventListener("click", openMenu);
+  closeButton.addEventListener("click", closeMenu);
+  menuLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay && !panel.contains(event.target)) closeMenu();
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeMenu();
+  });
+})();
+</script>
+
+
+<!-- ==================================================
+     ABOUT / BRAND STORY (원본 디자인 그대로)
+================================================== -->
+
+<section class="ss-brand-story">
+
+  <div class="ss-brand-story-inner">
+
+    <div class="ss-brand-story-heading">
+      <p class="ss-brand-story-eyebrow ss-brand-reveal" style="--ss-reveal-delay: 0s;">
+        BRAND STORY
+      </p>
+      <p class="ss-brand-story-en-title ss-brand-reveal" style="--ss-reveal-delay: 0.08s;">
+        Sydney to Seoul
+      </p>
+    </div>
+
+    <div class="ss-brand-story-copy">
+
+      <h1 class="ss-brand-story-title ss-brand-reveal" style="--ss-reveal-delay: 0.10s;">
+        시드니에서 시작된 감각,<br>
+        서울에서 완성된 미학
+      </h1>
+
+      <div class="ss-brand-story-description">
+        <p class="ss-brand-reveal" style="--ss-reveal-delay: 0.16s;">
+          시드니서울은 서로 다른 두 도시에서 얻은 경험과 영감을<br>
+          하나의 테이블 위에 풀어내는 컨템포러리 다이닝입니다.<br><br>
+          시드니에서 배운 자유로운 감각과 재료에 대한 존중,<br>
+          서울이 지닌 섬세한 미감과 계절의 흐름을 바탕으로<br>
+          익숙한 맛을 새롭게 바라봅니다.<br><br>
+          두 도시의 경계를 넘어,<br>
+          시드니서울만의 균형과 방식으로 완성한 요리를 선보입니다.<br>
+        </p>
+      </div>
+
+    </div>
+
+    <div class="ss-brand-story-illustration ss-brand-reveal" style="--ss-reveal-delay: 0.10s;" aria-hidden="true">
+      <img
+        class="ss-brand-story-illustration-image"
+        src="images/journey-illustration.png"
+        alt=""
+        loading="lazy"
+      >
+    </div>
+
+  </div>
+
+</section>
+
+
+<style>
+.ss-brand-story, .ss-brand-story * { box-sizing: border-box; }
+
+.ss-brand-story {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f7f0ea;
+  color: #28231f;
+}
+
+.ss-brand-story .ss-brand-story-inner {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(540px, 1.28fr);
+  align-items: start;
+  column-gap: clamp(90px, 11vw, 190px);
+  width: min(100%, 1440px);
+  margin: 0 auto;
+  padding: clamp(32px, 3vw, 48px) clamp(32px, 7vw, 105px) clamp(90px, 8vw, 130px);
+}
+
+.ss-brand-story .ss-brand-story-heading {
+  padding-top: 8px;
+}
+
+.ss-brand-story .ss-brand-story-eyebrow {
+  margin: 0 0 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  color: #9b7944;
+}
+
+.ss-brand-story .ss-brand-story-en-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #28231f;
+}
+
+.ss-brand-story .ss-brand-story-copy {
+  width: 100%;
+  min-width: 0;
+}
+
+.ss-brand-story .ss-brand-story-title {
+  margin: 0;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(34px, 2.7vw, 44px);
+  font-weight: 400;
+  line-height: 1.65 !important;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+  color: #29251f;
+}
+
+.ss-brand-story .ss-brand-story-description {
+  width: 100%;
+  max-width: 650px;
+  margin-top: 10px;
+  padding-top: 32px;
+}
+
+.ss-brand-story .ss-brand-story-description p {
+  margin: 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.95;
+  letter-spacing: -0.005em;
+  word-break: keep-all;
+  color: #5f554d;
+}
+
+.ss-brand-story .ss-brand-story-description p + p {
+  margin-top: 15px;
+}
+
+.ss-brand-story .ss-brand-story-illustration {
+  grid-column: 1 / -1;
+  width: min(100%, 590px);
+  margin: clamp(35px, 4vw, 60px) auto 0;
+  pointer-events: none;
+}
+
+.ss-brand-story .ss-brand-story-illustration-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0.72;
+  user-select: none;
+}
+
+.ss-brand-story .ss-brand-reveal {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-brand-story .ss-brand-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 991px) {
+  .ss-brand-story .ss-brand-story-inner {
+    display: block;
+    padding: 36px 48px 96px;
+  }
+  .ss-brand-story .ss-brand-story-heading {
+    padding-top: 0;
+    margin-bottom: 52px;
+  }
+  .ss-brand-story .ss-brand-story-en-title {
+    font-size: 34px;
+  }
+  .ss-brand-story .ss-brand-story-copy {
+    width: 100%;
+    max-width: 720px;
+    margin-left: auto;
+  }
+  .ss-brand-story .ss-brand-story-title {
+    font-size: 30px !important;
+    line-height: 1.6 !important;
+  }
+  .ss-brand-story .ss-brand-story-description {
+    margin-top: 13px;
+    padding-top: 26px;
+  }
+  .ss-brand-story .ss-brand-story-description p + p {
+    margin-top: 15px;
+  }
+  .ss-brand-story .ss-brand-story-illustration {
+    width: min(100%, 450px);
+    margin-top: 72px;
+  }
+}
+
+@media (max-width: 767px) {
+  .ss-brand-story .ss-brand-story-inner {
+    display: block;
+    padding: 24px 22px 76px;
+  }
+  .ss-brand-story .ss-brand-story-heading {
+    padding-top: 0;
+    margin-bottom: 43px;
+  }
+  .ss-brand-story .ss-brand-story-eyebrow {
+    margin-bottom: 20px;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 1;
+    letter-spacing: 0.26em;
+  }
+  .ss-brand-story .ss-brand-story-en-title {
+    font-size: 30px;
+    line-height: 1.1;
+  }
+  .ss-brand-story .ss-brand-story-title {
+    font-size: clamp(26px, 6.4vw, 29px) !important;
+    line-height: 1.6 !important;
+    letter-spacing: -0.03em;
+  }
+  .ss-brand-story .ss-brand-story-description {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  .ss-brand-story .ss-brand-story-description p {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 1.85;
+    letter-spacing: -0.005em;
+  }
+  .ss-brand-story .ss-brand-story-description p + p {
+    margin-top: 15px;
+  }
+  .ss-brand-story .ss-brand-reveal {
+    transform: translate3d(0, 26px, 0);
+  }
+  .ss-brand-story .ss-brand-reveal.is-visible {
+    transform: translate3d(0, 0, 0);
+  }
+  .ss-brand-story .ss-brand-story-illustration {
+    width: min(100%, 310px);
+    margin-top: 35px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .ss-brand-story .ss-brand-story-illustration-image {
+    opacity: 0.7;
+  }
+}
+
+@media (max-width: 374px) {
+  .ss-brand-story .ss-brand-story-inner {
+    padding: 20px 19px 68px;
+  }
+  .ss-brand-story .ss-brand-story-heading {
+    margin-bottom: 39px;
+  }
+  .ss-brand-story .ss-brand-story-en-title {
+    font-size: 28px;
+  }
+  .ss-brand-story .ss-brand-story-title {
+    font-size: 26px !important;
+    line-height: 1.6 !important;
+    letter-spacing: -0.035em;
+  }
+  .ss-brand-story .ss-brand-story-description {
+    margin-top: 15px;
+    padding-top: 15px;
+  }
+  .ss-brand-story .ss-brand-story-illustration {
+    width: min(100%, 280px);
+    margin-top: 40px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-brand-story .ss-brand-reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+}
+</style>
+
+<script>
+(() => {
+  const initializeBrandStoryReveal = () => {
+    const sections = document.querySelectorAll(".ss-brand-story");
+    if (!sections.length) return;
+
+    const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+
+    sections.forEach((section) => {
+      if (section.dataset.revealInitialized === "true") return;
+      section.dataset.revealInitialized = "true";
+
+      const revealItems = section.querySelectorAll(".ss-brand-reveal");
+      if (!revealItems.length) return;
+
+      if (reducedMotionQuery.matches || !("IntersectionObserver" in window)) {
+        revealItems.forEach((item) => item.classList.add("is-visible"));
+        return;
+      }
+
+      const observer = new IntersectionObserver(
+        (entries, currentObserver) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            currentObserver.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      revealItems.forEach((item) => observer.observe(item));
+    });
+  };
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initializeBrandStoryReveal, { once: true });
+  } else {
+    initializeBrandStoryReveal();
+  }
+})();
+</script>
+
+<!-- ==================================================
+     ABOUT / CHEF PROFILE
+================================================== -->
+
+<section class="ss-chef-profile">
+
+  <div class="ss-chef-profile-inner">
+
+    <header class="ss-chef-profile-header">
+      <p class="ss-chef-profile-eyebrow ss-chef-reveal" style="--ss-chef-reveal-delay: 0s;">
+        CHEF
+      </p>
+      <p class="ss-chef-profile-en-title ss-chef-reveal" style="--ss-chef-reveal-delay: 0.08s;">
+        The Chef
+      </p>
+    </header>
+
+    <div class="ss-chef-profile-grid">
+
+      <figure class="ss-chef-profile-visual ss-chef-reveal" style="--ss-chef-reveal-delay: 0.04s;">
+        <div class="ss-chef-profile-image-wrap">
+          <img
+            class="ss-chef-profile-image"
+            src="images/chef-portrait.png"
+            alt="시드니서울 셰프 프로필"
+            loading="lazy"
+          >
+          <div class="ss-chef-profile-placeholder">
+            <span>CHEF PORTRAIT</span>
+          </div>
+        </div>
+      </figure>
+
+      <div class="ss-chef-profile-content">
+
+        <div class="ss-chef-profile-name">
+          <strong class="ss-chef-reveal" style="--ss-chef-reveal-delay: 0.08s;">
+            Minhu Kim
+          </strong>
+          <span class="ss-chef-reveal" style="--ss-chef-reveal-delay: 0.14s;">
+            Owner Chef
+          </span>
+        </div>
+
+        <div class="ss-chef-profile-description">
+          <p class="ss-chef-reveal" style="--ss-chef-reveal-delay: 0.08s;">
+            호주 르 코르동 블루에서 수련한 셰프는<br>
+            호주의 자유로운 미식 문화와<br>
+            다양한 식재료에서 자신만의 감각을 쌓았습니다.<br><br>
+            2020년 비건 요리와 일반식을 함께 선보이는<br>
+            호주식 캐주얼 모던 다이닝 '업투미'를 시작했으며,<br>
+            2025년에는 한우를 중심으로<br>
+            프렌치와 한식의 조화를 풀어낸<br>
+            퓨전 레스토랑 '우고미'를 선보였습니다.<br><br>
+            서로 다른 문화와 조리 방식의 경계를 넘나들며,<br>
+            재료가 지닌 고유한 맛을<br>
+            섬세하고 새로운 방식으로 표현합니다.<br>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.ss-chef-profile, .ss-chef-profile * { box-sizing: border-box; }
+
+.ss-chef-profile {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f7f0ea;
+  color: #28231f;
+}
+
+.ss-chef-profile-inner {
+  width: min(100%, 1600px);
+  margin: 0 auto;
+  padding: clamp(40px, 5vw, 60px) clamp(32px, 6.5vw, 105px) clamp(70px, 8vw, 90px);
+}
+
+.ss-chef-profile-header {
+  margin-bottom: clamp(48px, 6vw, 80px);
+}
+
+.ss-chef-profile-eyebrow {
+  margin: 0 0 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  color: #9b7944;
+}
+
+.ss-chef-profile-en-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #28231f;
+}
+
+.ss-chef-profile-grid {
+  display: grid;
+  grid-template-columns: minmax(440px, 0.95fr) minmax(500px, 1.05fr);
+  align-items: start;
+  column-gap: clamp(90px, 12vw, 200px);
+}
+
+.ss-chef-profile-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.ss-chef-profile-image-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 4 / 5.25;
+  overflow: hidden;
+  background: #a18765;
+}
+
+.ss-chef-profile-image-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: #a18765;
+}
+
+.ss-chef-profile-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(33, 28, 24, 0.02) 48%, rgba(33, 28, 24, 0.16) 100%);
+  opacity: 1;
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ss-chef-profile-image {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  opacity: 1;
+  transform: scale(1.01);
+  filter: saturate(0.9) contrast(1.02);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.6s ease;
+}
+
+.ss-chef-profile.is-reveal-ready .ss-chef-profile-image-wrap:not(.is-visible) .ss-chef-profile-image {
+  opacity: 0;
+  transform: scale(1.06);
+}
+
+.ss-chef-profile.is-reveal-ready .ss-chef-profile-image-wrap:not(.is-visible)::after {
+  opacity: 0;
+}
+
+.ss-chef-profile-image-wrap.is-visible .ss-chef-profile-image {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+@media (hover: hover) {
+  .ss-chef-profile-visual:hover .ss-chef-profile-image-wrap.is-visible .ss-chef-profile-image {
+    transform: scale(1.035);
+    filter: saturate(1) contrast(1);
+  }
+}
+
+.ss-chef-profile-image-wrap.is-load-error::before,
+.ss-chef-profile-image-wrap.is-load-error::after {
+  opacity: 0;
+}
+
+.ss-chef-profile-placeholder {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(145deg, #e4d9cf 0%, #d3c6bb 100%);
+}
+
+.ss-chef-profile-placeholder span {
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 10px;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: rgba(40, 35, 31, 0.38);
+}
+
+.ss-chef-profile-content {
+  min-width: 0;
+  max-width: 670px;
+}
+
+.ss-chef-profile-name {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+}
+
+.ss-chef-profile-name strong {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 2.4vw, 34px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.01em;
+  color: #28231f;
+}
+
+.ss-chef-profile-name span {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 16px;
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+  color: #6f5636;
+}
+
+.ss-chef-profile-description {
+  margin-top: clamp(44px, 5.5vw, 58px);
+  padding-top: 20px;
+}
+
+.ss-chef-profile-description p {
+  margin: 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.95;
+  letter-spacing: -0.005em;
+  color: rgba(40, 35, 31, 0.78);
+  word-break: keep-all;
+}
+
+.ss-chef-profile-description p + p {
+  margin-top: 20px;
+}
+
+.ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-chef-reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 1050px) and (min-width: 901px) {
+  .ss-chef-profile-inner { padding: 48px 48px 90px; }
+  .ss-chef-profile-grid {
+    grid-template-columns: minmax(370px, 0.95fr) minmax(390px, 1.05fr);
+    column-gap: 75px;
+  }
+}
+
+@media (max-width: 900px) and (min-width: 768px) {
+  .ss-chef-profile-inner { padding: 42px 48px 90px; }
+  .ss-chef-profile-grid {
+    grid-template-columns: 1fr;
+    row-gap: 52px;
+    justify-items: center;
+  }
+  .ss-chef-profile-visual {
+    width: min(88%, 420px);
+    margin-left: auto;
+    margin-right: auto;
+    justify-self: center;
+  }
+  .ss-chef-profile-content { width: 100%; margin: 0; }
+  .ss-chef-profile-name { gap: 6px; }
+  .ss-chef-profile-name strong { font-size: 24px; }
+  .ss-chef-profile-name span { font-size: 15px; }
+}
+
+@media (max-width: 767px) {
+  .ss-chef-profile-inner { width: 100%; padding: 24px 22px 76px !important; }
+  .ss-chef-profile-header { margin-bottom: 38px; }
+  .ss-chef-profile-eyebrow { margin-bottom: 18px; font-size: 12px; line-height: 1; letter-spacing: 0.26em; }
+  .ss-chef-profile-en-title { font-size: 30px; }
+  .ss-chef-profile-grid { display: grid; grid-template-columns: 1fr; row-gap: 36px; justify-items: center; }
+  .ss-chef-profile-visual { width: min(88%, 420px); margin: 0 auto; justify-self: center; }
+  .ss-chef-profile-image-wrap { aspect-ratio: 4 / 5.15; }
+  .ss-chef-profile-content { width: 100%; max-width: none; margin: 0; }
+  .ss-chef-profile-name { gap: 6px; }
+  .ss-chef-profile-name strong { font-size: 24px; }
+  .ss-chef-profile-name span { font-size: 15px; }
+  .ss-chef-profile-description { margin-top: 20px; padding-top: 23px; }
+  .ss-chef-profile-description p { font-size: 14px; line-height: 1.85; letter-spacing: -0.005em; }
+  .ss-chef-profile-description p + p { margin-top: 20px; }
+  .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal { transform: translate3d(0, 26px, 0); }
+  .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal.is-visible { transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 374px) {
+  .ss-chef-profile-inner { padding: 20px 19px 68px !important; }
+  .ss-chef-profile-header { margin-bottom: 34px; }
+  .ss-chef-profile-en-title { font-size: 28px; }
+  .ss-chef-profile-name strong { font-size: 23px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-chef-profile-image, .ss-chef-profile-image-wrap::after { transition: none !important; }
+  .ss-chef-profile-image { opacity: 1; transform: scale(1.01); }
+  .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+}
+</style>
+
+<script>
+(function () {
+  function initChefProfileReveal() {
+    var chefSections = document.querySelectorAll(".ss-chef-profile:not([data-chef-reveal-ready])");
+    if (!chefSections.length) return;
+
+    var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    var observerSupported = "IntersectionObserver" in window;
+
+    chefSections.forEach(function (chefSection) {
+      var revealItems = chefSection.querySelectorAll(".ss-chef-reveal");
+      var imageWrap = chefSection.querySelector(".ss-chef-profile-image-wrap");
+
+      chefSection.setAttribute("data-chef-reveal-ready", "true");
+      chefSection.classList.add("is-scroll-reveal-ready", "is-reveal-ready");
+
+      if (reducedMotion || !observerSupported) {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+        if (imageWrap) imageWrap.classList.add("is-visible");
+        return;
+      }
+
+      var revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      revealItems.forEach(function (item) { revealObserver.observe(item); });
+
+      if (!imageWrap) return;
+
+      function showImageAfterLoad() {
+        var image = imageWrap.querySelector(".ss-chef-profile-image");
+
+        function showImage() {
+          window.requestAnimationFrame(function () { imageWrap.classList.add("is-visible"); });
+        }
+
+        if (!image) { showImage(); return; }
+
+        if (image.complete && image.naturalWidth > 0) {
+          if (typeof image.decode === "function") {
+            image.decode().catch(function () {}).then(showImage);
+          } else {
+            showImage();
+          }
+          return;
+        }
+
+        image.addEventListener("load", showImage, { once: true });
+        image.addEventListener("error", function () {
+          imageWrap.classList.add("is-load-error");
+          showImage();
+        }, { once: true });
+      }
+
+      var imageObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(entry.target);
+            showImageAfterLoad();
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      imageObserver.observe(imageWrap);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initChefProfileReveal, { once: true });
+  } else {
+    initChefProfileReveal();
+  }
+})();
+</script>
+
+
+<!-- ==================================================
+     ABOUT / PHILOSOPHY
+================================================== -->
+
+<section class="ss-about-philosophy">
+
+  <div class="ss-about-philosophy-inner">
+
+    <header class="ss-about-philosophy-header">
+
+      <div class="ss-about-philosophy-heading">
+        <p class="ss-about-philosophy-eyebrow ss-philosophy-reveal-up" style="--ss-reveal-delay: 0s;">
+          PHILOSOPHY
+        </p>
+        <p class="ss-about-philosophy-en-title ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.08s;">
+          Our Philosophy
+        </p>
+      </div>
+
+      <div class="ss-about-philosophy-copy">
+        <h2 class="ss-about-philosophy-title ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.10s;">
+          재료가 태어난 곳과 계절을<br>
+          한 접시 안에 담습니다
+        </h2>
+
+        <div class="ss-about-philosophy-description">
+          <p class="ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.16s;">
+            좋은 요리의 시작은<br>
+            재료를 깊이 이해하고 존중하는 데 있다고 믿습니다.<br><br>
+            직접 기른 제철 채소와 호주산 소고기, 캥거루, 바라문디 등<br>
+            호주와 한국의 자연에서 얻은 식재료를 세심하게 살피고,<br>
+            각각의 맛과 질감이 온전히 드러나는 방식으로 풀어냅니다.<br><br>
+            익숙한 재료에 새로운 시선, 섬세한 조리법을 더해<br>
+            두 지역의 풍경과 계절이 조화를 이루는<br>
+            시드니서울만의 한 접시를 완성합니다.<br>
+          </p>
+        </div>
+      </div>
+
+    </header>
+
+    <div class="ss-about-philosophy-gallery">
+
+      <figure class="ss-about-philosophy-item ss-about-philosophy-item-main">
+        <div class="ss-about-philosophy-image-wrap ss-philosophy-reveal-up" style="--ss-reveal-delay: 0s;">
+          <img
+            class="ss-about-philosophy-image"
+            src="images/philosophy-garden.png"
+            alt="시드니서울에서 사용하는 제철 채소를 기르는 농장"
+            loading="lazy"
+          >
+        </div>
+        <figcaption class="ss-about-philosophy-caption ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.08s;">
+          <span>From Our Garden</span>
+        </figcaption>
+      </figure>
+
+      <figure class="ss-about-philosophy-item ss-about-philosophy-item-small">
+        <div class="ss-about-philosophy-image-wrap ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.08s;">
+          <img
+            class="ss-about-philosophy-image"
+            src="images/philosophy-harvest.png"
+            alt="시드니서울에서 직접 기르고 수확한 제철 채소"
+            loading="lazy"
+          >
+        </div>
+        <figcaption class="ss-about-philosophy-caption ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.16s;">
+          <span>Harvested by Hand</span>
+        </figcaption>
+      </figure>
+
+      <figure class="ss-about-philosophy-item ss-about-philosophy-item-tall">
+        <div class="ss-about-philosophy-image-wrap ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.16s;">
+          <img
+            class="ss-about-philosophy-image"
+            src="images/philosophy-table.png"
+            alt="호주산 식재료를 활용한 시드니서울의 요리"
+            loading="lazy"
+          >
+        </div>
+        <figcaption class="ss-about-philosophy-caption ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.24s;">
+          <span>On the Table</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.ss-about-philosophy, .ss-about-philosophy * { box-sizing: border-box; }
+
+.ss-about-philosophy {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #f7f0ea;
+  color: #28231f;
+}
+
+.ss-about-philosophy .ss-about-philosophy-inner {
+  width: min(100%, 1600px);
+  margin: 0 auto;
+  padding: clamp(95px, 8vw, 135px) clamp(32px, 6.5vw, 105px) clamp(135px, 12vw, 195px);
+}
+
+.ss-about-philosophy .ss-about-philosophy-header {
+  display: grid;
+  grid-template-columns: minmax(220px, 0.72fr) minmax(540px, 1.28fr);
+  align-items: start;
+  column-gap: clamp(90px, 11vw, 190px);
+  margin-bottom: clamp(85px, 9vw, 130px);
+}
+
+.ss-about-philosophy .ss-about-philosophy-heading {
+  padding-top: 7px;
+}
+
+.ss-about-philosophy .ss-about-philosophy-eyebrow {
+  margin: 0 0 30px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.3em;
+  color: #9b7944;
+}
+
+.ss-about-philosophy .ss-about-philosophy-en-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px);
+  font-weight: 500;
+  font-style: italic;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: #28231f;
+}
+
+.ss-about-philosophy .ss-about-philosophy-copy {
+  width: 100%;
+  min-width: 0;
+}
+
+.ss-about-philosophy .ss-about-philosophy-title {
+  margin: 0;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(30px, 2.7vw, 40px) !important;
+  font-weight: 400;
+  line-height: 1.65 !important;
+  letter-spacing: -0.03em;
+  word-break: keep-all;
+  color: #29251f;
+}
+
+.ss-about-philosophy .ss-about-philosophy-description {
+  max-width: 650px;
+  margin-top: clamp(20px, 3vw, 25px);
+  padding-top: 20px;
+}
+
+.ss-about-philosophy .ss-about-philosophy-description p {
+  margin: 0;
+  font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.85;
+  letter-spacing: -0.005em;
+  word-break: keep-all;
+  color: rgba(40, 35, 31, 0.78);
+}
+
+.ss-about-philosophy .ss-about-philosophy-description p + p {
+  margin-top: 20px;
+}
+
+.ss-about-philosophy .ss-about-philosophy-gallery {
+  display: grid;
+  grid-template-columns: 1.2fr 0.62fr 0.86fr;
+  align-items: start;
+  column-gap: clamp(30px, 4.5vw, 80px);
+}
+
+.ss-about-philosophy .ss-about-philosophy-item {
+  min-width: 0;
+  margin: 0;
+}
+
+.ss-about-philosophy .ss-about-philosophy-item-main { margin-top: 0; }
+.ss-about-philosophy .ss-about-philosophy-item-small { margin-top: clamp(100px, 11vw, 165px); }
+.ss-about-philosophy .ss-about-philosophy-item-tall { margin-top: clamp(35px, 4.5vw, 72px); }
+
+.ss-about-philosophy .ss-about-philosophy-image-wrap {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  background: #a18765;
+}
+
+.ss-about-philosophy .ss-about-philosophy-image-wrap::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: linear-gradient(180deg, rgba(40, 35, 31, 0.01) 55%, rgba(40, 35, 31, 0.1) 100%);
+  opacity: 1;
+  transition: opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ss-about-philosophy .ss-about-philosophy-item-main .ss-about-philosophy-image-wrap { aspect-ratio: 4 / 5; }
+.ss-about-philosophy .ss-about-philosophy-item-small .ss-about-philosophy-image-wrap { aspect-ratio: 1 / 1.2; }
+.ss-about-philosophy .ss-about-philosophy-item-tall .ss-about-philosophy-image-wrap { aspect-ratio: 3 / 4.65; }
+
+.ss-about-philosophy .ss-about-philosophy-image {
+  position: relative;
+  z-index: 1;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  opacity: 1;
+  transform: scale(1.01);
+  filter: saturate(0.9) contrast(1.02);
+  transition:
+    opacity 1.4s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.7s cubic-bezier(0.22, 1, 0.36, 1),
+    filter 1.5s ease;
+}
+
+.ss-about-philosophy.is-reveal-ready .ss-about-philosophy-image-wrap:not(.is-visible) .ss-about-philosophy-image {
+  opacity: 0;
+  transform: scale(1.06);
+}
+
+.ss-about-philosophy.is-reveal-ready .ss-about-philosophy-image-wrap:not(.is-visible)::after {
+  opacity: 0;
+}
+
+.ss-about-philosophy .ss-about-philosophy-image-wrap.is-visible .ss-about-philosophy-image {
+  opacity: 1;
+  transform: scale(1.01);
+}
+
+.ss-about-philosophy .ss-about-philosophy-item:hover .ss-about-philosophy-image-wrap.is-visible .ss-about-philosophy-image {
+  transform: scale(1.045);
+  filter: saturate(1) contrast(1);
+}
+
+.ss-about-philosophy .ss-about-philosophy-caption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 4px;
+  padding-top: 6px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 11px;
+  font-weight: 500;
+  line-height: 1.2;
+  letter-spacing: 0.02em;
+  color: #6F5636;
+}
+
+.ss-about-philosophy .ss-about-philosophy-caption span:first-child {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 13px !important;
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  color: #6F5636;
+}
+
+.ss-about-philosophy.is-content-reveal-ready .ss-philosophy-reveal-up {
+  opacity: 0;
+  transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-about-philosophy.is-content-reveal-ready .ss-philosophy-reveal-up.is-content-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 991px) {
+  .ss-about-philosophy .ss-about-philosophy-inner { padding: 95px 48px 130px; }
+  .ss-about-philosophy .ss-about-philosophy-header {
+    grid-template-columns: 1fr;
+    row-gap: 56px;
+    margin-bottom: 90px;
+  }
+  .ss-about-philosophy .ss-about-philosophy-heading { padding-top: 0; }
+  .ss-about-philosophy .ss-about-philosophy-copy { max-width: 720px; margin-left: auto; }
+  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 34px; }
+  .ss-about-philosophy .ss-about-philosophy-title { font-size: 30px !important; line-height: 1.6 !important; }
+  .ss-about-philosophy .ss-about-philosophy-gallery {
+    grid-template-columns: 1.1fr 0.75fr;
+    gap: 58px 40px;
+  }
+  .ss-about-philosophy .ss-about-philosophy-item-small { margin-top: 90px; }
+  .ss-about-philosophy .ss-about-philosophy-item-tall {
+    grid-column: 2 / 3;
+    width: 70%;
+    margin-top: 0;
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 767px) {
+  .ss-about-philosophy.is-content-reveal-ready .ss-philosophy-reveal-up { transform: translate3d(0, 26px, 0); }
+  .ss-about-philosophy.is-content-reveal-ready .ss-philosophy-reveal-up.is-content-visible { transform: translate3d(0, 0, 0); }
+  .ss-about-philosophy .ss-about-philosophy-inner { padding: 85px 22px 100px; }
+  .ss-about-philosophy .ss-about-philosophy-header { display: block; margin-bottom: 68px; }
+  .ss-about-philosophy .ss-about-philosophy-heading { margin-bottom: 42px; }
+  .ss-about-philosophy .ss-about-philosophy-eyebrow { margin-bottom: 20px; font-size: 12px; line-height: 1; letter-spacing: 0.26em; }
+  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 30px; line-height: 1.1; }
+  .ss-about-philosophy .ss-about-philosophy-title {
+    font-size: 25px !important;
+    line-height: 1.65 !important;
+    letter-spacing: -0.03em;
+  }
+  .ss-about-philosophy .ss-about-philosophy-description { margin-top: 15px; padding-top: 15px; }
+  .ss-about-philosophy .ss-about-philosophy-description p {
+    font-size: 14px;
+    line-height: 1.7;
+    letter-spacing: -0.005em;
+  }
+  .ss-about-philosophy .ss-about-philosophy-description p + p { margin-top: 15px; }
+  .ss-about-philosophy .ss-about-philosophy-gallery {
+    display: grid;
+    grid-template-columns: 1fr 0.68fr;
+    column-gap: 15px;
+    row-gap: 44px;
+    align-items: start;
+  }
+  .ss-about-philosophy .ss-about-philosophy-item-main {
+    grid-column: 1 / -1;
+    width: 88%;
+    margin: 0;
+  }
+  .ss-about-philosophy .ss-about-philosophy-item-main .ss-about-philosophy-image-wrap { aspect-ratio: 4 / 4.8; }
+  .ss-about-philosophy .ss-about-philosophy-item-small {
+    grid-column: 1 / 2;
+    width: 100%;
+    margin: 0;
+  }
+  .ss-about-philosophy .ss-about-philosophy-item-tall {
+    grid-column: 2 / 3;
+    width: 100%;
+    margin: 52px 0 0;
+  }
+  .ss-about-philosophy .ss-about-philosophy-caption {
+    margin-top: 4px;
+    padding-top: 6px;
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+  .ss-about-philosophy .ss-about-philosophy-caption span:first-child {
+    font-size: 11px;
+    letter-spacing: 0.02em;
+  }
+}
+
+@media (max-width: 374px) {
+  .ss-about-philosophy .ss-about-philosophy-inner { padding-left: 19px; padding-right: 19px; }
+  .ss-about-philosophy .ss-about-philosophy-title {
+    font-size: 23px !important;
+    line-height: 1.6 !important;
+    letter-spacing: -0.035em;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-about-philosophy .ss-philosophy-reveal-up {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .ss-about-philosophy .ss-about-philosophy-image,
+  .ss-about-philosophy .ss-about-philosophy-image-wrap::after {
+    transition: none !important;
+  }
+  .ss-about-philosophy .ss-about-philosophy-image {
+    opacity: 1;
+    transform: scale(1.01);
+  }
+}
+</style>
+
+<script>
+(function () {
+  function initPhilosophyReveal() {
+    var philosophySections = document.querySelectorAll(".ss-about-philosophy:not([data-reveal-ready])");
+    if (!philosophySections.length) return;
+
+    philosophySections.forEach(function (philosophySection) {
+      philosophySection.setAttribute("data-reveal-ready", "true");
+
+      var contentItems = philosophySection.querySelectorAll(".ss-philosophy-reveal-up");
+      var imageWraps = philosophySection.querySelectorAll(".ss-about-philosophy-image-wrap");
+      var reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      if (!("IntersectionObserver" in window) || reducedMotion) {
+        contentItems.forEach(function (contentItem) { contentItem.classList.add("is-content-visible"); });
+        imageWraps.forEach(function (imageWrap) { imageWrap.classList.add("is-visible"); });
+        return;
+      }
+
+      philosophySection.classList.add("is-content-reveal-ready");
+
+      var contentObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-content-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -8% 0px" }
+      );
+
+      contentItems.forEach(function (contentItem) { contentObserver.observe(contentItem); });
+
+      function showImageAfterLoad(imageWrap) {
+        var image = imageWrap.querySelector(".ss-about-philosophy-image");
+
+        function showImage() {
+          window.requestAnimationFrame(function () { imageWrap.classList.add("is-visible"); });
+        }
+
+        if (!image) { showImage(); return; }
+
+        if (image.complete && image.naturalWidth > 0) {
+          if (typeof image.decode === "function") {
+            image.decode().catch(function () {}).then(showImage);
+          } else {
+            showImage();
+          }
+          return;
+        }
+
+        image.addEventListener("load", showImage, { once: true });
+        image.addEventListener("error", showImage, { once: true });
+      }
+
+      philosophySection.classList.add("is-reveal-ready");
+
+      var philosophyImageObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            observer.unobserve(entry.target);
+            showImageAfterLoad(entry.target);
+          });
+        },
+        { threshold: 0.18, rootMargin: "0px 0px -18% 0px" }
+      );
+
+      imageWraps.forEach(function (imageWrap) { philosophyImageObserver.observe(imageWrap); });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initPhilosophyReveal, { once: true });
+  } else {
+    initPhilosophyReveal();
+  }
+})();
+</script>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadPartial(url, targetId) {
+    fetch(url)
+      .then(res => res.text())
+      .then(html => {
+        const target = document.getElementById(targetId);
+        target.innerHTML = html;
+
+        target.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      });
+  }
+
+  loadPartial('footer.html', 'footer-placeholder');
+</script>
+
+</body>
+</html>

@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Menu | SYDNEY SEOUL</title>
+  <link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<!-- ==================================================
+     HEADER
+================================================== -->
+
+<script>
+(function () {
+  var path = window.location.pathname.replace(/\/+$/, "") || "/";
+
+  var isEnglish =
+    path === "/en" ||
+    path === "/en/index.html" ||
+    path.indexOf("/en-") === 0 ||
+    path.indexOf("/en/") === 0;
+
+  var isHome =
+    path === "/" ||
+    path === "/home" ||
+    path === "/index" ||
+    path === "/index.html" ||
+    path === "/en" ||
+    path === "/en/index.html";
+
+  document.documentElement.classList.toggle("ss-en-page", isEnglish);
+  document.documentElement.classList.toggle("ss-kr-page", !isEnglish);
+
+  if (!isHome) {
+    document.documentElement.classList.add("ss-sub-page");
+  }
+})();
+</script>
+
+<header class="ss-site-header" id="ssSiteHeader">
+  <div class="ss-pc-header">
+    <a class="ss-pc-logo" href="/" data-ss-page="home" aria-label="Sydney Seoul Home">SYDNEY SEOUL</a>
+    <nav class="ss-pc-menu" aria-label="Main menu">
+      <a href="/" data-ss-page="home">Home</a>
+      <a href="/about" data-ss-page="about">About</a>
+      <a href="/menu" data-ss-page="menu">Menu</a>
+      <a href="/visit" data-ss-page="visit">Visit</a>
+      <a href="/reservation" data-ss-page="reservation">Reservation</a>
+    </nav>
+    <div class="ss-pc-actions">
+      <div class="ss-pc-language" aria-label="Language selection">
+        <a class="ss-pc-language-link" href="/" data-ss-language="kr">KR</a>
+        <a class="ss-pc-language-link" href="/en" data-ss-language="en">EN</a>
+      </div>
+    </div>
+  </div>
+  <div class="ss-mobile-header">
+    <a class="ss-mobile-logo" href="/" data-ss-page="home" aria-label="Sydney Seoul Home">SYDNEY SEOUL</a>
+  </div>
+</header>
+
+<div class="ss-mobile-nav">
+  <button class="ss-menu-open" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ssMenuOverlay">
+    <span class="ss-menu-star" aria-hidden="true"></span>
+  </button>
+
+  <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
+    <button class="ss-menu-close" type="button" aria-label="Close menu">
+      <span></span><span></span>
+    </button>
+
+    <div class="ss-menu-panel">
+      <nav class="ss-menu-nav" aria-label="Mobile menu">
+        <ul class="ss-menu-list">
+          <li><a href="/" data-ss-page="home">Home</a></li>
+          <li><a href="/about" data-ss-page="about">About</a></li>
+          <li><a href="/menu" data-ss-page="menu">Menu</a></li>
+          <li><a href="/visit" data-ss-page="visit">Visit</a></li>
+          <li><a href="/reservation" data-ss-page="reservation">Reservation</a></li>
+        </ul>
+      </nav>
+
+      <div class="ss-menu-section-title">BOOK A TABLE</div>
+
+      <div class="ss-menu-reservation-wrap">
+        <a class="ss-menu-reservation" href="https://app.catchtable.co.kr/ct/shop/ahknPViXvZ72eNRDs1IQ6Q" target="_blank" rel="noopener">
+          <span>한국어로 예약하기</span>
+        </a>
+        <a class="ss-menu-reservation" href="https://www.catchtable.net/explore/shop/sydneyseoul" target="_blank" rel="noopener">
+          <span>Reserve in English</span>
+        </a>
+        <div class="ss-language-wrap">
+          <a class="ss-language-circle" href="/" data-ss-language="kr">KR</a>
+          <a class="ss-language-circle" href="/en" data-ss-language="en">EN</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<style>
+.ss-site-header, .ss-mobile-nav {
+  --ss-warm-ivory: #F5EBE1; --ss-soft-ivory: #FCF3E9; --ss-beige: #E2D6CC;
+  --ss-gold: #A18765; --ss-deep-bronze: #6F5636; --ss-espresso: #28231F; --ss-warm-gray: #756D66;
+}
+.ss-site-header, .ss-site-header *, .ss-mobile-nav, .ss-mobile-nav * { box-sizing: border-box; }
+.ss-site-header a, .ss-mobile-nav a { text-decoration: none; }
+button, a { -webkit-tap-highlight-color: transparent; }
+
+.ss-site-header {
+  position: absolute; top: 0; left: 0; width: 100%; z-index: 9997; color: #ffffff;
+  transition: background-color 0.35s ease, color 0.35s ease, box-shadow 0.35s ease, backdrop-filter 0.35s ease;
+}
+.ss-site-header.is-scrolled {
+  height: 0; overflow: visible; border-bottom: 0; background: transparent;
+  backdrop-filter: none; -webkit-backdrop-filter: none;
+}
+.ss-site-header.is-scrolled .ss-pc-header,
+.ss-site-header.is-scrolled .ss-mobile-header {
+  opacity: 0 !important; visibility: hidden !important; pointer-events: none !important; transform: translateY(-10px) !important;
+}
+
+.ss-pc-header {
+  position: relative; width: 100%; height: 96px; padding: 0 7.5vw;
+  display: grid; grid-template-columns: minmax(200px, 1fr) auto minmax(280px, 1fr); align-items: center;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+.ss-pc-logo {
+  justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
+}
+.ss-pc-menu {
+  display: flex; align-items: center; justify-content: center; gap: clamp(26px, 2.7vw, 50px);
+  opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
+}
+.ss-pc-menu a {
+  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
+}
+.ss-pc-menu a::after {
+  content: ""; position: absolute; left: 0; bottom: 6px; width: 100%; height: 1px; background: var(--ss-gold);
+  transform: scaleX(0); transform-origin: right center; transition: transform 0.35s ease;
+}
+.ss-pc-menu a:hover { color: var(--ss-soft-ivory); }
+.ss-pc-menu a:hover::after { transform: scaleX(1); transform-origin: left center; }
+
+.ss-pc-actions {
+  justify-self: end; display: flex; align-items: center; gap: 28px;
+  opacity: 0; animation: ssHeaderReveal 0.8s ease 0.34s forwards;
+}
+.ss-pc-language {
+  display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
+  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+}
+.ss-pc-language-link {
+  width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
+  border: 1px solid transparent; border-radius: 50%; color: rgba(255, 255, 255, 0.46) !important; background: transparent;
+  transition: color 0.25s ease, background-color 0.25s ease, border-color 0.25s ease, transform 0.25s ease;
+}
+.ss-pc-language-link:hover { color: var(--ss-soft-ivory) !important; border-color: rgba(252, 243, 233, 0.3); }
+.ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
+.ss-pc-language-link:active { transform: scale(0.94); }
+
+@keyframes ssHeaderReveal { from { opacity: 0; transform: translateY(-5px); } to { opacity: 1; transform: translateY(0); } }
+
+@media (min-width: 1101px) {
+  .ss-pc-header { display: flex; justify-content: space-between; }
+  .ss-pc-menu { position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); animation-name: ssPcMenuReveal; }
+}
+@keyframes ssPcMenuReveal { from { opacity: 0; transform: translate(-50%, calc(-50% - 5px)); } to { opacity: 1; transform: translate(-50%, -50%); } }
+
+.ss-mobile-header, .ss-mobile-nav { display: none; }
+
+@media (min-width: 768px) and (max-width: 1100px) {
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
+  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-menu { gap: 22px; }
+  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-actions { gap: 14px; }
+  .ss-pc-language { gap: 6px; font-size: 9px; }
+}
+
+@media (max-width: 767px) {
+  .ss-pc-header { display: none; }
+  .ss-mobile-header {
+    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+  .ss-mobile-logo {
+    position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
+    font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+    letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -50%);
+  }
+  .ss-mobile-nav { display: block; }
+  .ss-menu-open {
+    position: fixed; top: 19px; right: 18px; z-index: 99998; width: 30px; height: 30px; padding: 0; border: 0;
+    border-radius: 50%; background: rgba(161, 135, 101, 0.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
+    box-shadow: 0 6px 18px rgba(40, 35, 31, 0.12); display: flex; align-items: center; justify-content: center;
+    cursor: pointer; appearance: none; -webkit-appearance: none;
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s ease, background-color 0.3s ease;
+  }
+  .ss-menu-star {
+    display: block; width: 16px; height: 16px; background: var(--ss-soft-ivory);
+    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    -webkit-clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
+    transform: rotate(0deg); transition: transform 0.4s ease, opacity 0.3s ease;
+  }
+  .ss-menu-open:hover { background: var(--ss-deep-bronze); }
+  .ss-menu-open:hover .ss-menu-star { transform: rotate(45deg); }
+  .ss-menu-open:active { transform: scale(0.92); }
+  .ss-menu-open:active .ss-menu-star { transform: rotate(45deg) scale(0.88); }
+  .ss-menu-open.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .ss-menu-overlay {
+    position: fixed; inset: 0; z-index: 99999; width: 100%; height: 100vh; height: 100dvh; color: var(--ss-espresso);
+    background: linear-gradient(180deg, rgba(245, 235, 225, 0.86) 0%, rgba(245, 235, 225, 0.92) 52%, rgba(226, 214, 204, 0.94) 100%);
+    backdrop-filter: blur(18px) saturate(0.82); -webkit-backdrop-filter: blur(18px) saturate(0.82);
+    opacity: 0; visibility: hidden; pointer-events: none; transform: translateY(-10px);
+    transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; overflow: hidden;
+  }
+  .ss-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
+
+  .ss-menu-close {
+    position: absolute; top: 21px; right: 18px; z-index: 4; width: 30px; height: 30px; padding: 0; border: 0;
+    border-radius: 50%; background: var(--ss-gold); box-shadow: 0 8px 24px rgba(111, 86, 54, 0.18);
+    cursor: pointer; appearance: none; -webkit-appearance: none; transition: transform 0.25s ease, background-color 0.25s ease;
+  }
+  .ss-menu-close span { position: absolute; top: 50%; left: 50%; display: block; width: 17px; height: 1px; background: var(--ss-soft-ivory); }
+  .ss-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
+  .ss-menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
+  .ss-menu-close:hover { background: var(--ss-deep-bronze); }
+  .ss-menu-close:active { transform: scale(0.92); }
+
+  .ss-menu-panel {
+    position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
+    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
+    overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  .ss-menu-panel::-webkit-scrollbar { display: none; }
+
+  .ss-menu-list { margin: 0; padding: 0; list-style: none; }
+  .ss-menu-list li { margin: 0; padding: 0; }
+  .ss-menu-list a {
+    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
+    transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
+  .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
+
+  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-circle {
+    width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
+    border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
+    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+  }
+  .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
+  .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
+
+  .ss-menu-section-title {
+    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+  }
+  .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
+  .ss-menu-reservation {
+    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
+    text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
+  }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
+  .ss-menu-reservation:active { transform: scale(0.985); }
+
+  body.ss-menu-lock { overflow: hidden !important; touch-action: none; }
+}
+
+@media (max-width: 380px) {
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
+  .ss-menu-list a { min-height: 49px; font-size: 11px; }
+  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
+  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
+  .ss-menu-reservation span { font-size: 11px; }
+}
+
+html.ss-sub-page .ss-pc-logo,
+html.ss-sub-page .ss-pc-menu a,
+html.ss-sub-page .ss-pc-language,
+html.ss-sub-page .ss-mobile-logo {
+  color: #28231F !important;
+}
+html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important; }
+html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
+html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
+html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
+html.ss-sub-page body { padding-top: 96px; }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+</style>
+
+<script>
+(function () {
+  const routes = {
+    kr: { home: "/", about: "/about", menu: "/menu", visit: "/visit", reservation: "/reservation" },
+    en: { home: "/en", about: "/en-about", menu: "/en-menu", visit: "/en-visit", reservation: "/en-reservation" }
+  };
+
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  const isEnglishPage =
+    currentPath === routes.en.home ||
+    currentPath === "/en/index.html" ||
+    currentPath.indexOf("/en-") === 0 ||
+    currentPath.indexOf("/en/") === 0;
+
+  const currentLanguage = isEnglishPage ? "en" : "kr";
+
+  function findCurrentPageKey(path) {
+    const normalizedPath = (path === "/home" || path === "/index" || path === "/index.html") ? "/" : path;
+    const languages = ["kr", "en"];
+    const pageKeys = Object.keys(routes.kr);
+    for (let i = 0; i < languages.length; i += 1) {
+      const language = languages[i];
+      for (let j = 0; j < pageKeys.length; j += 1) {
+        const pageKey = pageKeys[j];
+        if (routes[language][pageKey] === normalizedPath) return pageKey;
+      }
+    }
+    return "home";
+  }
+
+  const currentPageKey = findCurrentPageKey(currentPath);
+
+  document.querySelectorAll("[data-ss-page]").forEach(function (link) {
+    const pageKey = link.getAttribute("data-ss-page");
+    const destination = routes[currentLanguage][pageKey];
+    if (destination) link.setAttribute("href", destination);
+  });
+
+  document.querySelectorAll("[data-ss-language]").forEach(function (link) {
+    const language = link.getAttribute("data-ss-language");
+    const destination = routes[language][currentPageKey];
+    link.setAttribute("href", destination);
+    const isActive = language === currentLanguage;
+    link.classList.toggle("active", isActive);
+    if (isActive) link.setAttribute("aria-current", "page");
+    else link.removeAttribute("aria-current");
+  });
+
+  const header = document.getElementById("ssSiteHeader");
+  const openButton = document.querySelector(".ss-menu-open");
+  const closeButton = document.querySelector(".ss-menu-close");
+  const overlay = document.querySelector(".ss-menu-overlay");
+  const panel = document.querySelector(".ss-menu-panel");
+  const menuLinks = document.querySelectorAll(".ss-menu-overlay a");
+
+  var SCROLL_THRESHOLD = 30;
+  var scrollTicking = false;
+
+  function getScrollTop(target) {
+    if (!target || target === document || target === window) {
+      return window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
+    }
+    return target.scrollTop || 0;
+  }
+
+  function applyScrollState(scrollTop) {
+    if (!header) return;
+    if (scrollTop > SCROLL_THRESHOLD) header.classList.add("is-scrolled");
+    else header.classList.remove("is-scrolled");
+  }
+
+  function handleScroll(event) {
+    if (scrollTicking) return;
+    scrollTicking = true;
+    var target = event ? event.target : null;
+    requestAnimationFrame(function () {
+      applyScrollState(getScrollTop(target));
+      scrollTicking = false;
+    });
+  }
+
+  window.addEventListener("scroll", handleScroll, { passive: true });
+  document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
+  applyScrollState(getScrollTop(window));
+
+  if (!openButton || !closeButton || !overlay) return;
+
+  function openMenu() {
+    overlay.classList.add("is-open");
+    openButton.classList.add("is-hidden");
+    document.body.classList.add("ss-menu-lock");
+    openButton.setAttribute("aria-expanded", "true");
+    overlay.setAttribute("aria-hidden", "false");
+  }
+
+  function closeMenu() {
+    overlay.classList.remove("is-open");
+    openButton.classList.remove("is-hidden");
+    document.body.classList.remove("ss-menu-lock");
+    openButton.setAttribute("aria-expanded", "false");
+    overlay.setAttribute("aria-hidden", "true");
+  }
+
+  openButton.addEventListener("click", openMenu);
+  closeButton.addEventListener("click", closeMenu);
+  menuLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
+  overlay.addEventListener("click", function (event) {
+    if (event.target === overlay && !panel.contains(event.target)) closeMenu();
+  });
+  document.addEventListener("keydown", function (event) {
+    if (event.key === "Escape") closeMenu();
+  });
+})();
+</script>
+
+
+<!-- ==================================================
+     COURSE MENU (Lunch / Dinner / Wine Pairing)
+================================================== -->
+
+<section class="ss-course-menu-section">
+
+  <div class="ss-course-menu-inner">
+
+    <header class="ss-course-menu-header">
+      <div class="ss-course-menu-heading">
+        <p class="ss-course-menu-eyebrow">SYDNEY TO SEOUL</p>
+        <h1 class="ss-course-menu-title">The Menu</h1>
+      </div>
+    </header>
+
+    <div class="ss-course-menu-tabs" role="tablist">
+      <button class="ss-course-menu-tab is-active" type="button" role="tab" aria-selected="true" data-menu-tab="lunch">
+        <span class="ss-course-menu-tab-name">Lunch</span>
+      </button>
+      <button class="ss-course-menu-tab" type="button" role="tab" aria-selected="false" data-menu-tab="dinner">
+        <span class="ss-course-menu-tab-name">Dinner</span>
+      </button>
+      <button class="ss-course-menu-tab" type="button" role="tab" aria-selected="false" data-menu-tab="wine">
+        <span class="ss-course-menu-tab-name">Wine Pairing</span>
+      </button>
+    </div>
+
+    <!-- LUNCH -->
+    <article class="ss-course-menu-panel is-active" data-menu-panel="lunch" role="tabpanel">
+      <div class="ss-course-menu-card">
+        <div class="ss-course-menu-list">
+
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">01</span>
+            <div class="ss-course-menu-item-copy"><h3>Welcome Drink</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">02</span>
+            <div class="ss-course-menu-item-copy"><h3>Amuse-Bouche</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">03</span>
+            <div class="ss-course-menu-item-copy"><h3>Australian Crayfish</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">04</span>
+            <div class="ss-course-menu-item-copy"><h3>Barramundi Fish &amp; Chips</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">05</span>
+            <div class="ss-course-menu-item-copy"><h3>Kangaroo Ravioli</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">06</span>
+            <div class="ss-course-menu-item-copy"><h3>Beetroot Palate Cleanser</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">07</span>
+            <div class="ss-course-menu-item-copy"><h3>Tenderloin Meat Pie</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">08</span>
+            <div class="ss-course-menu-item-copy"><h3>Seasonal Ice Cream</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">09</span>
+            <div class="ss-course-menu-item-copy"><h3>Baked Alaska</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">10</span>
+            <div class="ss-course-menu-item-copy"><h3>Chocolate Petits Fours</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">11</span>
+            <div class="ss-course-menu-item-copy"><h3>T2 Tea or Dukes Coffee</h3></div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- DINNER -->
+    <article class="ss-course-menu-panel" data-menu-panel="dinner" role="tabpanel" hidden>
+      <div class="ss-course-menu-card">
+        <div class="ss-course-menu-list">
+
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">01</span>
+            <div class="ss-course-menu-item-copy"><h3>Welcome Drink</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">02</span>
+            <div class="ss-course-menu-item-copy"><h3>Amuse-Bouche</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">03</span>
+            <div class="ss-course-menu-item-copy"><h3>Australian Crayfish</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">04</span>
+            <div class="ss-course-menu-item-copy"><h3>Barramundi Fish &amp; Chips</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">05</span>
+            <div class="ss-course-menu-item-copy"><h3>Chicken Roulade</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">06</span>
+            <div class="ss-course-menu-item-copy"><h3>Kangaroo Ravioli</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">07</span>
+            <div class="ss-course-menu-item-copy"><h3>Beetroot Palate Cleanser</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">08</span>
+            <div class="ss-course-menu-item-copy"><h3>Tenderloin Meat Pie</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">09</span>
+            <div class="ss-course-menu-item-copy"><h3>Rack of Lamb Steak</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">10</span>
+            <div class="ss-course-menu-item-copy"><h3>Seasonal Ice Cream</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">11</span>
+            <div class="ss-course-menu-item-copy"><h3>Baked Alaska</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">12</span>
+            <div class="ss-course-menu-item-copy"><h3>Chocolate Petits Fours</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">13</span>
+            <div class="ss-course-menu-item-copy"><h3>T2 Tea or Dukes Coffee</h3></div>
+          </div>
+
+        </div>
+      </div>
+    </article>
+
+    <!-- WINE PAIRING -->
+    <article class="ss-course-menu-panel" data-menu-panel="wine" role="tabpanel" hidden>
+      <div class="ss-course-menu-card ss-course-menu-card-wine">
+        <div class="ss-course-menu-card-top">
+          <div>
+            <h2 class="ss-course-menu-card-title">5-Glass Wine Pairing</h2>
+          </div>
+        </div>
+
+        <div class="ss-course-menu-list">
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">01</span>
+            <div class="ss-course-menu-item-copy"><h3>House of Arras, Brut Elite NV</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">02</span>
+            <div class="ss-course-menu-item-copy"><h3>Tyrrell's, Hunter Valley Semillon 2025</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">03</span>
+            <div class="ss-course-menu-item-copy"><h3>Vasse Felix, Premier Chardonnay 2023</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">04</span>
+            <div class="ss-course-menu-item-copy"><h3>Nitschke, Julius Shiraz 2022</h3></div>
+          </div>
+          <div class="ss-course-menu-item">
+            <span class="ss-course-menu-item-number">05</span>
+            <div class="ss-course-menu-item-copy"><h3>De Bortoli, Noble One 2019</h3></div>
+          </div>
+        </div>
+      </div>
+    </article>
+
+    <div class="ss-course-menu-notice">
+      <span class="ss-course-menu-notice-line"></span>
+      <p>
+        Menu items may vary depending on the season<br class="ss-course-menu-mobile-break">
+        and availability of ingredients.
+      </p>
+      <span class="ss-course-menu-notice-line"></span>
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.ss-course-menu-section, .ss-course-menu-section * { box-sizing: border-box; }
+
+.ss-course-menu-section {
+  --ink: #28231f; --muted: rgba(40,35,31,.56); --line: rgba(40,35,31,.17);
+  --gold: #a18765; --paper: #fbf5ee;
+  background: #f7f0ea; color: var(--ink);
+  padding: 60px 24px 60px;
+}
+
+.ss-course-menu-inner { width: min(100%, 880px); margin: 0 auto; }
+
+.ss-course-menu-header { display: block; text-align: center; margin-bottom: 40px; }
+
+.ss-course-menu-eyebrow {
+  margin: 0 0 26px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 15px; font-weight: 500; line-height: 1; letter-spacing: 0.22em;
+  color: #9b7944;
+}
+
+.ss-course-menu-section .ss-course-menu-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(38px, 4.2vw, 48px) !important;
+  font-weight: 400; font-style: italic; line-height: 1; letter-spacing: -0.025em;
+  color: #28231f;
+}
+
+.ss-course-menu-tabs {
+  display: grid; grid-template-columns: repeat(3, 1fr);
+  width: min(100%, 720px); margin: 0 auto 48px; border: 0; background: transparent;
+}
+.ss-course-menu-tab {
+  position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
+  gap: 5px; min-height: 40px; padding: 9px 12px 8px; border: 0; background: transparent;
+  color: var(--muted); cursor: pointer;
+}
+.ss-course-menu-tab::after {
+  content: ''; position: absolute; left: 22%; right: 22%; bottom: -1px; height: 1px; background: var(--gold);
+  transform: scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.22,1,.36,1);
+}
+.ss-course-menu-tab-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; }
+.ss-course-menu-tab.is-active { color: var(--ink); background: transparent; }
+.ss-course-menu-tab.is-active::after { transform: scaleX(1); }
+.ss-course-menu-tab.is-active .ss-course-menu-tab-name { font-weight: 500; }
+
+.ss-course-menu-panel[hidden] { display: none !important; }
+.ss-course-menu-card {
+  position: relative; width: min(100%, 720px); margin: 0 auto; padding: 20px 52px 30px 38px;
+  background-color: #f7f0ea;
+}
+.ss-course-menu-card-top {
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: 22px;
+}
+
+.ss-course-menu-section .ss-course-menu-card-title {
+  margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 22px !important;
+  font-weight: 400; line-height: 1.05; text-align: center;
+}
+
+.ss-course-menu-list { padding: 8px 20px 0 20px; max-height: none; overflow: visible; }
+
+[data-menu-panel='wine'] .ss-course-menu-card { padding: 28px 38px 30px; }
+[data-menu-panel='wine'] .ss-course-menu-card-top { display: block; width: 100%; padding: 12px 0 30px; text-align: center; }
+[data-menu-panel='wine'] .ss-course-menu-card-top > div { width: 100%; }
+[data-menu-panel='wine'] .ss-course-menu-card-title { width: 100%; line-height: 1.2; letter-spacing: .015em; text-align: center; white-space: nowrap; }
+[data-menu-panel='wine'] .ss-course-menu-list { max-height: none; overflow: visible; padding: 8px 20px 0; }
+[data-menu-panel='wine'] .ss-course-menu-item { grid-template-columns: 42px minmax(0, 1fr); }
+[data-menu-panel='wine'] .ss-course-menu-item-copy h3 { white-space: nowrap; }
+
+.ss-course-menu-item {
+  display: grid; grid-template-columns: 42px minmax(0, 1fr) auto; align-items: center;
+  column-gap: 12px; min-height: 68px;
+}
+.ss-course-menu-item-number {
+  display: flex; flex-direction: column; gap: 3px;
+  font-family: Pretendard, sans-serif; font-size: 11px; font-weight: 500; line-height: 1;
+  letter-spacing: .08em; color: rgba(40,35,31,.62);
+}
+.ss-course-menu-item-copy h3 {
+  margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 500; line-height: 1.2;
+}
+
+.ss-course-menu-notice {
+  display: flex; align-items: center; gap: 18px; width: min(100%, 640px); margin: 50px auto 0;
+}
+.ss-course-menu-notice-line { flex: 1; height: 1px; background: var(--line); }
+.ss-course-menu-notice p {
+  margin: 0; font-family: Pretendard, sans-serif; font-size: 11px; font-weight: 300; line-height: 1.65;
+  text-align: center; color: var(--muted);
+}
+
+@media (hover:hover) {
+  .ss-course-menu-tab { transition: color .25s ease; }
+  .ss-course-menu-tab:hover { color: var(--ink); }
+}
+
+@media (max-width: 767px) {
+  .ss-course-menu-section { padding: 20px 24px 60px; }
+  .ss-course-menu-header { display: block; margin-bottom: 25px; }
+  .ss-course-menu-eyebrow { margin-bottom: 18px; font-size: 12px; line-height: 1; letter-spacing: 0.19em; }
+  .ss-course-menu-section .ss-course-menu-title { font-size: 34px !important; }
+  .ss-course-menu-tabs { width: 100%; margin: 0 0 20px; }
+  .ss-course-menu-tab { min-height: 30px; gap: 5px; padding: 8px 3px 4px; }
+  .ss-course-menu-tab-name { font-size: 15px; }
+  .ss-course-menu-card { padding: 10px 40px 24px 18px; }
+  .ss-course-menu-card-top { gap: 12px; padding-bottom: 18px; }
+  .ss-course-menu-section .ss-course-menu-card-title { font-size: 19px !important; }
+  .ss-course-menu-list { padding: 8px 12px 0 12px; }
+
+  [data-menu-panel='wine'] .ss-course-menu-card { padding: 22px 14px 24px; }
+  [data-menu-panel='wine'] .ss-course-menu-card-top { padding: 8px 0 25px; }
+  [data-menu-panel='wine'] .ss-course-menu-list { padding: 8px 8px 0; }
+
+  .ss-course-menu-item { grid-template-columns: 34px minmax(0, 1fr) auto; column-gap: 8px; min-height: 64px; }
+  [data-menu-panel='wine'] .ss-course-menu-item { grid-template-columns: 26px minmax(0, 1fr); column-gap: 6px; }
+  .ss-course-menu-item-copy h3 { font-size: 17px; line-height: 1.18; letter-spacing: -.01em; }
+  .ss-course-menu-item-number { font-size: 11px; color: rgba(40,35,31,.62); }
+  [data-menu-panel='wine'] .ss-course-menu-item-copy h3 { font-size: clamp(12px, 3.6vw, 14px); letter-spacing: -.01em; }
+
+  .ss-course-menu-notice { margin-top: 40px; gap: 11px; }
+  .ss-course-menu-notice p { font-size: 9px; }
+}
+
+.ss-course-menu-section.ss-course-menu-reveal-ready .ss-course-menu-reveal {
+  opacity: 0; transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform; transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-course-menu-reveal-delay, 0s);
+  will-change: opacity, transform;
+}
+.ss-course-menu-section.ss-course-menu-reveal-ready .ss-course-menu-reveal.is-visible {
+  opacity: 1; transform: translate3d(0, 0, 0); will-change: auto;
+}
+
+@media (max-width: 767px) {
+  .ss-course-menu-section.ss-course-menu-reveal-ready .ss-course-menu-reveal { transform: translate3d(0, 26px, 0); }
+  .ss-course-menu-section.ss-course-menu-reveal-ready .ss-course-menu-reveal.is-visible { transform: translate3d(0, 0, 0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-course-menu-tab { transition: none !important; }
+  .ss-course-menu-section.ss-course-menu-reveal-ready .ss-course-menu-reveal {
+    opacity: 1 !important; transform: none !important; transition: none !important;
+  }
+}
+</style>
+
+<script>
+(function () {
+  const root = document.querySelector('.ss-course-menu-section');
+  if (!root) return;
+  if (root.dataset.courseMenuInitialized === 'true') return;
+  root.dataset.courseMenuInitialized = 'true';
+
+  const tabs = root.querySelectorAll('[data-menu-tab]');
+  const panels = root.querySelectorAll('[data-menu-panel]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  let revealObserver = null;
+
+  function addRevealItem(element, delay) {
+    if (!element) return;
+    element.classList.add('ss-course-menu-reveal');
+    element.style.setProperty('--ss-course-menu-reveal-delay', delay || '0s');
+  }
+
+  function prepareRevealItems() {
+    addRevealItem(root.querySelector('.ss-course-menu-eyebrow'), '0s');
+    addRevealItem(root.querySelector('.ss-course-menu-title'), '0.08s');
+
+    tabs.forEach(function (tab, index) {
+      addRevealItem(tab, (0.12 + index * 0.05).toFixed(2) + 's');
+    });
+
+    panels.forEach(function (panel) {
+      addRevealItem(panel.querySelector('.ss-course-menu-card-top'), '0.04s');
+      panel.querySelectorAll('.ss-course-menu-item').forEach(function (item, index) {
+        const delay = Math.min(index, 5) * 0.03;
+        addRevealItem(item, delay.toFixed(2) + 's');
+      });
+    });
+
+    const noticeParts = root.querySelectorAll('.ss-course-menu-notice-line, .ss-course-menu-notice p');
+    noticeParts.forEach(function (part, index) {
+      addRevealItem(part, (index * 0.07).toFixed(2) + 's');
+    });
+  }
+
+  function observeRevealItems(container) {
+    if (!revealObserver) return;
+    container.querySelectorAll('.ss-course-menu-reveal:not(.is-visible)').forEach(function (item) {
+      revealObserver.unobserve(item);
+      revealObserver.observe(item);
+    });
+  }
+
+  function initializeReveal() {
+    prepareRevealItems();
+    root.classList.add('ss-course-menu-reveal-ready');
+
+    const revealItems = root.querySelectorAll('.ss-course-menu-reveal');
+
+    if (reducedMotion || !('IntersectionObserver' in window)) {
+      revealItems.forEach(function (item) { item.classList.add('is-visible'); });
+      return;
+    }
+
+    revealObserver = new IntersectionObserver(
+      function (entries, currentObserver) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting) return;
+          entry.target.classList.add('is-visible');
+          currentObserver.unobserve(entry.target);
+        });
+      },
+      { threshold: 0.08, rootMargin: '0px 0px -6% 0px' }
+    );
+
+    revealItems.forEach(function (item) { revealObserver.observe(item); });
+  }
+
+  function activateMenu(target, updateHash) {
+    const targetTab = root.querySelector('[data-menu-tab="' + target + '"]');
+    if (!targetTab) return;
+
+    tabs.forEach(function (tab) {
+      const isActive = tab.getAttribute('data-menu-tab') === target;
+      tab.classList.toggle('is-active', isActive);
+      tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+
+    panels.forEach(function (panel) {
+      const isActive = panel.getAttribute('data-menu-panel') === target;
+      panel.classList.toggle('is-active', isActive);
+      panel.hidden = !isActive;
+
+      if (isActive && revealObserver) {
+        window.requestAnimationFrame(function () { observeRevealItems(panel); });
+      }
+    });
+
+    if (updateHash) {
+      history.replaceState(null, '', window.location.pathname + window.location.search + '#' + target);
+    }
+  }
+
+  function getMenuFromHash() {
+    const hash = window.location.hash.replace('#', '').toLowerCase();
+    return ['lunch', 'dinner', 'wine'].includes(hash) ? hash : 'lunch';
+  }
+
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+      activateMenu(tab.getAttribute('data-menu-tab'), true);
+    });
+  });
+
+  window.addEventListener('hashchange', function () {
+    activateMenu(getMenuFromHash(), false);
+  });
+
+  initializeReveal();
+  activateMenu(getMenuFromHash(), false);
+})();
+</script>
+
+
+<!-- ==================================================
+     FOOD GALLERY (The Course)
+================================================== -->
+
+<section class="ss-food-showcase">
+
+  <div class="ss-food-showcase-inner">
+
+    <header class="ss-food-showcase-header">
+      <div class="ss-food-showcase-heading">
+        <p class="ss-food-showcase-eyebrow ss-food-reveal" style="--ss-food-delay: 0s;">FROM THE KITCHEN</p>
+        <h2 class="ss-food-showcase-title ss-food-reveal" style="--ss-food-delay: 0.08s;">The Course</h2>
+      </div>
+    </header>
+
+    <div class="ss-food-showcase-grid">
+
+      <figure class="ss-food-showcase-item">
+        <div class="ss-food-showcase-image-wrap ss-food-reveal" style="--ss-food-delay: 0s;">
+          <img class="ss-food-showcase-image" src="../images/food-amuse.png" alt="Sydney Seoul first course" loading="lazy">
+        </div>
+        <figcaption class="ss-food-showcase-caption ss-food-reveal" style="--ss-food-delay: 0.08s;">
+          <span>Amuse-Bouche</span>
+        </figcaption>
+      </figure>
+
+      <figure class="ss-food-showcase-item">
+        <div class="ss-food-showcase-image-wrap ss-food-reveal" style="--ss-food-delay: 0.08s;">
+          <img class="ss-food-showcase-image" src="../images/food-tenderloin.png" alt="Sydney Seoul signature course" loading="lazy">
+        </div>
+        <figcaption class="ss-food-showcase-caption ss-food-reveal" style="--ss-food-delay: 0.16s;">
+          <span>Tenderloin Meat Pie</span>
+        </figcaption>
+      </figure>
+
+      <figure class="ss-food-showcase-item">
+        <div class="ss-food-showcase-image-wrap ss-food-reveal" style="--ss-food-delay: 0.16s;">
+          <img class="ss-food-showcase-image" src="../images/food-dessert.png" alt="Sydney Seoul dessert course" loading="lazy">
+        </div>
+        <figcaption class="ss-food-showcase-caption ss-food-reveal" style="--ss-food-delay: 0.24s;">
+          <span>The Dessert</span>
+        </figcaption>
+      </figure>
+
+    </div>
+
+  </div>
+
+</section>
+
+<style>
+.ss-food-showcase, .ss-food-showcase * { box-sizing: border-box; }
+
+.ss-food-showcase {
+  --ss-food-ink: #28231f;
+  --ss-food-muted: rgba(40, 35, 31, 0.6);
+  --ss-food-line: rgba(40, 35, 31, 0.15);
+  --ss-food-gold: #9b7944;
+  --ss-food-bg: #f7f0ea;
+
+  width: 100%;
+  padding: clamp(48px, 5vw, 72px) 6vw clamp(90px, 9vw, 135px);
+  overflow: hidden;
+  background: var(--ss-food-bg);
+  color: var(--ss-food-ink);
+}
+
+.ss-food-showcase-inner { width: 100%; max-width: 1240px; margin: 0 auto; }
+
+.ss-food-showcase-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
+  align-items: end;
+  gap: clamp(48px, 7vw, 100px);
+  margin-bottom: clamp(48px, 6vw, 76px);
+}
+
+.ss-food-showcase-eyebrow {
+  margin: 0 0 24px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px; font-weight: 500; line-height: 1; letter-spacing: 0.23em;
+  color: var(--ss-food-gold);
+}
+
+.ss-food-showcase-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 42px);
+  font-weight: 500; font-style: italic !important; line-height: 1.08; letter-spacing: -0.01em;
+  color: var(--ss-food-ink);
+}
+
+.ss-food-showcase-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: clamp(24px, 2.8vw, 36px);
+}
+
+.ss-food-showcase-item { width: 100%; min-width: 0; margin: 0; }
+
+.ss-food-showcase-image-wrap {
+  position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: #e8ddd2;
+}
+
+.ss-food-showcase-image {
+  display: block; width: 100%; height: 100%; object-fit: cover; object-position: center;
+  opacity: 0; transform: scale(1.055);
+  transition:
+    opacity 1.1s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.ss-food-showcase-image-wrap.is-visible .ss-food-showcase-image {
+  opacity: 1; transform: scale(1.001);
+}
+
+.ss-food-showcase-caption {
+  display: flex; align-items: center; justify-content: space-between; gap: 15px;
+  margin-top: 4px; padding-top: 6px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 13px; font-weight: 500; line-height: 1.2; letter-spacing: 0.04em;
+  color: #6F5636;
+}
+
+.ss-food-showcase .ss-food-reveal {
+  opacity: 0; transform: translate3d(0, 38px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.9s, 1.05s;
+  transition-timing-function: ease, cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-food-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-food-showcase .ss-food-reveal.is-visible {
+  opacity: 1; transform: translate3d(0, 0, 0); will-change: auto;
+}
+
+@media (hover: hover) {
+  .ss-food-showcase-item:hover .ss-food-showcase-image-wrap.is-visible .ss-food-showcase-image {
+    transform: scale(1.035);
+  }
+}
+
+@media (max-width: 1024px) and (min-width: 768px) {
+  .ss-food-showcase-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 22px; }
+}
+
+@media (max-width: 767px) {
+  .ss-food-showcase { padding: 46px 22px 78px; }
+  .ss-food-showcase-header { display: block; margin-bottom: 40px; }
+  .ss-food-showcase-eyebrow { margin-bottom: 18px; font-size: 12px; letter-spacing: 0.19em; }
+  .ss-food-showcase-title { font-size: 30px; line-height: 1.1; }
+  .ss-food-showcase-grid { display: block; }
+  .ss-food-showcase-item { width: 100%; margin: 0 0 38px; }
+  .ss-food-showcase-item:last-child { margin-bottom: 0; }
+  .ss-food-showcase-image-wrap { aspect-ratio: 4 / 5; }
+  .ss-food-showcase-caption { margin-top: 5px; padding-bottom: 10px; font-size: 13px; letter-spacing: 0.02em; }
+  .ss-food-showcase .ss-food-reveal { transform: translate3d(0, 26px, 0); }
+  .ss-food-showcase .ss-food-reveal.is-visible { transform: translate3d(0, 0, 0); }
+}
+
+@media (max-width: 390px) {
+  .ss-food-showcase { padding-left: 18px; padding-right: 18px; }
+  .ss-food-showcase-title { font-size: 28px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-food-showcase .ss-food-reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
+  .ss-food-showcase-image { opacity: 1 !important; transform: scale(1.001) !important; transition: none !important; }
+}
+</style>
+
+<script>
+(function () {
+  function initFoodShowcaseReveal() {
+    var sections = document.querySelectorAll(".ss-food-showcase:not([data-food-showcase-ready])");
+    if (!sections.length) return;
+
+    sections.forEach(function (section) {
+      section.setAttribute("data-food-showcase-ready", "true");
+
+      var revealItems = section.querySelectorAll(".ss-food-reveal");
+      if (!revealItems.length) return;
+
+      if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        revealItems.forEach(function (item) { item.classList.add("is-visible"); });
+        return;
+      }
+
+      var revealObserver = new IntersectionObserver(
+        function (entries, observer) {
+          entries.forEach(function (entry) {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add("is-visible");
+            observer.unobserve(entry.target);
+          });
+        },
+        { threshold: 0.12, rootMargin: "0px 0px -6% 0px" }
+      );
+
+      revealItems.forEach(function (item) { revealObserver.observe(item); });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initFoodShowcaseReveal, { once: true });
+  } else {
+    initFoodShowcaseReveal();
+  }
+})();
+</script>
+
+
+<!-- ==================================================
+     FOOTER
+================================================== -->
+
+<div id="footer-placeholder"></div>
+
+<script>
+  function loadPartial(url, targetId) {
+    fetch(url)
+      .then(res => res.text())
+      .then(html => {
+        const target = document.getElementById(targetId);
+        target.innerHTML = html;
+
+        target.querySelectorAll('script').forEach(oldScript => {
+          const newScript = document.createElement('script');
+          if (oldScript.src) {
+            newScript.src = oldScript.src;
+          } else {
+            newScript.textContent = oldScript.textContent;
+          }
+          oldScript.parentNode.replaceChild(newScript, oldScript);
+        });
+      });
+  }
+
+  loadPartial('../header.html', 'header-placeholder');
+  loadPartial('../footer.html', 'footer-placeholder');
+</script>
+
+</body>
+</html>
