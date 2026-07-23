@@ -244,7 +244,7 @@ document.addEventListener("DOMContentLoaded", function () {
     left: 50% !important;
     width: var(--ss-slider-width, 100vw) !important;
     max-width: none !important;
-    height: var(--ss-slider-height, 100vh);
+    height: 100dvh;
     min-height: 650px;
     margin: 0 !important;
     padding: 0 !important;
@@ -325,7 +325,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   @media (max-width: 767px) {
     .ss-crossfade-wrap {
-      height: var(--ss-slider-height, 100vh);
+      height: 100dvh;
       min-height: 580px;
     }
 
@@ -423,7 +423,6 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
-    window.addEventListener("resize", requestSizeUpdate, { passive: true });
     window.addEventListener("orientationchange", function () {
       window.setTimeout(setStableSliderSize, 500);
     });
