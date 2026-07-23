@@ -3,88 +3,342 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Privacy Policy | SYDNEY SEOUL</title>
-  <link rel="stylesheet" href="../style.css">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+  <link rel="canonical" href="https://sydneyseoul.com/en-privacy">
+  <meta name="robots" content="noindex, follow">
+
+  <title>Privacy Policy | Sydney Seoul</title>
+  <meta name="description" content="Sydney Seoul privacy policy">
+
+  <link rel="stylesheet" href="style.css">
+
   <style>
-    .privacy-wrap {
-      max-width: 780px;
-      margin: 0 auto;
-      padding: 60px 24px 100px;
-      font-family: Pretendard, -apple-system, "Apple SD Gothic Neo", sans-serif;
-      color: #28231F;
-      line-height: 1.75;
+    @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&display=swap");
+
+    .ss-privacy-section,
+    .ss-privacy-section * {
+      box-sizing: border-box;
     }
-    .privacy-wrap h1 {
-      font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 32px;
-      margin-bottom: 8px;
-    }
-    .privacy-wrap p.updated {
-      color: #8A827B;
-      font-size: 13px;
-      margin-bottom: 40px;
-    }
-    .privacy-wrap h2 {
-      font-size: 17px;
-      margin-top: 40px;
-      margin-bottom: 12px;
-      color: #6F5636;
-    }
-    .privacy-wrap p, .privacy-wrap li {
-      font-size: 14px;
-      color: #655E58;
-    }
-    .privacy-wrap ul {
-      padding-left: 20px;
-    }
-    .privacy-wrap table {
+
+    .ss-privacy-section {
+      --ss-privacy-ink: #28231f;
+      --ss-privacy-muted: rgba(40, 35, 31, 0.66);
+      --ss-privacy-muted-soft: rgba(40, 35, 31, 0.48);
+      --ss-privacy-line: rgba(40, 35, 31, 0.14);
+      --ss-privacy-gold: #9b7944;
+
       width: 100%;
-      border-collapse: collapse;
-      margin: 16px 0;
+      padding: clamp(55px, 7vw, 90px) 6vw clamp(100px, 10vw, 150px);
+      background: #f7f0ea;
+      color: var(--ss-privacy-ink);
+    }
+
+    .ss-privacy-inner {
+      width: 100%;
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .ss-privacy-eyebrow {
+      margin: 0 0 22px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 14px;
+      font-weight: 500;
+      line-height: 1;
+      letter-spacing: 0.24em;
+      color: var(--ss-privacy-gold);
+    }
+
+    .ss-privacy-title {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(30px, 3.2vw, 40px);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+      color: var(--ss-privacy-ink);
+    }
+
+    .ss-privacy-updated {
+      margin: 18px 0 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 14px;
+      font-weight: 500;
+      font-style: italic;
+      letter-spacing: 0.01em;
+      color: var(--ss-privacy-muted-soft);
+    }
+
+    .ss-privacy-intro {
+      margin: clamp(40px, 5vw, 56px) 0 0;
+      padding-top: clamp(36px, 4.5vw, 48px);
+      border-top: 1px solid var(--ss-privacy-line);
+    }
+
+    .ss-privacy-intro p {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.003em;
+      color: var(--ss-privacy-muted);
+    }
+
+    .ss-privacy-article {
+      margin-top: clamp(46px, 5.5vw, 62px);
+      padding-top: clamp(36px, 4.5vw, 48px);
+      border-top: 1px solid var(--ss-privacy-line);
+    }
+
+    .ss-privacy-article h2 {
+      margin: 0 0 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
       font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      color: var(--ss-privacy-gold);
+      text-transform: uppercase;
     }
-    .privacy-wrap th, .privacy-wrap td {
-      border: 1px solid #E2D6CC;
-      padding: 10px 12px;
+
+    .ss-privacy-article h3 {
+      margin: 0 0 16px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: clamp(19px, 1.9vw, 22px);
+      font-weight: 500;
+      font-style: italic;
+      line-height: 1.4;
+      letter-spacing: 0.005em;
+      color: var(--ss-privacy-ink);
+    }
+
+    .ss-privacy-article p {
+      margin: 0;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 17px;
+      font-weight: 400;
+      line-height: 1.85;
+      letter-spacing: 0.003em;
+      color: var(--ss-privacy-muted);
+    }
+
+    .ss-privacy-article p + p {
+      margin-top: 14px;
+    }
+
+    .ss-privacy-note {
+      margin-top: 16px;
+      font-size: 15px;
+      font-style: italic;
+      color: var(--ss-privacy-muted-soft);
+    }
+
+    .ss-privacy-table {
+      width: 100%;
+      margin: 22px 0 0;
+      border-collapse: collapse;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 16px;
+    }
+
+    .ss-privacy-table th,
+    .ss-privacy-table td {
+      padding: 14px 16px;
       text-align: left;
+      border-top: 1px solid var(--ss-privacy-line);
+      color: var(--ss-privacy-muted);
     }
-    .privacy-wrap th {
-      background: #F5EBE1;
+
+    .ss-privacy-table th {
+      font-size: 12px;
+      font-weight: 500;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ss-privacy-gold);
+      border-top: none;
+      border-bottom: 1px solid var(--ss-privacy-line);
+      font-style: normal;
+    }
+
+    .ss-privacy-contact {
+      margin-top: 18px;
+      font-family: "Cormorant Garamond", Georgia, serif;
+      font-size: 16px;
+      font-style: italic;
+      line-height: 1.8;
+      color: var(--ss-privacy-ink);
+    }
+
+    @media (max-width: 767px) {
+      .ss-privacy-section {
+        padding: 40px 22px 80px;
+      }
+
+      .ss-privacy-title {
+        font-size: 27px;
+      }
+
+      .ss-privacy-intro,
+      .ss-privacy-article {
+        margin-top: 34px;
+        padding-top: 28px;
+      }
+
+      .ss-privacy-article h3 {
+        font-size: 18px;
+      }
+
+      .ss-privacy-article p,
+      .ss-privacy-intro p {
+        font-size: 15px;
+        line-height: 1.75;
+      }
+
+      .ss-privacy-table {
+        font-size: 14px;
+      }
+
+      .ss-privacy-table th,
+      .ss-privacy-table td {
+        padding: 11px 12px;
+      }
     }
   </style>
-  <link rel="icon" href="/favicon.ico">
-<link rel="canonical" href="https://sydneyseoul.com/en-privacy">
-<meta name="robots" content="noindex, follow">
-
-<title>Privacy Policy | Sydney Seoul</title>
-<meta name="description" content="Sydney Seoul privacy policy">
 </head>
 <body>
 
-  <div id="header-placeholder"></div>
+<!-- ==================================================
+     이 스크립트가 없으면 로고가 흰색으로 보입니다.
+     반드시 헤더가 삽입되기 전에 있어야 합니다.
+================================================== -->
+<script>
+(function () {
+  var path = window.location.pathname.replace(/\/+$/, "") || "/";
 
-  <div class="privacy-wrap">
-    <h1>Privacy Policy</h1>
-    <p class="updated">Effective Date: [ ], 2026</p>
+  var isEnglish =
+    path === "/en" ||
+    path === "/en/index.html" ||
+    path.indexOf("/en-") === 0 ||
+    path.indexOf("/en/") === 0;
 
-    <p>
-      SYDNEY SEOUL ("the Company") values the privacy of its users and
-      complies with applicable personal data protection laws.
-      This Privacy Policy explains what personal information we collect,
-      how it is used, and the measures we take to protect it.
-    </p>
+  var isHome =
+    path === "/" ||
+    path === "/home" ||
+    path === "/index" ||
+    path === "/index.html" ||
+    path === "/en" ||
+    path === "/en/index.html";
 
-    <h2>1. Information We Collect</h2>
-    <p>To provide reservation and inquiry services, we collect the following information:</p>
-    <table>
-      <tr>
-        <th>Information Collected</th>
-        <th>Purpose</th>
-      </tr>
-      <tr>
-        <td>Name, contact number, reservation date/time, number of guests</td>
-        <td>Reservation processing and confirmation, guest communication</td>
-      </tr>
-    </table>
-    <p>
-      ※ Reservations are processed through an external
+  document.documentElement.classList.toggle("ss-en-page", isEnglish);
+  document.documentElement.classList.toggle("ss-kr-page", !isEnglish);
+
+  if (!isHome) {
+    document.documentElement.classList.add("ss-sub-page");
+  }
+})();
+</script>
+
+<div id="header-placeholder"></div>
+
+<section class="ss-privacy-section">
+  <div class="ss-privacy-inner">
+
+    <header>
+      <p class="ss-privacy-eyebrow">LEGAL</p>
+      <h1 class="ss-privacy-title">Privacy Policy</h1>
+      <p class="ss-privacy-updated">Effective — [ ] 2026</p>
+    </header>
+
+    <div class="ss-privacy-intro">
+      <p>
+        Sydney Seoul (the "Company") values the privacy of its users and
+        complies with the Personal Information Protection Act and other
+        relevant regulations. Through this Privacy Policy, the Company
+        explains what personal information is collected from users, for
+        what purposes it is used, and what measures are taken to protect it.
+      </p>
+    </div>
+
+    <article class="ss-privacy-article">
+      <h2>01</h2>
+      <h3>Information We Collect</h3>
+      <p>The Company collects the following personal information to provide reservation and inquiry services.</p>
+
+      <table class="ss-privacy-table">
+        <tr>
+          <th>Information Collected</th>
+          <th>Purpose</th>
+        </tr>
+        <tr>
+          <td>Name, contact number, reservation date/time, party size</td>
+          <td>Reservation processing, confirmation, and guest communication</td>
+        </tr>
+      </table>
+
+      <p class="ss-privacy-note">
+        Note — Reservations are accepted through an external reservation
+        platform (CatchTable). Personal information handled through that
+        platform is governed by CatchTable's own privacy policy.
+      </p>
+    </article>
+
+    <article class="ss-privacy-article">
+      <h2>02</h2>
+      <h3>Retention Period</h3>
+      <p>
+        The Company destroys users' personal information without delay
+        once the purpose of collection has been fulfilled, except where
+        retention is required under applicable law, in which case
+        information is retained for the period specified by law.
+      </p>
+    </article>
+
+    <article class="ss-privacy-article">
+      <h2>03</h2>
+      <h3>Disclosure to Third Parties</h3>
+      <p>
+        The Company does not disclose users' personal information to
+        third parties in principle. However, the minimum information
+        necessary for a reservation may be shared with CatchTable, our
+        external reservation platform, to facilitate the booking.
+      </p>
+    </article>
+
+    <article class="ss-privacy-article">
+      <h2>04</h2>
+      <h3>User Rights</h3>
+      <p>
+        Users may request to view, correct, or delete their registered
+        personal information at any time. Please contact us using the
+        details below, and we will respond promptly.
+      </p>
+    </article>
+
+    <article class="ss-privacy-article">
+      <h2>05</h2>
+      <h3>Contact</h3>
+      <p class="ss-privacy-contact">
+        Sydney Seoul<br>
+        2F, 18 Dosan-daero 58-gil, Gangnam-gu, Seoul<br>
+        02 545 7772
+      </p>
+    </article>
+
+  </div>
+</section>
+
+<div id="footer-placeholder"></div>
+
+<script>
+  fetch('footer.html').then(r => r.text()).then(html => {
+    document.getElementById('footer-placeholder').innerHTML = html;
+  });
+  fetch('header.html').then(r => r.text()).then(html => {
+    document.getElementById('header-placeholder').innerHTML = html;
+  });
+</script>
+
+</body>
+</html>
