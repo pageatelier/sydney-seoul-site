@@ -107,7 +107,7 @@
       font-style: italic;
       line-height: 1.4;
       letter-spacing: 0.01em;
-      color: var(--ss-info-ink);
+      color: #6F5636;
     }
 
     .ss-visit-info-content {
@@ -163,13 +163,6 @@
       will-change: auto;
     }
 
-    @media (max-width: 900px) {
-      .ss-visit-info-section {
-        --ss-info-label-w: clamp(120px, 20vw, 160px);
-        --ss-info-content-w: clamp(260px, 42vw, 360px);
-        --ss-info-gap: clamp(22px, 4vw, 34px);
-      }
-    }
 
     @media (max-width: 767px) {
       .ss-visit-info-section { padding: 28px 22px 65px; }
@@ -178,9 +171,9 @@
       .ss-visit-info-title { font-size: 28px; }
       .ss-visit-info-list { align-items: stretch; }
       .ss-visit-info-row { grid-template-columns: 1fr; max-width: none; row-gap: 10px; padding: 32px 0; }
-      .ss-visit-info-label { text-align: left; }
+      .ss-visit-info-label { text-align: center; }
       .ss-visit-info-label h2 { padding-top: 0; font-size: 19px; }
-      .ss-visit-info-content { padding-top: 0; }
+      .ss-visit-info-content { text-align: center;padding-top: 0; }
       .ss-visit-info-content p { font-size: 15px; line-height: 1.7; }
       .ss-visit-info-content .ss-visit-info-time { font-size: 22px; }
       .ss-visit-info-content .ss-visit-info-subtext { margin-top: 12px; font-size: 13.5px; line-height: 1.65; }
