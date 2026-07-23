@@ -834,6 +834,208 @@ html.ss-sub-page body { padding-top: 96px; }
   }
 })();
 </script>
+<style>
+  /* ===== VISIT INFO ===== */
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400;1,500&family=Noto+Serif+KR:wght@400;500&display=swap");
+
+.ss-visit-info-section,
+.ss-visit-info-section * {
+  box-sizing: border-box;
+}
+
+.ss-visit-info-section {
+  --ss-info-ink: #28231f;
+  --ss-info-muted: rgba(40, 35, 31, 0.64);
+  --ss-info-muted-soft: rgba(40, 35, 31, 0.46);
+  --ss-info-line: rgba(40, 35, 31, 0.15);
+  --ss-info-gold: #9b7944;
+
+  --ss-info-label-w: clamp(138px, 13.5vw, 186px);
+  --ss-info-content-w: clamp(300px, 38vw, 430px);
+  --ss-info-gap: clamp(28px, 3.6vw, 46px);
+
+  width: 100%;
+  padding: clamp(35px, 4vw, 60px) 6vw clamp(70px, 8vw, 100px);
+  overflow: hidden;
+  background: #f7f0ea;
+  color: var(--ss-info-ink);
+}
+
+.ss-visit-info-inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+
+.ss-visit-info-header {
+  margin-bottom: clamp(58px, 7vw, 88px);
+  text-align: center;
+}
+
+.ss-visit-info-eyebrow {
+  margin: 0 0 22px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.22em;
+  color: var(--ss-info-gold);
+}
+
+.ss-visit-info-title {
+  margin: 0;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(32px, 3.1vw, 44px) !important;
+  font-weight: 500;
+  font-style: italic !important;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--ss-info-ink);
+}
+
+.ss-visit-info-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.ss-visit-info-row {
+  display: grid;
+  grid-template-columns: var(--ss-info-label-w) var(--ss-info-content-w);
+  column-gap: var(--ss-info-gap);
+
+  width: 100%;
+  max-width: calc(var(--ss-info-label-w) + var(--ss-info-gap) + var(--ss-info-content-w));
+
+  padding: clamp(40px, 4.6vw, 54px) 0;
+  border-top: 1px solid var(--ss-info-line);
+}
+
+.ss-visit-info-row:first-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+.ss-visit-info-row:last-child {
+  padding-bottom: 0;
+}
+
+.ss-visit-info-label {
+  text-align: right;
+}
+
+.ss-visit-info-label p {
+  margin: 0 0 13px;
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: 13px;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.16em;
+  color: var(--ss-info-gold);
+}
+
+.ss-visit-info-label h2 {
+  margin: 0;
+  font-family: "Noto Serif KR", serif;
+  font-size: clamp(19px, 1.9vw, 22px);
+  font-weight: 500;
+  line-height: 1.5;
+  letter-spacing: -0.01em;
+  color: var(--ss-info-ink);
+}
+
+.ss-visit-info-content {
+  min-width: 0;
+  padding-top: 3px;
+}
+
+.ss-visit-info-content p {
+  margin: 0;
+  font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-size: 16px;
+  font-weight: 350;
+  line-height: 1.9;
+  letter-spacing: -0.008em;
+  word-break: keep-all;
+  color: rgba(40, 35, 31, 0.82);
+}
+
+.ss-visit-info-content .ss-visit-info-time {
+  font-family: "Cormorant Garamond", Georgia, serif;
+  font-size: clamp(25px, 2.3vw, 29px);
+  font-weight: 400;
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+  color: var(--ss-info-ink);
+}
+
+.ss-visit-info-content .ss-visit-info-detail {
+  margin-top: 16px;
+  color: rgba(40, 35, 31, 0.86);
+}
+
+.ss-visit-info-content .ss-visit-info-subtext {
+  margin-top: 18px;
+  font-size: 14px;
+  line-height: 1.85;
+  letter-spacing: -0.008em;
+  color: var(--ss-info-muted-soft);
+}
+
+.ss-visit-info-section .ss-visit-reveal {
+  opacity: 0;
+  transform: translate3d(0, 22px, 0);
+  transition-property: opacity, transform;
+  transition-duration: 0.85s;
+  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: var(--ss-visit-delay, 0s);
+  will-change: opacity, transform;
+}
+
+.ss-visit-info-section .ss-visit-reveal.is-visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0);
+  will-change: auto;
+}
+
+@media (max-width: 900px) {
+  .ss-visit-info-section {
+    --ss-info-label-w: clamp(120px, 20vw, 160px);
+    --ss-info-content-w: clamp(260px, 42vw, 360px);
+    --ss-info-gap: clamp(22px, 4vw, 34px);
+  }
+}
+
+@media (max-width: 767px) {
+  .ss-visit-info-section { padding: 28px 22px 65px; }
+  .ss-visit-info-header { margin-bottom: 48px; }
+  .ss-visit-info-eyebrow { margin-bottom: 16px; font-size: 12px; letter-spacing: 0.18em; }
+  .ss-visit-info-title { font-size: 28px; }
+  .ss-visit-info-list { align-items: stretch; }
+  .ss-visit-info-row { grid-template-columns: 1fr; max-width: none; row-gap: 14px; padding: 32px 0; }
+  .ss-visit-info-label { text-align: left; }
+  .ss-visit-info-label p { margin-bottom: 8px; font-size: 11px; }
+  .ss-visit-info-label h2 { font-size: 17px; }
+  .ss-visit-info-content { padding-top: 0; }
+  .ss-visit-info-content p { font-size: 14.5px; line-height: 1.8; }
+  .ss-visit-info-content .ss-visit-info-time { font-size: 22px; }
+  .ss-visit-info-content .ss-visit-info-subtext { margin-top: 12px; font-size: 12.5px; line-height: 1.75; }
+  .ss-visit-info-section .ss-visit-reveal { transform: translate3d(0, 16px, 0); }
+}
+
+@media (max-width: 374px) {
+  .ss-visit-info-section { padding-left: 18px; padding-right: 18px; }
+  .ss-visit-info-title { font-size: 26px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ss-visit-info-section .ss-visit-reveal {
+    transition: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}
+</style>
 
 
 <!-- ==================================================
