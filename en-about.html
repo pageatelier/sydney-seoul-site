@@ -26,10 +26,10 @@
 <meta name="twitter:image" content="https://sydneyseoul.com/images/og-share.webp">
 </head>
 <body>
-
 <!-- ==================================================
-     HEADER
+     header.html
 ================================================== -->
+
 
 <script>
 (function () {
@@ -60,8 +60,8 @@
 
 <header class="ss-site-header" id="ssSiteHeader">
   <div class="ss-pc-header">
-    <a class="ss-pc-logo" href="/en" data-ss-page="home" aria-label="Sydney Seoul home">SYDNEY SEOUL</a>
-    <nav class="ss-pc-menu" aria-label="Main menu">
+    <a class="ss-pc-logo" href="/" data-ss-page="home" aria-label="시드니서울 홈">SYDNEY SEOUL</a>
+    <nav class="ss-pc-menu" aria-label="PC 메뉴">
       <a href="/" data-ss-page="home">Home</a>
       <a href="/about" data-ss-page="about">About</a>
       <a href="/menu" data-ss-page="menu">Menu</a>
@@ -69,29 +69,27 @@
       <a href="/reservation" data-ss-page="reservation">Reservation</a>
     </nav>
     <div class="ss-pc-actions">
-      <div class="ss-pc-language" aria-label="Language selection">
+      <div class="ss-pc-language" aria-label="언어 선택">
         <a class="ss-pc-language-link" href="/" data-ss-language="kr">KR</a>
         <a class="ss-pc-language-link" href="/en" data-ss-language="en">EN</a>
       </div>
     </div>
   </div>
   <div class="ss-mobile-header">
-    <a class="ss-mobile-logo" href="/en" data-ss-page="home" aria-label="Sydney Seoul home">SYDNEY SEOUL</a>
+    <a class="ss-mobile-logo" href="/" data-ss-page="home" aria-label="시드니서울 홈">SYDNEY SEOUL</a>
   </div>
 </header>
 
 <div class="ss-mobile-nav">
-  <button class="ss-menu-open" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="ssMenuOverlay">
-    <span class="ss-menu-star" aria-hidden="true"></span>
+  <button class="ss-menu-open" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="ssMenuOverlay">
+    <span class="ss-menu-hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
   </button>
 
-  <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="Site menu" aria-hidden="true">
-    <button class="ss-menu-close" type="button" aria-label="Close menu">
-      <span></span><span></span>
-    </button>
-
+  <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="사이트 메뉴" aria-hidden="true">
     <div class="ss-menu-panel">
-      <nav class="ss-menu-nav" aria-label="Mobile menu">
+      <nav class="ss-menu-nav" aria-label="모바일 메뉴">
         <ul class="ss-menu-list">
           <li><a href="/" data-ss-page="home">Home</a></li>
           <li><a href="/about" data-ss-page="about">About</a></li>
@@ -105,7 +103,7 @@
 
       <div class="ss-menu-reservation-wrap">
         <a class="ss-menu-reservation" href="https://app.catchtable.co.kr/ct/shop/ahknPViXvZ72eNRDs1IQ6Q" target="_blank" rel="noopener">
-          <span>Reserve in Korean</span>
+          <span>한국어로 예약하기</span>
         </a>
         <a class="ss-menu-reservation" href="https://www.catchtable.net/explore/shop/sydneyseoul" target="_blank" rel="noopener">
           <span>Reserve in English</span>
@@ -209,30 +207,55 @@ button, a { -webkit-tap-highlight-color: transparent; }
     width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
-  .ss-mobile-logo {
-    position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-    font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
-    letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -50%);
-  }
+.ss-mobile-logo {
+  position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
+}
   .ss-mobile-nav { display: block; }
+
+  /* =========================================
+     HAMBURGER / X 통합 토글 버튼
+     — 오버레이 z-index(99999)보다 높여서
+       메뉴가 열려도 이 버튼이 계속 맨 위에 보이고,
+       같은 버튼을 눌러 열고 닫을 수 있게 함
+  ========================================= */
   .ss-menu-open {
-    position: fixed; top: 19px; right: 18px; z-index: 99998; width: 30px; height: 30px; padding: 0; border: 0;
+    position: fixed; top: 19px; right: 18px; z-index: 100000; width: 34px; height: 34px; padding: 0; border: 0;
     border-radius: 50%; background: rgba(161, 135, 101, 0.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 6px 18px rgba(40, 35, 31, 0.12); display: flex; align-items: center; justify-content: center;
     cursor: pointer; appearance: none; -webkit-appearance: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s ease, background-color 0.3s ease;
-  }
-  .ss-menu-star {
-    display: block; width: 16px; height: 16px; background: var(--ss-soft-ivory);
-    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    -webkit-clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    transform: rotate(0deg); transition: transform 0.4s ease, opacity 0.3s ease;
+    transition: transform 0.35s ease, background-color 0.3s ease;
   }
   .ss-menu-open:hover { background: var(--ss-deep-bronze); }
-  .ss-menu-open:hover .ss-menu-star { transform: rotate(45deg); }
   .ss-menu-open:active { transform: scale(0.92); }
-  .ss-menu-open:active .ss-menu-star { transform: rotate(45deg) scale(0.88); }
-  .ss-menu-open.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .ss-menu-hamburger {
+    position: relative;
+    display: block; width: 16px; height: 12px;
+  }
+  .ss-menu-hamburger span {
+    position: absolute; left: 0; width: 100%; height: 1.5px; border-radius: 1px;
+    background: var(--ss-soft-ivory);
+    transition:
+      top 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+      transform 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+      opacity 0.2s ease;
+  }
+  .ss-menu-hamburger span:nth-child(1) { top: 0; }
+  .ss-menu-hamburger span:nth-child(2) { top: 5.5px; }
+  .ss-menu-hamburger span:nth-child(3) { top: 11px; }
+
+  /* 버튼이 열림 상태일 때 — 가로줄 3개가 매끄럽게 X자로 변형 */
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(1) {
+    top: 5.5px; transform: rotate(45deg);
+  }
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(2) {
+    opacity: 0; transform: scaleX(0);
+  }
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(3) {
+    top: 5.5px; transform: rotate(-45deg);
+  }
 
   .ss-menu-overlay {
     position: fixed; inset: 0; z-index: 99999; width: 100%; height: 100vh; height: 100dvh; color: var(--ss-espresso);
@@ -242,17 +265,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; overflow: hidden;
   }
   .ss-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
-
-  .ss-menu-close {
-    position: absolute; top: 21px; right: 18px; z-index: 4; width: 30px; height: 30px; padding: 0; border: 0;
-    border-radius: 50%; background: var(--ss-gold); box-shadow: 0 8px 24px rgba(111, 86, 54, 0.18);
-    cursor: pointer; appearance: none; -webkit-appearance: none; transition: transform 0.25s ease, background-color 0.25s ease;
-  }
-  .ss-menu-close span { position: absolute; top: 50%; left: 50%; display: block; width: 17px; height: 1px; background: var(--ss-soft-ivory); }
-  .ss-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
-  .ss-menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
-  .ss-menu-close:hover { background: var(--ss-deep-bronze); }
-  .ss-menu-close:active { transform: scale(0.92); }
 
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
@@ -374,8 +386,7 @@ html.ss-sub-page body { padding-top: 96px; }
   });
 
   const header = document.getElementById("ssSiteHeader");
-  const openButton = document.querySelector(".ss-menu-open");
-  const closeButton = document.querySelector(".ss-menu-close");
+  const toggleButton = document.querySelector(".ss-menu-open");
   const overlay = document.querySelector(".ss-menu-overlay");
   const panel = document.querySelector(".ss-menu-panel");
   const menuLinks = document.querySelectorAll(".ss-menu-overlay a");
@@ -410,26 +421,35 @@ html.ss-sub-page body { padding-top: 96px; }
   document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
   applyScrollState(getScrollTop(window));
 
-  if (!openButton || !closeButton || !overlay) return;
+  if (!toggleButton || !overlay) return;
 
   function openMenu() {
     overlay.classList.add("is-open");
-    openButton.classList.add("is-hidden");
+    toggleButton.classList.add("is-active");
     document.body.classList.add("ss-menu-lock");
-    openButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-label", "메뉴 닫기");
     overlay.setAttribute("aria-hidden", "false");
   }
 
   function closeMenu() {
     overlay.classList.remove("is-open");
-    openButton.classList.remove("is-hidden");
+    toggleButton.classList.remove("is-active");
     document.body.classList.remove("ss-menu-lock");
-    openButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-label", "메뉴 열기");
     overlay.setAttribute("aria-hidden", "true");
   }
 
-  openButton.addEventListener("click", openMenu);
-  closeButton.addEventListener("click", closeMenu);
+  function toggleMenu() {
+    if (overlay.classList.contains("is-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleButton.addEventListener("click", toggleMenu);
   menuLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
   overlay.addEventListener("click", function (event) {
     if (event.target === overlay && !panel.contains(event.target)) closeMenu();
@@ -439,8 +459,6 @@ html.ss-sub-page body { padding-top: 96px; }
   });
 })();
 </script>
-
-
 <!-- ==================================================
      ABOUT / BRAND STORY — 중앙 정렬 단일 컬럼 구조로 변경
 ================================================== -->
@@ -461,12 +479,12 @@ html.ss-sub-page body { padding-top: 96px; }
     <div class="ss-brand-story-copy">
       <div class="ss-brand-story-description">
         <p class="ss-brand-reveal" style="--ss-reveal-delay: 0.16s;">
-          Sydney Seoul is a contemporary dining experience shaped<br>
+          Sydney Seoul is a contemporary dining experience shaped<br class="pc-only-br">
           by the inspiration and experiences of two distinct cities.<br><br>
-          Guided by Sydney’s free-spirited approach and respect for ingredients,<br>
-          together with Seoul’s refined sensibility and changing seasons,<br>
+          Guided by Sydney’s free-spirited approach and respect for ingredients,<br class="pc-only-br">
+          together with Seoul’s refined sensibility and changing seasons,<br class="pc-only-br">
           we offer a fresh perspective on familiar flavours.<br><br>
-          Moving beyond the boundaries of both cities,<br>
+          Moving beyond the boundaries of both cities,<br class="pc-only-br">
           each dish expresses a balance that is distinctly Sydney Seoul.<br>
         </p>
       </div>
@@ -487,6 +505,16 @@ html.ss-sub-page body { padding-top: 96px; }
 
 
 <style>
+
+  .pc-only-br {
+  display: inline; /* 기본(PC)에서는 줄바꿈 태그로 정상 작동 */
+}
+
+@media (max-width: 767px) {
+  .pc-only-br {
+    display: none; /* 모바일에서는 숨겨서 줄바꿈이 안 일어남 */
+  }
+}
 .ss-brand-story, .ss-brand-story * { box-sizing: border-box; }
 
 .ss-brand-story {
@@ -1030,7 +1058,7 @@ display: grid;
   .ss-chef-profile-name strong { font-size: 24px; }
   .ss-chef-profile-name span { font-size: 15px; }
   .ss-chef-profile-description { margin-top: 20px; padding-top: 23px; }
-  .ss-chef-profile-description p { font-size: 14px; line-height: 1.85; letter-spacing: -0.005em; }
+  .ss-chef-profile-description p { font-size: 14px; line-height: 1.85; letter-spacing: -0.005em; text-align: center;}
   .ss-chef-profile-description p + p { margin-top: 20px; }
   .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal { transform: translate3d(0, 26px, 0); }
   .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal.is-visible { transform: translate3d(0, 0, 0); }
@@ -1449,6 +1477,7 @@ display: grid;
     font-size: 14px;
     line-height: 1.7;
     letter-spacing: -0.005em;
+    text-align: center;
   }
   .ss-about-philosophy .ss-about-philosophy-description p + p { margin-top: 15px; }
   .ss-about-philosophy .ss-about-philosophy-gallery {
@@ -1618,7 +1647,8 @@ display: grid;
     </h2>
 
     <p class="ss-reservation-subtitle ss-reservation-subtitle-en">
-      Reserve your place for a dining journey<br>from Sydney to Seoul.
+      A dining experience that brings<br>
+      Sydney and Seoul together
     </p>
 
     <a class="ss-reservation-text-link" href="https://www.catchtable.net/explore/shop/sydneyseoul" aria-label="Reserve a table at Sydney Seoul">
@@ -2009,7 +2039,7 @@ margin: 0;
   }
 
   .ss-reservation-subtitle-en {
-    font-size: 14.5px;
+    font-size: 13px;
     line-height: 1.6;
   }
 
