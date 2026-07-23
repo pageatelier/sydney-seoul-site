@@ -742,9 +742,6 @@ html.ss-sub-page body { padding-top: 96px; }
   <div class="ss-chef-profile-inner">
 
     <header class="ss-chef-profile-header">
-      <p class="ss-chef-profile-eyebrow ss-chef-reveal" style="--ss-chef-reveal-delay: 0s;">
-        CHEF
-      </p>
       <p class="ss-chef-profile-en-title ss-chef-reveal" style="--ss-chef-reveal-delay: 0.08s;">
         The Chef
       </p>
@@ -822,16 +819,6 @@ html.ss-sub-page body { padding-top: 96px; }
 
 .ss-chef-profile-header {
     margin-bottom: clamp(36px, 5vw, 56px);
-}
-
-.ss-chef-profile-eyebrow {
-  margin: 0 0 30px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.3em;
-  color: #9b7944;
 }
 
 .ss-chef-profile-en-title {
@@ -1045,7 +1032,6 @@ display: grid;
 @media (max-width: 767px) {
   .ss-chef-profile-inner { width: 100%; padding: 24px 22px 76px !important; }
   .ss-chef-profile-header { margin-bottom: 38px; }
-  .ss-chef-profile-eyebrow { margin-bottom: 18px; font-size: 12px; line-height: 1; letter-spacing: 0.26em; }
   .ss-chef-profile-en-title { font-size: 30px; }
   .ss-chef-profile-grid { display: grid; grid-template-columns: 1fr; row-gap: 36px; justify-items: center; }
   .ss-chef-profile-visual { width: min(88%, 420px); margin: 0 auto; justify-self: center; }
@@ -1172,9 +1158,6 @@ display: grid;
     <header class="ss-about-philosophy-header">
 
       <div class="ss-about-philosophy-heading">
-        <p class="ss-about-philosophy-eyebrow ss-philosophy-reveal-up" style="--ss-reveal-delay: 0s;">
-          PHILOSOPHY
-        </p>
         <p class="ss-about-philosophy-en-title ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.08s;">
           Our Philosophy
         </p>
@@ -1278,15 +1261,6 @@ display: grid;
   padding-top: 7px;
 }
 
-.ss-about-philosophy .ss-about-philosophy-eyebrow {
-  margin: 0 0 30px;
-  font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 14px;
-  font-weight: 500;
-  line-height: 1;
-  letter-spacing: 0.3em;
-  color: #9b7944;
-}
 
 .ss-about-philosophy .ss-about-philosophy-en-title {
   margin: 0;
@@ -1468,7 +1442,6 @@ display: grid;
   .ss-about-philosophy .ss-about-philosophy-inner { padding: 85px 22px 100px; }
   .ss-about-philosophy .ss-about-philosophy-header { display: block; margin-bottom: 68px; }
   .ss-about-philosophy .ss-about-philosophy-heading { margin-bottom: 20px; }
-  .ss-about-philosophy .ss-about-philosophy-eyebrow { margin-bottom: 20px; font-size: 12px; line-height: 1; letter-spacing: 0.26em; }
   .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 30px; line-height: 1.1; }
   .ss-about-philosophy .ss-about-philosophy-description { margin-top: 0px; padding-top: 15px; }
   .ss-about-philosophy .ss-about-philosophy-description p {
