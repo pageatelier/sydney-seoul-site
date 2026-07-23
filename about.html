@@ -26,11 +26,10 @@
 <meta name="twitter:description" content="시드니에서 시작된 감각, 서울에서 완성된 미학">
 <meta name="twitter:image" content="https://sydneyseoul.com/images/og-share.webp">
 </head>
-<body>
-
 <!-- ==================================================
-     HEADER
+     header.html
 ================================================== -->
+
 
 <script>
 (function () {
@@ -83,14 +82,12 @@
 
 <div class="ss-mobile-nav">
   <button class="ss-menu-open" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="ssMenuOverlay">
-    <span class="ss-menu-star" aria-hidden="true"></span>
+    <span class="ss-menu-hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
   </button>
 
   <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="사이트 메뉴" aria-hidden="true">
-    <button class="ss-menu-close" type="button" aria-label="메뉴 닫기">
-      <span></span><span></span>
-    </button>
-
     <div class="ss-menu-panel">
       <nav class="ss-menu-nav" aria-label="모바일 메뉴">
         <ul class="ss-menu-list">
@@ -210,30 +207,55 @@ button, a { -webkit-tap-highlight-color: transparent; }
     width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
-  .ss-mobile-logo {
-    position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-    font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
-    letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -50%);
-  }
+.ss-mobile-logo {
+  position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
+}
   .ss-mobile-nav { display: block; }
+
+  /* =========================================
+     HAMBURGER / X 통합 토글 버튼
+     — 오버레이 z-index(99999)보다 높여서
+       메뉴가 열려도 이 버튼이 계속 맨 위에 보이고,
+       같은 버튼을 눌러 열고 닫을 수 있게 함
+  ========================================= */
   .ss-menu-open {
-    position: fixed; top: 19px; right: 18px; z-index: 99998; width: 30px; height: 30px; padding: 0; border: 0;
+    position: fixed; top: 19px; right: 18px; z-index: 100000; width: 34px; height: 34px; padding: 0; border: 0;
     border-radius: 50%; background: rgba(161, 135, 101, 0.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 6px 18px rgba(40, 35, 31, 0.12); display: flex; align-items: center; justify-content: center;
     cursor: pointer; appearance: none; -webkit-appearance: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s ease, background-color 0.3s ease;
-  }
-  .ss-menu-star {
-    display: block; width: 16px; height: 16px; background: var(--ss-soft-ivory);
-    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    -webkit-clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    transform: rotate(0deg); transition: transform 0.4s ease, opacity 0.3s ease;
+    transition: transform 0.35s ease, background-color 0.3s ease;
   }
   .ss-menu-open:hover { background: var(--ss-deep-bronze); }
-  .ss-menu-open:hover .ss-menu-star { transform: rotate(45deg); }
   .ss-menu-open:active { transform: scale(0.92); }
-  .ss-menu-open:active .ss-menu-star { transform: rotate(45deg) scale(0.88); }
-  .ss-menu-open.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .ss-menu-hamburger {
+    position: relative;
+    display: block; width: 16px; height: 12px;
+  }
+  .ss-menu-hamburger span {
+    position: absolute; left: 0; width: 100%; height: 1.5px; border-radius: 1px;
+    background: var(--ss-soft-ivory);
+    transition:
+      top 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+      transform 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+      opacity 0.2s ease;
+  }
+  .ss-menu-hamburger span:nth-child(1) { top: 0; }
+  .ss-menu-hamburger span:nth-child(2) { top: 5.5px; }
+  .ss-menu-hamburger span:nth-child(3) { top: 11px; }
+
+  /* 버튼이 열림 상태일 때 — 가로줄 3개가 매끄럽게 X자로 변형 */
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(1) {
+    top: 5.5px; transform: rotate(45deg);
+  }
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(2) {
+    opacity: 0; transform: scaleX(0);
+  }
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(3) {
+    top: 5.5px; transform: rotate(-45deg);
+  }
 
   .ss-menu-overlay {
     position: fixed; inset: 0; z-index: 99999; width: 100%; height: 100vh; height: 100dvh; color: var(--ss-espresso);
@@ -243,17 +265,6 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transition: opacity 0.4s ease, visibility 0.4s ease, transform 0.4s ease; overflow: hidden;
   }
   .ss-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
-
-  .ss-menu-close {
-    position: absolute; top: 21px; right: 18px; z-index: 4; width: 30px; height: 30px; padding: 0; border: 0;
-    border-radius: 50%; background: var(--ss-gold); box-shadow: 0 8px 24px rgba(111, 86, 54, 0.18);
-    cursor: pointer; appearance: none; -webkit-appearance: none; transition: transform 0.25s ease, background-color 0.25s ease;
-  }
-  .ss-menu-close span { position: absolute; top: 50%; left: 50%; display: block; width: 17px; height: 1px; background: var(--ss-soft-ivory); }
-  .ss-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
-  .ss-menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
-  .ss-menu-close:hover { background: var(--ss-deep-bronze); }
-  .ss-menu-close:active { transform: scale(0.92); }
 
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
@@ -375,8 +386,7 @@ html.ss-sub-page body { padding-top: 96px; }
   });
 
   const header = document.getElementById("ssSiteHeader");
-  const openButton = document.querySelector(".ss-menu-open");
-  const closeButton = document.querySelector(".ss-menu-close");
+  const toggleButton = document.querySelector(".ss-menu-open");
   const overlay = document.querySelector(".ss-menu-overlay");
   const panel = document.querySelector(".ss-menu-panel");
   const menuLinks = document.querySelectorAll(".ss-menu-overlay a");
@@ -411,26 +421,35 @@ html.ss-sub-page body { padding-top: 96px; }
   document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
   applyScrollState(getScrollTop(window));
 
-  if (!openButton || !closeButton || !overlay) return;
+  if (!toggleButton || !overlay) return;
 
   function openMenu() {
     overlay.classList.add("is-open");
-    openButton.classList.add("is-hidden");
+    toggleButton.classList.add("is-active");
     document.body.classList.add("ss-menu-lock");
-    openButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-label", "메뉴 닫기");
     overlay.setAttribute("aria-hidden", "false");
   }
 
   function closeMenu() {
     overlay.classList.remove("is-open");
-    openButton.classList.remove("is-hidden");
+    toggleButton.classList.remove("is-active");
     document.body.classList.remove("ss-menu-lock");
-    openButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-label", "메뉴 열기");
     overlay.setAttribute("aria-hidden", "true");
   }
 
-  openButton.addEventListener("click", openMenu);
-  closeButton.addEventListener("click", closeMenu);
+  function toggleMenu() {
+    if (overlay.classList.contains("is-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleButton.addEventListener("click", toggleMenu);
   menuLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
   overlay.addEventListener("click", function (event) {
     if (event.target === overlay && !panel.contains(event.target)) closeMenu();
@@ -440,10 +459,8 @@ html.ss-sub-page body { padding-top: 96px; }
   });
 })();
 </script>
-
-
 <!-- ==================================================
-     ABOUT / BRAND STORY (원본 디자인 그대로)
+     ABOUT / BRAND STORY — 중앙 정렬 단일 컬럼 구조로 변경
 ================================================== -->
 
 <section class="ss-brand-story">
@@ -460,12 +477,6 @@ html.ss-sub-page body { padding-top: 96px; }
     </div>
 
     <div class="ss-brand-story-copy">
-
-      <h1 class="ss-brand-story-title ss-brand-reveal" style="--ss-reveal-delay: 0.10s;">
-        시드니에서 시작된 감각,<br>
-        서울에서 완성된 미학
-      </h1>
-
       <div class="ss-brand-story-description">
         <p class="ss-brand-reveal" style="--ss-reveal-delay: 0.16s;">
           시드니서울은 서로 다른 두 도시에서 얻은 경험과 영감을<br>
@@ -477,7 +488,6 @@ html.ss-sub-page body { padding-top: 96px; }
           시드니서울만의 균형과 방식으로 완성한 요리를 선보입니다.<br>
         </p>
       </div>
-
     </div>
 
     <div class="ss-brand-story-illustration ss-brand-reveal" style="--ss-reveal-delay: 0.10s;" aria-hidden="true">
@@ -505,22 +515,30 @@ html.ss-sub-page body { padding-top: 96px; }
   color: #28231f;
 }
 
+/* 중앙 정렬 단일 컬럼 — PC/모바일 공통 구조 */
 .ss-brand-story .ss-brand-story-inner {
-  display: grid;
-  grid-template-columns: minmax(220px, 0.72fr) minmax(540px, 1.28fr);
-  align-items: start;
-  column-gap: clamp(90px, 11vw, 190px);
-  width: min(100%, 1440px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  width: min(100%, 780px);
   margin: 0 auto;
-  padding: clamp(32px, 3vw, 48px) clamp(32px, 7vw, 105px) clamp(90px, 8vw, 130px);
+
+  padding:
+    clamp(20px, 3vw, 32px)
+    clamp(24px, 6vw, 60px)
+    clamp(90px, 9vw, 130px);
+
+  text-align: center;
 }
 
 .ss-brand-story .ss-brand-story-heading {
-  padding-top: 8px;
+  padding-top: 0;
+  margin-bottom: clamp(26px, 4vw, 38px);
 }
 
 .ss-brand-story .ss-brand-story-eyebrow {
-  margin: 0 0 30px;
+  margin: 0 0 20px;
   font-family: "Cormorant Garamond", Georgia, serif;
   font-size: 14px;
   font-weight: 500;
@@ -542,25 +560,13 @@ html.ss-sub-page body { padding-top: 96px; }
 
 .ss-brand-story .ss-brand-story-copy {
   width: 100%;
-  min-width: 0;
-}
-
-.ss-brand-story .ss-brand-story-title {
-  margin: 0;
-  font-family: "Noto Serif KR", serif;
-  font-size: clamp(34px, 2.7vw, 44px);
-  font-weight: 400;
-  line-height: 1.65 !important;
-  letter-spacing: -0.03em;
-  word-break: keep-all;
-  color: #29251f;
 }
 
 .ss-brand-story .ss-brand-story-description {
   width: 100%;
-  max-width: 650px;
-  margin-top: 10px;
-  padding-top: 32px;
+  max-width: 620px;
+  margin: 0 auto;
+  padding-top: 0;
 }
 
 .ss-brand-story .ss-brand-story-description p {
@@ -571,17 +577,13 @@ html.ss-sub-page body { padding-top: 96px; }
   line-height: 1.95;
   letter-spacing: -0.005em;
   word-break: keep-all;
+  text-align: center;
   color: #5f554d;
 }
 
-.ss-brand-story .ss-brand-story-description p + p {
-  margin-top: 15px;
-}
-
 .ss-brand-story .ss-brand-story-illustration {
-  grid-column: 1 / -1;
-  width: min(100%, 590px);
-  margin: clamp(35px, 4vw, 60px) auto 0;
+  width: min(100%, 480px);
+  margin: clamp(30px, 4vw, 48px) auto 0;
   pointer-events: none;
 }
 
@@ -610,90 +612,51 @@ html.ss-sub-page body { padding-top: 96px; }
   will-change: auto;
 }
 
-@media (max-width: 991px) {
-  .ss-brand-story .ss-brand-story-inner {
-    display: block;
-    padding: 36px 48px 96px;
-  }
-  .ss-brand-story .ss-brand-story-heading {
-    padding-top: 0;
-    margin-bottom: 52px;
-  }
-  .ss-brand-story .ss-brand-story-en-title {
-    font-size: 34px;
-  }
-  .ss-brand-story .ss-brand-story-copy {
-    width: 100%;
-    max-width: 720px;
-    margin-left: auto;
-  }
-  .ss-brand-story .ss-brand-story-title {
-    font-size: 30px !important;
-    line-height: 1.6 !important;
-  }
-  .ss-brand-story .ss-brand-story-description {
-    margin-top: 13px;
-    padding-top: 26px;
-  }
-  .ss-brand-story .ss-brand-story-description p + p {
-    margin-top: 15px;
-  }
-  .ss-brand-story .ss-brand-story-illustration {
-    width: min(100%, 450px);
-    margin-top: 72px;
-  }
-}
-
 @media (max-width: 767px) {
   .ss-brand-story .ss-brand-story-inner {
-    display: block;
-    padding: 24px 22px 76px;
+    padding:
+      16px
+      22px
+      76px;
   }
+
   .ss-brand-story .ss-brand-story-heading {
-    padding-top: 0;
-    margin-bottom: 43px;
+    margin-bottom: 30px;
   }
+
   .ss-brand-story .ss-brand-story-eyebrow {
-    margin-bottom: 20px;
+    margin-bottom: 16px;
     font-size: 12px;
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0.26em;
   }
+
   .ss-brand-story .ss-brand-story-en-title {
-    font-size: 30px;
+    font-size: 28px;
     line-height: 1.1;
   }
-  .ss-brand-story .ss-brand-story-title {
-    font-size: clamp(26px, 6.4vw, 29px) !important;
-    line-height: 1.6 !important;
-    letter-spacing: -0.03em;
-  }
-  .ss-brand-story .ss-brand-story-description {
-    margin-top: 15px;
-    padding-top: 15px;
-  }
+
   .ss-brand-story .ss-brand-story-description p {
     font-size: 14px;
     font-weight: 300;
     line-height: 1.85;
     letter-spacing: -0.005em;
   }
-  .ss-brand-story .ss-brand-story-description p + p {
-    margin-top: 15px;
-  }
+
   .ss-brand-story .ss-brand-reveal {
     transform: translate3d(0, 26px, 0);
   }
+
   .ss-brand-story .ss-brand-reveal.is-visible {
     transform: translate3d(0, 0, 0);
   }
+
   .ss-brand-story .ss-brand-story-illustration {
-    width: min(100%, 310px);
-    margin-top: 35px;
-    margin-left: auto;
-    margin-right: auto;
+    width: min(100%, 280px);
+    margin-top: 30px;
   }
+
   .ss-brand-story .ss-brand-story-illustration-image {
     opacity: 0.7;
   }
@@ -701,26 +664,16 @@ html.ss-sub-page body { padding-top: 96px; }
 
 @media (max-width: 374px) {
   .ss-brand-story .ss-brand-story-inner {
-    padding: 20px 19px 68px;
+    padding-left: 18px;
+    padding-right: 18px;
   }
-  .ss-brand-story .ss-brand-story-heading {
-    margin-bottom: 39px;
-  }
+
   .ss-brand-story .ss-brand-story-en-title {
-    font-size: 28px;
+    font-size: 26px;
   }
-  .ss-brand-story .ss-brand-story-title {
-    font-size: 26px !important;
-    line-height: 1.6 !important;
-    letter-spacing: -0.035em;
-  }
-  .ss-brand-story .ss-brand-story-description {
-    margin-top: 15px;
-    padding-top: 15px;
-  }
+
   .ss-brand-story .ss-brand-story-illustration {
-    width: min(100%, 280px);
-    margin-top: 40px;
+    width: min(100%, 250px);
   }
 }
 
@@ -822,7 +775,7 @@ html.ss-sub-page body { padding-top: 96px; }
 
         <div class="ss-chef-profile-description">
           <p class="ss-chef-reveal" style="--ss-chef-reveal-delay: 0.08s;">
-            호주 르 코르동 블루에서 수련한 셰프는<br>
+            호주 르 코르동 블루에서 요리의 기반을 다진 셰프는<br>
             호주의 자유로운 미식 문화와<br>
             다양한 식재료에서 자신만의 감각을 쌓았습니다.<br><br>
             2020년 비건 요리와 일반식을 함께 선보이는<br>
@@ -856,13 +809,13 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-chef-profile-inner {
-  width: min(100%, 1600px);
+  width: min(100%, 980px);
   margin: 0 auto;
   padding: clamp(40px, 5vw, 60px) clamp(32px, 6.5vw, 105px) clamp(70px, 8vw, 90px);
 }
 
 .ss-chef-profile-header {
-  margin-bottom: clamp(48px, 6vw, 80px);
+    margin-bottom: clamp(36px, 5vw, 56px);
 }
 
 .ss-chef-profile-eyebrow {
@@ -887,10 +840,11 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-chef-profile-grid {
-  display: grid;
-  grid-template-columns: minmax(440px, 0.95fr) minmax(500px, 1.05fr);
+display: grid;
+  grid-template-columns: minmax(380px, 0.9fr) minmax(400px, 1.1fr);
   align-items: start;
-  column-gap: clamp(90px, 12vw, 200px);
+  /* 기존: column-gap: clamp(90px, 12vw, 200px); */
+  column-gap: clamp(50px, 7vw, 100px);
 }
 
 .ss-chef-profile-visual {
@@ -1020,8 +974,8 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-chef-profile-description {
-  margin-top: clamp(44px, 5.5vw, 58px);
-  padding-top: 20px;
+  margin-top: clamp(24px, 3.2vw, 32px);
+  padding-top: 0;
 }
 
 .ss-chef-profile-description p {
@@ -1029,14 +983,14 @@ html.ss-sub-page body { padding-top: 96px; }
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
   font-size: 16px;
   font-weight: 300;
-  line-height: 1.95;
+  line-height: 1.85;
   letter-spacing: -0.005em;
   color: rgba(40, 35, 31, 0.78);
   word-break: keep-all;
 }
 
 .ss-chef-profile-description p + p {
-  margin-top: 20px;
+  margin-top: 16px;
 }
 
 .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal {
@@ -1221,10 +1175,6 @@ html.ss-sub-page body { padding-top: 96px; }
       </div>
 
       <div class="ss-about-philosophy-copy">
-        <h2 class="ss-about-philosophy-title ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.10s;">
-          재료가 태어난 곳과 계절을<br>
-          한 접시 안에 담습니다
-        </h2>
 
         <div class="ss-about-philosophy-description">
           <p class="ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.16s;">
@@ -1304,7 +1254,7 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-about-philosophy .ss-about-philosophy-inner {
-  width: min(100%, 1600px);
+  width: min(100%, 1080px);
   margin: 0 auto;
   padding: clamp(95px, 8vw, 135px) clamp(32px, 6.5vw, 105px) clamp(135px, 12vw, 195px);
 }
@@ -1340,22 +1290,12 @@ html.ss-sub-page body { padding-top: 96px; }
   line-height: 1.08;
   letter-spacing: -0.01em;
   color: #28231f;
+  white-space: nowrap; 
 }
 
 .ss-about-philosophy .ss-about-philosophy-copy {
   width: 100%;
   min-width: 0;
-}
-
-.ss-about-philosophy .ss-about-philosophy-title {
-  margin: 0;
-  font-family: "Noto Serif KR", serif;
-  font-size: clamp(30px, 2.7vw, 40px) !important;
-  font-weight: 400;
-  line-height: 1.65 !important;
-  letter-spacing: -0.03em;
-  word-break: keep-all;
-  color: #29251f;
 }
 
 .ss-about-philosophy .ss-about-philosophy-description {
@@ -1502,7 +1442,6 @@ html.ss-sub-page body { padding-top: 96px; }
   .ss-about-philosophy .ss-about-philosophy-heading { padding-top: 0; }
   .ss-about-philosophy .ss-about-philosophy-copy { max-width: 720px; margin-left: auto; }
   .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 34px; }
-  .ss-about-philosophy .ss-about-philosophy-title { font-size: 30px !important; line-height: 1.6 !important; }
   .ss-about-philosophy .ss-about-philosophy-gallery {
     grid-template-columns: 1.1fr 0.75fr;
     gap: 58px 40px;
@@ -1524,11 +1463,6 @@ html.ss-sub-page body { padding-top: 96px; }
   .ss-about-philosophy .ss-about-philosophy-heading { margin-bottom: 42px; }
   .ss-about-philosophy .ss-about-philosophy-eyebrow { margin-bottom: 20px; font-size: 12px; line-height: 1; letter-spacing: 0.26em; }
   .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 30px; line-height: 1.1; }
-  .ss-about-philosophy .ss-about-philosophy-title {
-    font-size: 25px !important;
-    line-height: 1.65 !important;
-    letter-spacing: -0.03em;
-  }
   .ss-about-philosophy .ss-about-philosophy-description { margin-top: 15px; padding-top: 15px; }
   .ss-about-philosophy .ss-about-philosophy-description p {
     font-size: 14px;
@@ -1573,11 +1507,6 @@ html.ss-sub-page body { padding-top: 96px; }
 
 @media (max-width: 374px) {
   .ss-about-philosophy .ss-about-philosophy-inner { padding-left: 19px; padding-right: 19px; }
-  .ss-about-philosophy .ss-about-philosophy-title {
-    font-size: 23px !important;
-    line-height: 1.6 !important;
-    letter-spacing: -0.035em;
-  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1850,8 +1779,6 @@ margin: 0;
     0 1px 4px rgba(40, 35, 31, 0.16);
 }
 
-/* 국문 타이틀 보정 — Cormorant Garamond는 한글 글리프가 없어
-   그대로 두면 브라우저 기본 세리프체로 대체되어 버립니다. */
 .ss-reservation-title-kr {
   font-family: "Noto Serif KR", "Cormorant Garamond", serif;
   font-size: clamp(34px, 3.6vw, 48px);

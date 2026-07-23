@@ -27,10 +27,10 @@
 
 </head>
 <body>
-
 <!-- ==================================================
-     HEADER
+     header.html
 ================================================== -->
+
 
 <script>
 (function () {
@@ -60,7 +60,6 @@
 </script>
 
 <header class="ss-site-header" id="ssSiteHeader">
-
   <div class="ss-pc-header">
     <a class="ss-pc-logo" href="/" data-ss-page="home" aria-label="시드니서울 홈">SYDNEY SEOUL</a>
     <nav class="ss-pc-menu" aria-label="PC 메뉴">
@@ -77,23 +76,19 @@
       </div>
     </div>
   </div>
-
   <div class="ss-mobile-header">
     <a class="ss-mobile-logo" href="/" data-ss-page="home" aria-label="시드니서울 홈">SYDNEY SEOUL</a>
   </div>
-
 </header>
 
 <div class="ss-mobile-nav">
   <button class="ss-menu-open" type="button" aria-label="메뉴 열기" aria-expanded="false" aria-controls="ssMenuOverlay">
-    <span class="ss-menu-star" aria-hidden="true"></span>
+    <span class="ss-menu-hamburger" aria-hidden="true">
+      <span></span><span></span><span></span>
+    </span>
   </button>
 
   <div class="ss-menu-overlay" id="ssMenuOverlay" role="dialog" aria-modal="true" aria-label="사이트 메뉴" aria-hidden="true">
-    <button class="ss-menu-close" type="button" aria-label="메뉴 닫기">
-      <span></span><span></span>
-    </button>
-
     <div class="ss-menu-panel">
       <nav class="ss-menu-nav" aria-label="모바일 메뉴">
         <ul class="ss-menu-list">
@@ -213,30 +208,55 @@ button, a { -webkit-tap-highlight-color: transparent; }
     width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
-  .ss-mobile-logo {
-    position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-    font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
-    letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -50%);
-  }
+.ss-mobile-logo {
+  position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
+}
   .ss-mobile-nav { display: block; }
+
+  /* =========================================
+     HAMBURGER / X 통합 토글 버튼
+     — 오버레이 z-index(99999)보다 높여서
+       메뉴가 열려도 이 버튼이 계속 맨 위에 보이고,
+       같은 버튼을 눌러 열고 닫을 수 있게 함
+  ========================================= */
   .ss-menu-open {
-    position: fixed; top: 19px; right: 18px; z-index: 99998; width: 30px; height: 30px; padding: 0; border: 0;
+    position: fixed; top: 19px; right: 18px; z-index: 100000; width: 34px; height: 34px; padding: 0; border: 0;
     border-radius: 50%; background: rgba(161, 135, 101, 0.76); backdrop-filter: blur(12px); -webkit-backdrop-filter: blur(12px);
     box-shadow: 0 6px 18px rgba(40, 35, 31, 0.12); display: flex; align-items: center; justify-content: center;
     cursor: pointer; appearance: none; -webkit-appearance: none;
-    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.35s ease, background-color 0.3s ease;
-  }
-  .ss-menu-star {
-    display: block; width: 16px; height: 16px; background: var(--ss-soft-ivory);
-    clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    -webkit-clip-path: polygon(50% 0%, 61% 39%, 100% 50%, 61% 61%, 50% 100%, 39% 61%, 0% 50%, 39% 39%);
-    transform: rotate(0deg); transition: transform 0.4s ease, opacity 0.3s ease;
+    transition: transform 0.35s ease, background-color 0.3s ease;
   }
   .ss-menu-open:hover { background: var(--ss-deep-bronze); }
-  .ss-menu-open:hover .ss-menu-star { transform: rotate(45deg); }
   .ss-menu-open:active { transform: scale(0.92); }
-  .ss-menu-open:active .ss-menu-star { transform: rotate(45deg) scale(0.88); }
-  .ss-menu-open.is-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
+
+  .ss-menu-hamburger {
+    position: relative;
+    display: block; width: 16px; height: 12px;
+  }
+  .ss-menu-hamburger span {
+    position: absolute; left: 0; width: 100%; height: 1.5px; border-radius: 1px;
+    background: var(--ss-soft-ivory);
+    transition:
+      top 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+      transform 0.32s cubic-bezier(0.65, 0, 0.35, 1),
+      opacity 0.2s ease;
+  }
+  .ss-menu-hamburger span:nth-child(1) { top: 0; }
+  .ss-menu-hamburger span:nth-child(2) { top: 5.5px; }
+  .ss-menu-hamburger span:nth-child(3) { top: 11px; }
+
+  /* 버튼이 열림 상태일 때 — 가로줄 3개가 매끄럽게 X자로 변형 */
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(1) {
+    top: 5.5px; transform: rotate(45deg);
+  }
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(2) {
+    opacity: 0; transform: scaleX(0);
+  }
+  .ss-menu-open.is-active .ss-menu-hamburger span:nth-child(3) {
+    top: 5.5px; transform: rotate(-45deg);
+  }
 
   .ss-menu-overlay {
     position: fixed; inset: 0; z-index: 99999; width: 100%; height: 100vh; height: 100dvh; color: var(--ss-espresso);
@@ -247,27 +267,16 @@ button, a { -webkit-tap-highlight-color: transparent; }
   }
   .ss-menu-overlay.is-open { opacity: 1; visibility: visible; pointer-events: auto; transform: translateY(0); }
 
-  .ss-menu-close {
-    position: absolute; top: 21px; right: 18px; z-index: 4; width: 30px; height: 30px; padding: 0; border: 0;
-    border-radius: 50%; background: var(--ss-gold); box-shadow: 0 8px 24px rgba(111, 86, 54, 0.18);
-    cursor: pointer; appearance: none; -webkit-appearance: none; transition: transform 0.25s ease, background-color 0.25s ease;
-  }
-  .ss-menu-close span { position: absolute; top: 50%; left: 50%; display: block; width: 17px; height: 1px; background: var(--ss-soft-ivory); }
-  .ss-menu-close span:first-child { transform: translate(-50%, -50%) rotate(45deg); }
-  .ss-menu-close span:last-child { transform: translate(-50%, -50%) rotate(-45deg); }
-  .ss-menu-close:hover { background: var(--ss-deep-bronze); }
-  .ss-menu-close:active { transform: scale(0.92); }
-
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
     padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
     box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
-    -webkit-overflow-scrolling: touch;
-    scrollbar-width: none;
-    -ms-overflow-style: none;
+    scrollbar-width: thin; scrollbar-color: rgba(161, 135, 101, 0.42) transparent; -webkit-overflow-scrolling: touch;
   }
-  .ss-menu-panel::-webkit-scrollbar { display: none; }
+  .ss-menu-panel::-webkit-scrollbar { width: 4px; }
+  .ss-menu-panel::-webkit-scrollbar-track { background: transparent; }
+  .ss-menu-panel::-webkit-scrollbar-thumb { border-radius: 0; background: rgba(161, 135, 101, 0.42); }
 
   .ss-menu-list { margin: 0; padding: 0; list-style: none; }
   .ss-menu-list li { margin: 0; padding: 0; }
@@ -378,8 +387,7 @@ html.ss-sub-page body { padding-top: 96px; }
   });
 
   const header = document.getElementById("ssSiteHeader");
-  const openButton = document.querySelector(".ss-menu-open");
-  const closeButton = document.querySelector(".ss-menu-close");
+  const toggleButton = document.querySelector(".ss-menu-open");
   const overlay = document.querySelector(".ss-menu-overlay");
   const panel = document.querySelector(".ss-menu-panel");
   const menuLinks = document.querySelectorAll(".ss-menu-overlay a");
@@ -414,26 +422,35 @@ html.ss-sub-page body { padding-top: 96px; }
   document.addEventListener("scroll", handleScroll, { passive: true, capture: true });
   applyScrollState(getScrollTop(window));
 
-  if (!openButton || !closeButton || !overlay) return;
+  if (!toggleButton || !overlay) return;
 
   function openMenu() {
     overlay.classList.add("is-open");
-    openButton.classList.add("is-hidden");
+    toggleButton.classList.add("is-active");
     document.body.classList.add("ss-menu-lock");
-    openButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-expanded", "true");
+    toggleButton.setAttribute("aria-label", "메뉴 닫기");
     overlay.setAttribute("aria-hidden", "false");
   }
 
   function closeMenu() {
     overlay.classList.remove("is-open");
-    openButton.classList.remove("is-hidden");
+    toggleButton.classList.remove("is-active");
     document.body.classList.remove("ss-menu-lock");
-    openButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-expanded", "false");
+    toggleButton.setAttribute("aria-label", "메뉴 열기");
     overlay.setAttribute("aria-hidden", "true");
   }
 
-  openButton.addEventListener("click", openMenu);
-  closeButton.addEventListener("click", closeMenu);
+  function toggleMenu() {
+    if (overlay.classList.contains("is-open")) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  }
+
+  toggleButton.addEventListener("click", toggleMenu);
   menuLinks.forEach(function (link) { link.addEventListener("click", closeMenu); });
   overlay.addEventListener("click", function (event) {
     if (event.target === overlay && !panel.contains(event.target)) closeMenu();
@@ -443,8 +460,6 @@ html.ss-sub-page body { padding-top: 96px; }
   });
 })();
 </script>
-
-
 <!-- ==================================================
      RESERVATION BOOKING
 ================================================== -->
