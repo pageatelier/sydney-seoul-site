@@ -118,7 +118,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-logo {
   justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  font-size: var(--ss-text-23); font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
   opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
 }
 .ss-pc-menu {
@@ -126,8 +126,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
 }
 .ss-pc-menu a {
-  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
-  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  position: relative; padding: var(--ss-space-14) 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: var(--ss-text-12); font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
   white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
 }
 .ss-pc-menu a::after {
@@ -143,7 +143,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-language {
   display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
-  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+  font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; line-height: 1; letter-spacing: 0.08em;
 }
 .ss-pc-language-link {
   width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
@@ -165,23 +165,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .ss-mobile-header, .ss-mobile-nav { display: none; }
 
 @media (min-width: 768px) and (max-width: 1100px) {
-  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
-  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 var(--ss-space-28); }
+  .ss-pc-logo { font-size: var(--ss-text-17); letter-spacing: 0.16em; }
   .ss-pc-menu { gap: 22px; }
-  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-menu a { font-size: var(--ss-text-10); letter-spacing: 0.1em; }
   .ss-pc-actions { gap: 14px; }
-  .ss-pc-language { gap: 6px; font-size: 9px; }
+  .ss-pc-language { gap: 6px; font-size: var(--ss-text-9); }
 }
 
 @media (max-width: 767px) {
   .ss-pc-header { display: none; }
   .ss-mobile-header {
-    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 68px; padding: 0 var(--ss-space-72) 0 var(--ss-space-20); display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
 .ss-mobile-logo {
   position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: var(--ss-text-18); font-weight: 600; line-height: 1;
   letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
 }
   .ss-mobile-nav { display: block; }
@@ -240,7 +240,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
-    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    padding: var(--ss-space-28) var(--ss-space-20) var(--ss-space-40); border-radius: 2px; background: rgba(252, 243, 233, 0.88);
     box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
     scrollbar-width: thin; scrollbar-color: rgba(161, 135, 101, 0.42) transparent; -webkit-overflow-scrolling: touch;
@@ -252,34 +252,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ss-menu-list { margin: 0; padding: 0; list-style: none; }
   .ss-menu-list li { margin: 0; padding: 0; }
   .ss-menu-list a {
-    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
-    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    width: 100%; min-height: 45px; padding: var(--ss-space-12) var(--ss-space-8); display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 410;
     line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
     transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
   .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
   .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
 
-  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-wrap { margin: var(--ss-space-20) 0 var(--ss-space-2); display: flex; justify-content: center; align-items: center; gap: 10px; }
   .ss-language-circle {
     width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
     border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
-    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+    font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; letter-spacing: .08em; transition: .3s;
   }
   .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
   .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
 
   .ss-menu-section-title {
-    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+    margin: var(--ss-space-28) 0 var(--ss-space-18); color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: var(--ss-text-14); font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
   }
   .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
   .ss-menu-reservation {
-    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    width: 100%; min-height: 42px; padding: 0 var(--ss-space-18); border: 1px solid var(--ss-gold); border-radius: 0;
     display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
     text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
-  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
   .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
   .ss-menu-reservation:active { transform: scale(0.985); }
 
@@ -287,12 +287,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 380px) {
-  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
-  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
-  .ss-menu-list a { min-height: 49px; font-size: 11px; }
-  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
-  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
-  .ss-menu-reservation span { font-size: 11px; }
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: var(--ss-text-15); letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: var(--ss-space-28) var(--ss-space-16) var(--ss-space-40); }
+  .ss-menu-list a { min-height: 49px; font-size: var(--ss-text-11); }
+  .ss-menu-section-title { margin-top: var(--ss-space-22); font-size: var(--ss-text-13); }
+  .ss-menu-reservation { min-height: 44px; padding: 0 var(--ss-space-14); }
+  .ss-menu-reservation span { font-size: var(--ss-text-11); }
 }
 
 html.ss-sub-page .ss-pc-logo,
@@ -305,8 +305,8 @@ html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important
 html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
 html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
 html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
-html.ss-sub-page body { padding-top: 96px; }
-@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+html.ss-sub-page body { padding-top: var(--ss-space-96); }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: var(--ss-space-64); } }
 </style>
 
 <script>

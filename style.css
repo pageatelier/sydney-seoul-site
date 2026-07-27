@@ -26,6 +26,74 @@
   --ss-text: #28231f;
   --ss-text-sub: #756d66;
   --ss-warm-gray: #756D66;
+
+  /* ==================================================
+     스페이싱 스케일 (margin/padding)
+     실측 사용값을 그룹화한 결과 — 사이트 전역 margin/padding에
+     var(--ss-space-N) 형태로 사용
+  ================================================== */
+  --ss-space-0: 0px;
+  --ss-space-2: 2px;
+  --ss-space-4: 4px;
+  --ss-space-6: 6px;
+  --ss-space-8: 8px;
+  --ss-space-10: 10px;
+  --ss-space-12: 12px;
+  --ss-space-14: 14px;
+  --ss-space-16: 16px;
+  --ss-space-18: 18px;
+  --ss-space-20: 20px;
+  --ss-space-22: 22px;
+  --ss-space-24: 24px;
+  --ss-space-28: 28px;
+  --ss-space-32: 32px;
+  --ss-space-36: 36px;
+  --ss-space-40: 40px;
+  --ss-space-48: 48px;
+  --ss-space-56: 56px;
+  --ss-space-64: 64px;
+  --ss-space-72: 72px;
+  --ss-space-80: 80px;
+  --ss-space-90: 90px;
+  --ss-space-96: 96px;
+  --ss-space-105: 105px;
+  --ss-space-120: 120px;
+  --ss-space-135: 135px;
+  --ss-space-150: 150px;
+  --ss-space-165: 165px;
+  --ss-space-180: 180px;
+  --ss-space-195: 195px;
+
+  /* ==================================================
+     타입 스케일 (font-size)
+  ================================================== */
+  --ss-text-9: 9px;
+  --ss-text-10: 10px;
+  --ss-text-11: 11px;
+  --ss-text-12: 12px;
+  --ss-text-13: 13px;
+  --ss-text-14: 14px;
+  --ss-text-15: 15px;
+  --ss-text-16: 16px;
+  --ss-text-17: 17px;
+  --ss-text-18: 18px;
+  --ss-text-19: 19px;
+  --ss-text-21: 21px;
+  --ss-text-22: 22px;
+  --ss-text-23: 23px;
+  --ss-text-24: 24px;
+  --ss-text-25: 25px;
+  --ss-text-26: 26px;
+  --ss-text-27: 27px;
+  --ss-text-28: 28px;
+  --ss-text-30: 30px;
+  --ss-text-32: 32px;
+  --ss-text-34: 34px;
+  --ss-text-35: 35px;
+  --ss-text-40: 40px;
+  --ss-text-42: 42px;
+  --ss-text-48: 48px;
+  --ss-text-50: 50px;
 }
 
 

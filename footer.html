@@ -149,7 +149,7 @@ html.ss-en-page .ss-footer-address-kr {
 
 html.ss-en-page .ss-footer-address-en {
   order: 1;
-  margin-bottom: 2px; /* 기존 subtext 위쪽 여백이 아래로 가야 하니 살짝 조정 */
+  margin-bottom: var(--ss-space-2); /* 기존 subtext 위쪽 여백이 아래로 가야 하니 살짝 조정 */
 }
 /* ==============================
    MINIMAL FOOTER
@@ -169,7 +169,7 @@ html.ss-en-page .ss-footer-address-en {
   margin-left: calc(50% - 50vw) !important;
   margin-right: calc(50% - 50vw) !important;
 
-  padding: 70px clamp(34px, 5vw, 76px) 26px;
+  padding: var(--ss-space-72) clamp(var(--ss-space-32), 5vw, var(--ss-space-72)) var(--ss-space-24);
 
   overflow: hidden;
 
@@ -203,7 +203,7 @@ html.ss-en-page .ss-footer-address-en {
 
   column-gap: clamp(26px, 2.4vw, 46px);
 
-  padding-bottom: 44px;
+  padding-bottom: var(--ss-space-40);
 }
 
 /* ==============================
@@ -225,7 +225,7 @@ html.ss-en-page .ss-footer-address-en {
 
 .ss-footer-logo-en {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 22px;
+  font-size: var(--ss-text-22);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.18em;
@@ -250,10 +250,10 @@ html.ss-en-page .ss-footer-address-en {
 }
 
 .ss-footer-label {
-  margin: 2px 0 17px;
+  margin: var(--ss-space-2) 0 var(--ss-space-16);
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 13px;
+  font-size: var(--ss-text-13);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.19em;
@@ -272,7 +272,7 @@ html.ss-en-page .ss-footer-address-en {
     "Noto Sans KR",
     sans-serif;
 
-  font-size: 13px;
+  font-size: var(--ss-text-13);
   font-weight: 300;
   font-style: normal;
   line-height: 1.75;
@@ -298,7 +298,7 @@ html.ss-en-page .ss-footer-address-en {
     "Noto Sans KR",
     sans-serif;
 
-  font-size: 13px;
+  font-size: var(--ss-text-13);
   font-weight: 300;
   font-style: normal;
   line-height: 1.75;
@@ -333,7 +333,7 @@ html.ss-en-page .ss-footer-address-en {
     "Noto Sans KR",
     sans-serif;
 
-  font-size: 13px;
+  font-size: var(--ss-text-13);
   font-weight: 400;
   line-height: 1.35;
   letter-spacing: 0.045em;
@@ -345,7 +345,7 @@ html.ss-en-page .ss-footer-address-en {
 }
 
 .ss-minimal-footer .ss-footer-phone {
-  font-size: 12px;
+  font-size: var(--ss-text-12);
   letter-spacing: 0.02em;
 }
 
@@ -390,7 +390,7 @@ html.ss-en-page .ss-footer-address-en {
 
   top: 1px;
 
-  font-size: 13px;
+  font-size: var(--ss-text-13);
   font-weight: 400;
   line-height: 1;
 
@@ -409,7 +409,7 @@ html.ss-en-page .ss-footer-address-en {
 
 .ss-footer-bottom {
   min-height: 44px;
-  padding-top: 16px;
+  padding-top: var(--ss-space-16);
 
   display: flex;
   align-items: flex-end;
@@ -430,7 +430,7 @@ html.ss-en-page .ss-footer-address-en {
     "Apple SD Gothic Neo",
     sans-serif;
 
-  font-size: 8px;
+  font-size: var(--ss-text-9);
   font-weight: 400;
   line-height: 1.4;
   letter-spacing: 0.12em;
@@ -456,7 +456,7 @@ html.ss-en-page .ss-footer-address-en {
     "Apple SD Gothic Neo",
     sans-serif;
 
-  font-size: 9px;
+  font-size: var(--ss-text-9);
   font-weight: 400;
   line-height: 1;
   letter-spacing: 0.11em;
@@ -500,8 +500,8 @@ html.ss-en-page .ss-footer-address-en {
 
 @media (max-width: 1279px) {
   .ss-minimal-footer {
-    padding-left: 42px;
-    padding-right: 42px;
+    padding-left: var(--ss-space-40);
+    padding-right: var(--ss-space-40);
   }
 
   .ss-footer-main {
@@ -515,7 +515,7 @@ html.ss-en-page .ss-footer-address-en {
 
   .ss-footer-brand {
     grid-row: span 2;
-    padding-right: 10px;
+    padding-right: var(--ss-space-10);
   }
 
   .ss-footer-reservation-column {
@@ -533,7 +533,7 @@ html.ss-en-page .ss-footer-address-en {
 
 @media (max-width: 767px) {
   .ss-minimal-footer {
-    padding: 48px 22px 24px;
+    padding: var(--ss-space-48) var(--ss-space-22) var(--ss-space-24);
   }
 
   .ss-footer-main {
@@ -542,8 +542,8 @@ html.ss-en-page .ss-footer-address-en {
 
     column-gap: 24px;
     row-gap: 34px;
-    margin-top: 20px;
-    padding-bottom: 35px;
+    margin-top: var(--ss-space-20);
+    padding-bottom: var(--ss-space-36);
   }
 
   .ss-footer-brand {
@@ -554,7 +554,7 @@ html.ss-en-page .ss-footer-address-en {
   }
 
   .ss-footer-logo-en {
-    font-size: 20px;
+    font-size: var(--ss-text-19);
     letter-spacing: 0.12em;
   }
 
@@ -564,27 +564,27 @@ html.ss-en-page .ss-footer-address-en {
   }
 
   .ss-footer-contact-column {
-    margin-top: -4px;
+    margin-top: calc(-1 * var(--ss-space-4));
   }
 
   .ss-footer-reservation-column {
-    margin-top: -4px;
-    margin-left: -18px;
+    margin-top: calc(-1 * var(--ss-space-4));
+    margin-left: calc(-1 * var(--ss-space-18));
     padding-left: 0;
   }
 
   .ss-footer-label {
-    margin-bottom: 14px;
-    font-size: 12px;
+    margin-bottom: var(--ss-space-14);
+    font-size: var(--ss-text-12);
   }
 
   .ss-footer-text {
-    font-size: 13px;
+    font-size: var(--ss-text-13);
     line-height: 1.75;
   }
 
   .ss-footer-subtext {
-    font-size: 13px;
+    font-size: var(--ss-text-13);
     line-height: 1.75;
   }
 
@@ -600,13 +600,13 @@ html.ss-en-page .ss-footer-address-en {
   .ss-footer-reservation .ss-footer-link {
     gap: 7px;
 
-    font-size: 12px;
+    font-size: var(--ss-text-12);
     letter-spacing: 0.02em;
   }
 
   .ss-footer-bottom {
     min-height: 68px;
-    padding-top: 18px;
+    padding-top: var(--ss-space-18);
 
     flex-direction: column;
     align-items: flex-start;
@@ -618,7 +618,7 @@ html.ss-en-page .ss-footer-address-en {
   .ss-footer-copyright {
     order: 2;
 
-    font-size: 8px;
+    font-size: var(--ss-text-9);
     letter-spacing: 0.1em;
   }
 
@@ -634,8 +634,8 @@ html.ss-en-page .ss-footer-address-en {
 
 @media (max-width: 390px) {
   .ss-minimal-footer {
-    padding-left: 19px;
-    padding-right: 19px;
+    padding-left: var(--ss-space-18);
+    padding-right: var(--ss-space-18);
   }
 
   .ss-footer-main {
@@ -643,16 +643,16 @@ html.ss-en-page .ss-footer-address-en {
   }
 
   .ss-footer-logo-en {
-    font-size: 20px;
+    font-size: var(--ss-text-19);
     letter-spacing: 0.1em;
   }
 
   .ss-footer-reservation-column {
-    margin-left: -14px;
+    margin-left: calc(-1 * var(--ss-space-14));
   }
 
   .ss-footer-reservation .ss-footer-link {
-    font-size: 10px;
+    font-size: var(--ss-text-10);
   }
 }
 </style>

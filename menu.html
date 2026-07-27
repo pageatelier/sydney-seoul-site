@@ -146,7 +146,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-logo {
   justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  font-size: var(--ss-text-23); font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
   opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
 }
 .ss-pc-menu {
@@ -154,8 +154,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
 }
 .ss-pc-menu a {
-  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
-  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  position: relative; padding: var(--ss-space-14) 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: var(--ss-text-12); font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
   white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
 }
 .ss-pc-menu a::after {
@@ -171,7 +171,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-language {
   display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
-  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+  font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; line-height: 1; letter-spacing: 0.08em;
 }
 .ss-pc-language-link {
   width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
@@ -193,23 +193,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .ss-mobile-header, .ss-mobile-nav { display: none; }
 
 @media (min-width: 768px) and (max-width: 1100px) {
-  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
-  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 var(--ss-space-28); }
+  .ss-pc-logo { font-size: var(--ss-text-17); letter-spacing: 0.16em; }
   .ss-pc-menu { gap: 22px; }
-  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-menu a { font-size: var(--ss-text-10); letter-spacing: 0.1em; }
   .ss-pc-actions { gap: 14px; }
-  .ss-pc-language { gap: 6px; font-size: 9px; }
+  .ss-pc-language { gap: 6px; font-size: var(--ss-text-9); }
 }
 
 @media (max-width: 767px) {
   .ss-pc-header { display: none; }
   .ss-mobile-header {
-    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 68px; padding: 0 var(--ss-space-72) 0 var(--ss-space-20); display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
 .ss-mobile-logo {
   position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: var(--ss-text-18); font-weight: 600; line-height: 1;
   letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
 }
   .ss-mobile-nav { display: block; }
@@ -268,7 +268,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
-    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    padding: var(--ss-space-28) var(--ss-space-20) var(--ss-space-40); border-radius: 2px; background: rgba(252, 243, 233, 0.88);
     box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
     scrollbar-width: thin; scrollbar-color: rgba(161, 135, 101, 0.42) transparent; -webkit-overflow-scrolling: touch;
@@ -280,34 +280,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ss-menu-list { margin: 0; padding: 0; list-style: none; }
   .ss-menu-list li { margin: 0; padding: 0; }
   .ss-menu-list a {
-    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
-    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    width: 100%; min-height: 45px; padding: var(--ss-space-12) var(--ss-space-8); display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 410;
     line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
     transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
   .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
   .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
 
-  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-wrap { margin: var(--ss-space-20) 0 var(--ss-space-2); display: flex; justify-content: center; align-items: center; gap: 10px; }
   .ss-language-circle {
     width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
     border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
-    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+    font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; letter-spacing: .08em; transition: .3s;
   }
   .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
   .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
 
   .ss-menu-section-title {
-    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+    margin: var(--ss-space-28) 0 var(--ss-space-18); color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: var(--ss-text-14); font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
   }
   .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
   .ss-menu-reservation {
-    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    width: 100%; min-height: 42px; padding: 0 var(--ss-space-18); border: 1px solid var(--ss-gold); border-radius: 0;
     display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
     text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
-  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
   .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
   .ss-menu-reservation:active { transform: scale(0.985); }
 
@@ -315,12 +315,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 380px) {
-  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
-  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
-  .ss-menu-list a { min-height: 49px; font-size: 11px; }
-  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
-  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
-  .ss-menu-reservation span { font-size: 11px; }
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: var(--ss-text-15); letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: var(--ss-space-28) var(--ss-space-16) var(--ss-space-40); }
+  .ss-menu-list a { min-height: 49px; font-size: var(--ss-text-11); }
+  .ss-menu-section-title { margin-top: var(--ss-space-22); font-size: var(--ss-text-13); }
+  .ss-menu-reservation { min-height: 44px; padding: 0 var(--ss-space-14); }
+  .ss-menu-reservation span { font-size: var(--ss-text-11); }
 }
 
 html.ss-sub-page .ss-pc-logo,
@@ -333,8 +333,8 @@ html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important
 html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
 html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
 html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
-html.ss-sub-page body { padding-top: 96px; }
-@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+html.ss-sub-page body { padding-top: var(--ss-space-96); }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: var(--ss-space-64); } }
 </style>
 
 <script>
@@ -656,60 +656,60 @@ html.ss-sub-page body { padding-top: 96px; }
   --ink: #28231f; --muted: rgba(40,35,31,.56); --line: rgba(40,35,31,.17);
   --gold: #a18765; --paper: #fbf5ee;
   background: #f7f0ea; color: var(--ink);
-  padding: 60px 24px 60px;
+  padding: var(--ss-space-56) var(--ss-space-24) var(--ss-space-56);
 }
 
 .ss-course-menu-inner { width: min(100%, 880px); margin: 0 auto; }
 
-.ss-course-menu-header { display: block; text-align: center; margin-bottom: 40px; }
+.ss-course-menu-header { display: block; text-align: center; margin-bottom: var(--ss-space-40); }
 
 .ss-course-menu-section .ss-course-menu-title {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(38px, 4.2vw, 48px) !important;
+  font-size: clamp(var(--ss-text-40), 4.2vw, var(--ss-text-48)) !important;
   font-weight: 400; font-style: italic; line-height: 1; letter-spacing: -0.025em;
   color: #28231f;
 }
 
 .ss-course-menu-tabs {
   display: grid; grid-template-columns: repeat(3, 1fr);
-  width: min(100%, 720px); margin: 0 auto 48px; border: 0; background: transparent;
+  width: min(100%, 720px); margin: 0 auto var(--ss-space-48); border: 0; background: transparent;
 }
 .ss-course-menu-tab {
   position: relative; display: flex; flex-direction: column; align-items: center; justify-content: center;
-  gap: 5px; min-height: 40px; padding: 9px 12px 8px; border: 0; background: transparent;
+  gap: 5px; min-height: 40px; padding: var(--ss-space-8) var(--ss-space-12) var(--ss-space-8); border: 0; background: transparent;
   color: var(--muted); cursor: pointer;
 }
 .ss-course-menu-tab::after {
   content: ''; position: absolute; left: 22%; right: 22%; bottom: -1px; height: 1px; background: var(--gold);
   transform: scaleX(0); transform-origin: center; transition: transform .3s cubic-bezier(.22,1,.36,1);
 }
-.ss-course-menu-tab-name { font-family: 'Cormorant Garamond', serif; font-size: 16px; font-weight: 400; }
+.ss-course-menu-tab-name { font-family: 'Cormorant Garamond', serif; font-size: var(--ss-text-16); font-weight: 400; }
 .ss-course-menu-tab.is-active { color: var(--ink); background: transparent; }
 .ss-course-menu-tab.is-active::after { transform: scaleX(1); }
 .ss-course-menu-tab.is-active .ss-course-menu-tab-name { font-weight: 500; }
 
 .ss-course-menu-panel[hidden] { display: none !important; }
 .ss-course-menu-card {
-  position: relative; width: min(100%, 720px); margin: 0 auto; padding: 20px 52px 30px 38px;
+  position: relative; width: min(100%, 720px); margin: 0 auto; padding: var(--ss-space-20) var(--ss-space-48) var(--ss-space-28) var(--ss-space-36);
   background-color: #f7f0ea;
 }
 .ss-course-menu-card-top {
-  display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: 22px;
+  display: flex; justify-content: space-between; align-items: flex-end; gap: 20px; padding-bottom: var(--ss-space-22);
 }
 
 .ss-course-menu-section .ss-course-menu-card-title {
-  margin: 0; font-family: 'Cormorant Garamond', serif; font-size: 22px !important;
+  margin: 0; font-family: 'Cormorant Garamond', serif; font-size: var(--ss-text-22) !important;
   font-weight: 400; line-height: 1.05; text-align: center;
 }
 
-.ss-course-menu-list { padding: 8px 20px 0 20px; max-height: none; overflow: visible; }
+.ss-course-menu-list { padding: var(--ss-space-8) var(--ss-space-20) 0 var(--ss-space-20); max-height: none; overflow: visible; }
 
-[data-menu-panel='wine'] .ss-course-menu-card { padding: 28px 38px 30px; }
-[data-menu-panel='wine'] .ss-course-menu-card-top { display: block; width: 100%; padding: 12px 0 30px; text-align: center; }
+[data-menu-panel='wine'] .ss-course-menu-card { padding: var(--ss-space-28) var(--ss-space-36) var(--ss-space-28); }
+[data-menu-panel='wine'] .ss-course-menu-card-top { display: block; width: 100%; padding: var(--ss-space-12) 0 var(--ss-space-28); text-align: center; }
 [data-menu-panel='wine'] .ss-course-menu-card-top > div { width: 100%; }
 [data-menu-panel='wine'] .ss-course-menu-card-title { width: 100%; line-height: 1.2; letter-spacing: .015em; text-align: center; white-space: nowrap; }
-[data-menu-panel='wine'] .ss-course-menu-list { max-height: none; overflow: visible; padding: 8px 20px 0; }
+[data-menu-panel='wine'] .ss-course-menu-list { max-height: none; overflow: visible; padding: var(--ss-space-8) var(--ss-space-20) 0; }
 [data-menu-panel='wine'] .ss-course-menu-item { grid-template-columns: 42px minmax(0, 1fr); }
 [data-menu-panel='wine'] .ss-course-menu-item-copy h3,
 [data-menu-panel='wine'] .ss-course-menu-item-copy p { white-space: nowrap; }
@@ -720,23 +720,23 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 .ss-course-menu-item-number {
   display: flex; flex-direction: column; gap: 3px;
-  font-family: Pretendard, sans-serif; font-size: 11px; font-weight: 500; line-height: 1;
+  font-family: Pretendard, sans-serif; font-size: var(--ss-text-11); font-weight: 500; line-height: 1;
   letter-spacing: .08em; color: rgba(40,35,31,.62);
 }
 .ss-course-menu-item-copy h3 {
-  margin: 0 0 3px; font-family: 'Cormorant Garamond', serif; font-size: 18px; font-weight: 500; line-height: 1.2;
+  margin: 0 0 var(--ss-space-2); font-family: 'Cormorant Garamond', serif; font-size: var(--ss-text-18); font-weight: 500; line-height: 1.2;
 }
 .ss-course-menu-item-copy p {
-  margin: 0; font-family: Pretendard, sans-serif; font-size: 11px; font-weight: 400; line-height: 1.45;
+  margin: 0; font-family: Pretendard, sans-serif; font-size: var(--ss-text-11); font-weight: 400; line-height: 1.45;
   color: rgba(40,35,31,.66);
 }
 
 .ss-course-menu-notice {
-  display: flex; align-items: center; gap: 18px; width: min(100%, 640px); margin: 50px auto 0;
+  display: flex; align-items: center; gap: 18px; width: min(100%, 640px); margin: var(--ss-space-48) auto 0;
 }
 .ss-course-menu-notice-line { flex: 1; height: 1px; background: var(--line); }
 .ss-course-menu-notice p {
-  margin: 0; font-family: Pretendard, sans-serif; font-size: 11px; font-weight: 300; line-height: 1.65;
+  margin: 0; font-family: Pretendard, sans-serif; font-size: var(--ss-text-11); font-weight: 300; line-height: 1.65;
   text-align: center; color: var(--muted);
 }
 
@@ -746,31 +746,31 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 @media (max-width: 767px) {
-  .ss-course-menu-section { padding: 20px 24px 60px; }
-  .ss-course-menu-header { display: block; margin-bottom: 25px; }
-  .ss-course-menu-section .ss-course-menu-title { font-size: 34px !important; }
-  .ss-course-menu-tabs { width: 100%; margin: 0 0 20px; }
-  .ss-course-menu-tab { min-height: 30px; gap: 5px; padding: 8px 3px 4px; }
-  .ss-course-menu-tab-name { font-size: 15px; }
-  .ss-course-menu-card { padding: 10px 40px 24px 18px; }
-  .ss-course-menu-card-top { gap: 12px; padding-bottom: 18px; }
-  .ss-course-menu-section .ss-course-menu-card-title { font-size: 19px !important; }
-  .ss-course-menu-list { padding: 8px 12px 0 12px; }
+  .ss-course-menu-section { padding: var(--ss-space-20) var(--ss-space-24) var(--ss-space-56); }
+  .ss-course-menu-header { display: block; margin-bottom: var(--ss-space-24); }
+  .ss-course-menu-section .ss-course-menu-title { font-size: var(--ss-text-34) !important; }
+  .ss-course-menu-tabs { width: 100%; margin: 0 0 var(--ss-space-20); }
+  .ss-course-menu-tab { min-height: 30px; gap: 5px; padding: var(--ss-space-8) var(--ss-space-2) var(--ss-space-4); }
+  .ss-course-menu-tab-name { font-size: var(--ss-text-15); }
+  .ss-course-menu-card { padding: var(--ss-space-10) var(--ss-space-40) var(--ss-space-24) var(--ss-space-18); }
+  .ss-course-menu-card-top { gap: 12px; padding-bottom: var(--ss-space-18); }
+  .ss-course-menu-section .ss-course-menu-card-title { font-size: var(--ss-text-19) !important; }
+  .ss-course-menu-list { padding: var(--ss-space-8) var(--ss-space-12) 0 var(--ss-space-12); }
 
-  [data-menu-panel='wine'] .ss-course-menu-card { padding: 22px 14px 24px; }
-  [data-menu-panel='wine'] .ss-course-menu-card-top { padding: 8px 0 25px; }
-  [data-menu-panel='wine'] .ss-course-menu-list { padding: 8px 8px 0; }
+  [data-menu-panel='wine'] .ss-course-menu-card { padding: var(--ss-space-22) var(--ss-space-14) var(--ss-space-24); }
+  [data-menu-panel='wine'] .ss-course-menu-card-top { padding: var(--ss-space-8) 0 var(--ss-space-24); }
+  [data-menu-panel='wine'] .ss-course-menu-list { padding: var(--ss-space-8) var(--ss-space-8) 0; }
 
   .ss-course-menu-item { grid-template-columns: 34px minmax(0, 1fr) auto; column-gap: 8px; min-height: 64px; }
   [data-menu-panel='wine'] .ss-course-menu-item { grid-template-columns: 26px minmax(0, 1fr); column-gap: 6px; }
-  .ss-course-menu-item-copy h3 { font-size: 17px; line-height: 1.18; letter-spacing: -.01em; }
-  .ss-course-menu-item-copy p { font-size: 11px; line-height: 1.4; }
-  .ss-course-menu-item-number { font-size: 11px; color: rgba(40,35,31,.62); }
-  [data-menu-panel='wine'] .ss-course-menu-item-copy h3 { font-size: clamp(12px, 3.6vw, 14px); letter-spacing: -.01em; }
-  [data-menu-panel='wine'] .ss-course-menu-item-copy p { font-size: clamp(9px, 2.55vw, 10px); letter-spacing: -.025em; }
+  .ss-course-menu-item-copy h3 { font-size: var(--ss-text-17); line-height: 1.18; letter-spacing: -.01em; }
+  .ss-course-menu-item-copy p { font-size: var(--ss-text-11); line-height: 1.4; }
+  .ss-course-menu-item-number { font-size: var(--ss-text-11); color: rgba(40,35,31,.62); }
+  [data-menu-panel='wine'] .ss-course-menu-item-copy h3 { font-size: clamp(var(--ss-text-12), 3.6vw, var(--ss-text-14)); letter-spacing: -.01em; }
+  [data-menu-panel='wine'] .ss-course-menu-item-copy p { font-size: clamp(var(--ss-text-9), 2.55vw, var(--ss-text-10)); letter-spacing: -.025em; }
 
-  .ss-course-menu-notice { margin-top: 40px; gap: 11px; }
-  .ss-course-menu-notice p { font-size: 9px; }
+  .ss-course-menu-notice { margin-top: var(--ss-space-40); gap: 11px; }
+  .ss-course-menu-notice p { font-size: var(--ss-text-9); }
 }
 
 .ss-course-menu-section.ss-course-menu-reveal-ready .ss-course-menu-reveal {
@@ -977,7 +977,7 @@ html.ss-sub-page body { padding-top: 96px; }
   --ss-food-bg: #f7f0ea;
 
   width: 100%;
-  padding: clamp(48px, 5vw, 72px) 6vw clamp(90px, 9vw, 135px);
+  padding: clamp(var(--ss-space-48), 5vw, var(--ss-space-72)) 6vw clamp(var(--ss-space-90), 9vw, var(--ss-space-135));
   overflow: hidden;
   background: var(--ss-food-bg);
   color: var(--ss-food-ink);
@@ -990,13 +990,13 @@ html.ss-sub-page body { padding-top: 96px; }
   grid-template-columns: minmax(0, 1fr) minmax(300px, 0.7fr);
   align-items: end;
   gap: clamp(48px, 7vw, 100px);
-  margin-bottom: clamp(48px, 6vw, 76px);
+  margin-bottom: clamp(var(--ss-space-48), 6vw, var(--ss-space-72));
 }
 
 .ss-food-showcase-title {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(32px, 3.1vw, 42px);
+  font-size: clamp(var(--ss-text-32), 3.1vw, var(--ss-text-42));
   font-weight: 500; font-style: italic !important; line-height: 1.08; letter-spacing: -0.01em;
   color: var(--ss-food-ink);
 }
@@ -1028,9 +1028,9 @@ html.ss-sub-page body { padding-top: 96px; }
 
 .ss-food-showcase-caption {
   display: flex; align-items: center; justify-content: space-between; gap: 15px;
-  margin-top: 4px; padding-top: 6px;
+  margin-top: var(--ss-space-4); padding-top: var(--ss-space-6);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 13px; font-weight: 500; line-height: 1.2; letter-spacing: 0.04em;
+  font-size: var(--ss-text-13); font-weight: 500; line-height: 1.2; letter-spacing: 0.04em;
   color: #6F5636;
 }
 
@@ -1058,21 +1058,21 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 @media (max-width: 767px) {
-  .ss-food-showcase { padding: 46px 22px 78px; }
-  .ss-food-showcase-header { display: block; margin-bottom: 40px; }
-  .ss-food-showcase-title { font-size: 30px; line-height: 1.1; }
+  .ss-food-showcase { padding: var(--ss-space-48) var(--ss-space-22) var(--ss-space-80); }
+  .ss-food-showcase-header { display: block; margin-bottom: var(--ss-space-40); }
+  .ss-food-showcase-title { font-size: var(--ss-text-30); line-height: 1.1; }
   .ss-food-showcase-grid { display: block; }
-  .ss-food-showcase-item { width: 100%; margin: 0 0 38px; }
+  .ss-food-showcase-item { width: 100%; margin: 0 0 var(--ss-space-36); }
   .ss-food-showcase-item:last-child { margin-bottom: 0; }
   .ss-food-showcase-image-wrap { aspect-ratio: 4 / 5; }
-  .ss-food-showcase-caption { margin-top: 5px; padding-bottom: 10px; font-size: 13px; letter-spacing: 0.02em; }
+  .ss-food-showcase-caption { margin-top: var(--ss-space-4); padding-bottom: var(--ss-space-10); font-size: var(--ss-text-13); letter-spacing: 0.02em; }
   .ss-food-showcase .ss-food-reveal { transform: translate3d(0, 26px, 0); }
   .ss-food-showcase .ss-food-reveal.is-visible { transform: translate3d(0, 0, 0); }
 }
 
 @media (max-width: 390px) {
-  .ss-food-showcase { padding-left: 18px; padding-right: 18px; }
-  .ss-food-showcase-title { font-size: 28px; }
+  .ss-food-showcase { padding-left: var(--ss-space-18); padding-right: var(--ss-space-18); }
+  .ss-food-showcase-title { font-size: var(--ss-text-28); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1262,10 +1262,10 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-reservation-eyebrow {
-  margin: 0 0 24px;
+  margin: 0 0 var(--ss-space-24);
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 14px;
+  font-size: var(--ss-text-14);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.25em;
@@ -1281,7 +1281,7 @@ margin: 0;
     Georgia,
     serif;
 
-  font-size: clamp(40px, 5.5vw, 50px);
+  font-size: clamp(var(--ss-text-40), 5.5vw, var(--ss-text-50));
   font-weight: 500;
   line-height: 0.93;
   letter-spacing: -0.035em;
@@ -1297,7 +1297,7 @@ margin: 0;
    그대로 두면 브라우저 기본 세리프체로 대체되어 버립니다. */
 .ss-reservation-title-kr {
   font-family: "Noto Serif KR", "Cormorant Garamond", serif;
-  font-size: clamp(34px, 3.6vw, 48px);
+  font-size: clamp(var(--ss-text-34), 3.6vw, var(--ss-text-48));
   font-weight: 500;
   font-style: normal;
   line-height: 1.35;
@@ -1305,7 +1305,7 @@ margin: 0;
 }
 
 .ss-reservation-description {
-  margin: 31px 0 0;
+  margin: var(--ss-space-32) 0 0;
 
   font-family:
     Pretendard,
@@ -1315,7 +1315,7 @@ margin: 0;
     "Noto Sans KR",
     sans-serif;
 
-  font-size: 15px;
+  font-size: var(--ss-text-15);
   font-weight: 300;
   line-height: 1.85;
   letter-spacing: -0.02em;
@@ -1326,10 +1326,10 @@ margin: 0;
 }
 
 .ss-reservation-subtitle {
-  margin: 18px 0 0;
+  margin: var(--ss-space-18) 0 0;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 15px;
+  font-size: var(--ss-text-15);
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: 0.02em;
@@ -1341,7 +1341,7 @@ margin: 0;
 
 .ss-reservation-subtitle-kr {
   font-family: "Noto Serif KR", "Cormorant Garamond", serif;
-  font-size: 16px;
+  font-size: var(--ss-text-16);
   font-weight: 400;
   line-height: 1.65;
   letter-spacing: -0.005em;
@@ -1353,8 +1353,8 @@ margin: 0;
   width: fit-content;
   min-height: 49px;
 
-  margin-top: 31px;
-  padding: 0 22px;
+  margin-top: var(--ss-space-32);
+  padding: 0 var(--ss-space-22);
 
   display: inline-flex;
   align-items: center;
@@ -1383,7 +1383,7 @@ margin: 0;
   z-index: 1;
 
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  font-size: 12px;
+  font-size: var(--ss-text-12);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.16em;
@@ -1400,7 +1400,7 @@ margin: 0;
   display: inline-block;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 21px;
+  font-size: var(--ss-text-21);
   font-weight: 400;
   line-height: 1;
 
@@ -1463,7 +1463,7 @@ margin: 0;
   }
 
   .ss-reservation-title {
-    font-size: clamp(40px, 6vw, 50px);
+    font-size: clamp(var(--ss-text-40), 6vw, var(--ss-text-50));
   }
 }
 
@@ -1476,8 +1476,8 @@ margin: 0;
     min-height: 640px;
     max-height: 760px;
 
-    margin: 30px 0 0 !important;
-    padding: 72px 0 0 !important;
+    margin: var(--ss-space-28) 0 0 !important;
+    padding: var(--ss-space-72) 0 0 !important;
 
     align-items: flex-start;
     justify-content: center;
@@ -1520,39 +1520,39 @@ margin: 0;
   }
 
   .ss-reservation-eyebrow {
-    margin-bottom: 19px;
+    margin-bottom: var(--ss-space-18);
 
-    font-size: 12px;
+    font-size: var(--ss-text-12);
     letter-spacing: 0.22em;
   }
 
   .ss-reservation-title {
-    font-size: clamp(35px, 10vw, 40px);
+    font-size: clamp(var(--ss-text-35), 10vw, var(--ss-text-40));
     line-height: 0.94;
   }
 
   .ss-reservation-title-kr {
-    font-size: clamp(25px, 6vw, 30px);
+    font-size: clamp(var(--ss-text-25), 6vw, var(--ss-text-30));
     line-height: 1.4;
   }
 
   .ss-reservation-description {
-    margin-top: 25px;
+    margin-top: var(--ss-space-24);
 
-    font-size: 14px;
+    font-size: var(--ss-text-14);
     line-height: 1.85;
   }
 
   .ss-reservation-subtitle-kr {
-    font-size: 13px;
+    font-size: var(--ss-text-13);
     line-height: 1.6;
   }
 
   .ss-reservation-text-link {
     min-height: 48px;
 
-    margin-top: 23px;
-    padding: 0 18px;
+    margin-top: var(--ss-space-22);
+    padding: 0 var(--ss-space-18);
 
     gap: 15px;
 
@@ -1561,12 +1561,12 @@ margin: 0;
   }
 
   .ss-reservation-text-link-label {
-    font-size: 11.5px;
+    font-size: var(--ss-text-11);
     letter-spacing: 0.15em;
   }
 
   .ss-reservation-text-link-arrow {
-    font-size: 19px;
+    font-size: var(--ss-text-19);
   }
 }
 

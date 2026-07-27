@@ -29,7 +29,7 @@
       --ss-privacy-gold: #9b7944;
 
       width: 100%;
-      padding: clamp(55px, 7vw, 90px) 6vw clamp(100px, 10vw, 150px);
+      padding: clamp(var(--ss-space-56), 7vw, var(--ss-space-90)) 6vw clamp(var(--ss-space-96), 10vw, var(--ss-space-150));
       background: #f7f0ea;
       color: var(--ss-privacy-ink);
     }
@@ -41,9 +41,9 @@
     }
 
     .ss-privacy-eyebrow {
-      margin: 0 0 22px;
+      margin: 0 0 var(--ss-space-22);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 14px;
+      font-size: var(--ss-text-14);
       font-weight: 500;
       line-height: 1;
       letter-spacing: 0.24em;
@@ -53,7 +53,7 @@
     .ss-privacy-title {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(30px, 3.2vw, 40px);
+      font-size: clamp(var(--ss-text-30), 3.2vw, var(--ss-text-40));
       font-weight: 500;
       font-style: italic;
       line-height: 1.15;
@@ -62,9 +62,9 @@
     }
 
     .ss-privacy-updated {
-      margin: 18px 0 0;
+      margin: var(--ss-space-18) 0 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 14px;
+      font-size: var(--ss-text-14);
       font-weight: 500;
       font-style: italic;
       letter-spacing: 0.01em;
@@ -72,15 +72,15 @@
     }
 
     .ss-privacy-intro {
-      margin: clamp(40px, 5vw, 56px) 0 0;
-      padding-top: clamp(36px, 4.5vw, 48px);
+      margin: clamp(var(--ss-space-40), 5vw, var(--ss-space-56)) 0 0;
+      padding-top: clamp(var(--ss-space-36), 4.5vw, var(--ss-space-48));
       border-top: 1px solid var(--ss-privacy-line);
     }
 
     .ss-privacy-intro p {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 17px;
+      font-size: var(--ss-text-17);
       font-weight: 400;
       line-height: 1.85;
       letter-spacing: 0.003em;
@@ -88,15 +88,15 @@
     }
 
     .ss-privacy-article {
-      margin-top: clamp(46px, 5.5vw, 62px);
-      padding-top: clamp(36px, 4.5vw, 48px);
+      margin-top: clamp(var(--ss-space-48), 5.5vw, var(--ss-space-64));
+      padding-top: clamp(var(--ss-space-36), 4.5vw, var(--ss-space-48));
       border-top: 1px solid var(--ss-privacy-line);
     }
 
     .ss-privacy-article h2 {
-      margin: 0 0 18px;
+      margin: 0 0 var(--ss-space-18);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 13px;
+      font-size: var(--ss-text-13);
       font-weight: 500;
       letter-spacing: 0.18em;
       color: var(--ss-privacy-gold);
@@ -104,9 +104,9 @@
     }
 
     .ss-privacy-article h3 {
-      margin: 0 0 16px;
+      margin: 0 0 var(--ss-space-16);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(19px, 1.9vw, 22px);
+      font-size: clamp(var(--ss-text-19), 1.9vw, var(--ss-text-22));
       font-weight: 500;
       font-style: italic;
       line-height: 1.4;
@@ -117,7 +117,7 @@
     .ss-privacy-article p {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 17px;
+      font-size: var(--ss-text-17);
       font-weight: 400;
       line-height: 1.85;
       letter-spacing: 0.003em;
@@ -125,34 +125,34 @@
     }
 
     .ss-privacy-article p + p {
-      margin-top: 14px;
+      margin-top: var(--ss-space-14);
     }
 
     .ss-privacy-note {
-      margin-top: 16px;
-      font-size: 15px;
+      margin-top: var(--ss-space-16);
+      font-size: var(--ss-text-15);
       font-style: italic;
       color: var(--ss-privacy-muted-soft);
     }
 
     .ss-privacy-table {
       width: 100%;
-      margin: 22px 0 0;
+      margin: var(--ss-space-22) 0 0;
       border-collapse: collapse;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 16px;
+      font-size: var(--ss-text-16);
     }
 
     .ss-privacy-table th,
     .ss-privacy-table td {
-      padding: 14px 16px;
+      padding: var(--ss-space-14) var(--ss-space-16);
       text-align: left;
       border-top: 1px solid var(--ss-privacy-line);
       color: var(--ss-privacy-muted);
     }
 
     .ss-privacy-table th {
-      font-size: 12px;
+      font-size: var(--ss-text-12);
       font-weight: 500;
       letter-spacing: 0.14em;
       text-transform: uppercase;
@@ -163,9 +163,9 @@
     }
 
     .ss-privacy-contact {
-      margin-top: 18px;
+      margin-top: var(--ss-space-18);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 16px;
+      font-size: var(--ss-text-16);
       font-style: italic;
       line-height: 1.8;
       color: var(--ss-privacy-ink);
@@ -173,36 +173,36 @@
 
     @media (max-width: 767px) {
       .ss-privacy-section {
-        padding: 40px 22px 80px;
+        padding: var(--ss-space-40) var(--ss-space-22) var(--ss-space-80);
       }
 
       .ss-privacy-title {
-        font-size: 27px;
+        font-size: var(--ss-text-27);
       }
 
       .ss-privacy-intro,
       .ss-privacy-article {
-        margin-top: 34px;
-        padding-top: 28px;
+        margin-top: var(--ss-space-32);
+        padding-top: var(--ss-space-28);
       }
 
       .ss-privacy-article h3 {
-        font-size: 18px;
+        font-size: var(--ss-text-18);
       }
 
       .ss-privacy-article p,
       .ss-privacy-intro p {
-        font-size: 15px;
+        font-size: var(--ss-text-15);
         line-height: 1.75;
       }
 
       .ss-privacy-table {
-        font-size: 14px;
+        font-size: var(--ss-text-14);
       }
 
       .ss-privacy-table th,
       .ss-privacy-table td {
-        padding: 11px 12px;
+        padding: var(--ss-space-10) var(--ss-space-12);
       }
     }
   </style>

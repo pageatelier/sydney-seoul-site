@@ -27,7 +27,7 @@
       --ss-info-gap: clamp(28px, 3.6vw, 46px);
 
       width: 100%;
-      padding: clamp(35px, 4vw, 60px) 6vw clamp(70px, 8vw, 100px);
+      padding: clamp(var(--ss-space-36), 4vw, var(--ss-space-56)) 6vw clamp(var(--ss-space-72), 8vw, var(--ss-space-96));
       overflow: hidden;
       background: #f7f0ea;
       color: var(--ss-info-ink);
@@ -40,14 +40,14 @@
     }
 
     .ss-visit-info-header {
-      margin-bottom: clamp(58px, 7vw, 88px);
+      margin-bottom: clamp(var(--ss-space-56), 7vw, var(--ss-space-90));
       text-align: center;
     }
 
     .ss-visit-info-eyebrow {
-      margin: 0 0 22px;
+      margin: 0 0 var(--ss-space-22);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 14px;
+      font-size: var(--ss-text-14);
       font-weight: 500;
       line-height: 1;
       letter-spacing: 0.22em;
@@ -57,7 +57,7 @@
     .ss-visit-info-title {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(32px, 3.1vw, 44px) !important;
+      font-size: clamp(var(--ss-text-32), 3.1vw, var(--ss-text-42)) !important;
       font-weight: 500;
       font-style: italic !important;
       line-height: 1.08;
@@ -79,7 +79,7 @@
       width: 100%;
       max-width: calc(var(--ss-info-label-w) + var(--ss-info-gap) + var(--ss-info-content-w));
 
-      padding: clamp(40px, 4.6vw, 54px) 0;
+      padding: clamp(var(--ss-space-40), 4.6vw, var(--ss-space-56)) 0;
       border-top: 1px solid var(--ss-info-line);
     }
 
@@ -100,9 +100,9 @@
        한 줄짜리 영문 제목만 이탤릭 세리프로 표시합니다. */
     .ss-visit-info-label h2 {
       margin: 0;
-      padding-top: 6px;
+      padding-top: var(--ss-space-6);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(19px, 2vw, 24px);
+      font-size: clamp(var(--ss-text-19), 2vw, var(--ss-text-24));
       font-weight: 500;
       font-style: italic;
       line-height: 1.4;
@@ -112,13 +112,13 @@
 
     .ss-visit-info-content {
       min-width: 0;
-      padding-top: 3px;
+      padding-top: var(--ss-space-2);
     }
 
     .ss-visit-info-content p {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 17px;
+      font-size: var(--ss-text-17);
       font-weight: 400;
       line-height: 1.75;
       letter-spacing: 0.005em;
@@ -126,7 +126,7 @@
     }
 
     .ss-visit-info-content .ss-visit-info-time {
-      font-size: clamp(25px, 2.3vw, 29px);
+      font-size: clamp(var(--ss-text-25), 2.3vw, var(--ss-text-28));
       font-weight: 400;
       line-height: 1.25;
       letter-spacing: 0.01em;
@@ -134,13 +134,13 @@
     }
 
     .ss-visit-info-content .ss-visit-info-detail {
-      margin-top: 16px;
+      margin-top: var(--ss-space-16);
       color: rgba(40, 35, 31, 0.86);
     }
 
     .ss-visit-info-content .ss-visit-info-subtext {
-      margin-top: 18px;
-      font-size: 14.5px;
+      margin-top: var(--ss-space-18);
+      font-size: var(--ss-text-14);
       font-style: italic;
       line-height: 1.75;
       letter-spacing: 0.005em;
@@ -165,24 +165,24 @@
 
 
     @media (max-width: 767px) {
-      .ss-visit-info-section { padding: 28px 22px 65px; }
-      .ss-visit-info-header { margin-bottom: 48px; }
-      .ss-visit-info-eyebrow { margin-bottom: 16px; font-size: 12px; letter-spacing: 0.18em; }
-      .ss-visit-info-title { font-size: 28px; }
+      .ss-visit-info-section { padding: var(--ss-space-28) var(--ss-space-22) var(--ss-space-64); }
+      .ss-visit-info-header { margin-bottom: var(--ss-space-48); }
+      .ss-visit-info-eyebrow { margin-bottom: var(--ss-space-16); font-size: var(--ss-text-12); letter-spacing: 0.18em; }
+      .ss-visit-info-title { font-size: var(--ss-text-28); }
       .ss-visit-info-list { align-items: stretch; }
-      .ss-visit-info-row { grid-template-columns: 1fr; max-width: none; row-gap: 10px; padding: 32px 0; }
+      .ss-visit-info-row { grid-template-columns: 1fr; max-width: none; row-gap: 10px; padding: var(--ss-space-32) 0; }
       .ss-visit-info-label { text-align: center; }
-      .ss-visit-info-label h2 { padding-top: 0; font-size: 19px; }
+      .ss-visit-info-label h2 { padding-top: 0; font-size: var(--ss-text-19); }
       .ss-visit-info-content { text-align: center;padding-top: 0; }
-      .ss-visit-info-content p { font-size: 15px; line-height: 1.7; }
-      .ss-visit-info-content .ss-visit-info-time { font-size: 22px; }
-      .ss-visit-info-content .ss-visit-info-subtext { margin-top: 12px; font-size: 13.5px; line-height: 1.65; }
+      .ss-visit-info-content p { font-size: var(--ss-text-15); line-height: 1.7; }
+      .ss-visit-info-content .ss-visit-info-time { font-size: var(--ss-text-22); }
+      .ss-visit-info-content .ss-visit-info-subtext { margin-top: var(--ss-space-12); font-size: var(--ss-text-13); line-height: 1.65; }
       .ss-visit-info-section .ss-visit-reveal { transform: translate3d(0, 16px, 0); }
     }
 
     @media (max-width: 374px) {
-      .ss-visit-info-section { padding-left: 18px; padding-right: 18px; }
-      .ss-visit-info-title { font-size: 26px; }
+      .ss-visit-info-section { padding-left: var(--ss-space-18); padding-right: var(--ss-space-18); }
+      .ss-visit-info-title { font-size: var(--ss-text-26); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -206,7 +206,7 @@
       --ss-location-gold: #9b7944;
 
       width: 100%;
-      padding: clamp(55px, 7vw, 90px) 6vw clamp(105px, 10vw, 155px);
+      padding: clamp(var(--ss-space-56), 7vw, var(--ss-space-90)) 6vw clamp(var(--ss-space-105), 10vw, var(--ss-space-150));
       overflow: hidden;
       background: #f7f0ea;
       color: var(--ss-location-ink);
@@ -221,11 +221,11 @@
     .ss-location-header {
         display: block;
         text-align: center;
-        margin-bottom: clamp(42px, 5.5vw, 66px);  
+        margin-bottom: clamp(var(--ss-space-40), 5.5vw, var(--ss-space-64));  
     }
 
     .ss-location-heading {
-  margin-bottom: 20px;
+  margin-bottom: var(--ss-space-20);
 }
 
     .ss-location-address {
@@ -239,9 +239,9 @@
     }
 
     .ss-location-eyebrow {
-      margin: 0 0 26px;
+      margin: 0 0 var(--ss-space-24);
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 15px;
+      font-size: var(--ss-text-15);
       font-weight: 500;
       line-height: 1;
       letter-spacing: 0.22em;
@@ -251,7 +251,7 @@
     .ss-location-title {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: clamp(32px, 3.1vw, 42px) !important;
+      font-size: clamp(var(--ss-text-32), 3.1vw, var(--ss-text-42)) !important;
       font-weight: 400;
       font-style: italic !important;
       line-height: 1;
@@ -261,14 +261,14 @@
 
     .ss-location-address {
       margin: 0;
-      padding-top: 25px;
+      padding-top: var(--ss-space-24);
       font-style: normal;
     }
 
     .ss-location-address p {
       margin: 0;
       font-family: "Cormorant Garamond", Georgia, serif;
-      font-size: 16px;
+      font-size: var(--ss-text-16);
       font-weight: 500;
       line-height: 1.7;
       letter-spacing: 0.01em;
@@ -318,18 +318,18 @@
 
 
     @media (max-width: 767px) {
-      .ss-location-section { padding: 55px 22px 90px; }
-      .ss-location-header { display: block; margin-bottom: 35px; }
-      .ss-location-heading { margin-bottom: 20px; }
-      .ss-location-eyebrow { margin-bottom: 18px; font-size: 12px; line-height: 1; letter-spacing: 0.19em; }
-      .ss-location-title { font-size: 30px; }
-      .ss-location-address { margin: 0; padding-top: 10px; }
-      .ss-location-address p { font-size: 15px; line-height: 1.7; }
+      .ss-location-section { padding: var(--ss-space-56) var(--ss-space-22) var(--ss-space-90); }
+      .ss-location-header { display: block; margin-bottom: var(--ss-space-36); }
+      .ss-location-heading { margin-bottom: var(--ss-space-20); }
+      .ss-location-eyebrow { margin-bottom: var(--ss-space-18); font-size: var(--ss-text-12); line-height: 1; letter-spacing: 0.19em; }
+      .ss-location-title { font-size: var(--ss-text-30); }
+      .ss-location-address { margin: 0; padding-top: var(--ss-space-10); }
+      .ss-location-address p { font-size: var(--ss-text-15); line-height: 1.7; }
       .ss-location-map-wrap { min-height: 360px; aspect-ratio: 4 / 4.6; }
     }
 
     @media (max-width: 374px) {
-      .ss-location-section { padding-left: 18px; padding-right: 18px; }
+      .ss-location-section { padding-left: var(--ss-space-18); padding-right: var(--ss-space-18); }
     }
 
     @media (prefers-reduced-motion: reduce) {
@@ -497,7 +497,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-logo {
   justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  font-size: var(--ss-text-23); font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
   opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
 }
 .ss-pc-menu {
@@ -505,8 +505,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
 }
 .ss-pc-menu a {
-  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
-  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  position: relative; padding: var(--ss-space-14) 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: var(--ss-text-12); font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
   white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
 }
 .ss-pc-menu a::after {
@@ -522,7 +522,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-language {
   display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
-  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+  font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; line-height: 1; letter-spacing: 0.08em;
 }
 .ss-pc-language-link {
   width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
@@ -544,23 +544,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .ss-mobile-header, .ss-mobile-nav { display: none; }
 
 @media (min-width: 768px) and (max-width: 1100px) {
-  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
-  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 var(--ss-space-28); }
+  .ss-pc-logo { font-size: var(--ss-text-17); letter-spacing: 0.16em; }
   .ss-pc-menu { gap: 22px; }
-  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-menu a { font-size: var(--ss-text-10); letter-spacing: 0.1em; }
   .ss-pc-actions { gap: 14px; }
-  .ss-pc-language { gap: 6px; font-size: 9px; }
+  .ss-pc-language { gap: 6px; font-size: var(--ss-text-9); }
 }
 
 @media (max-width: 767px) {
   .ss-pc-header { display: none; }
   .ss-mobile-header {
-    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 68px; padding: 0 var(--ss-space-72) 0 var(--ss-space-20); display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
 .ss-mobile-logo {
   position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: var(--ss-text-18); font-weight: 600; line-height: 1;
   letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
 }
   .ss-mobile-nav { display: block; }
@@ -619,7 +619,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
-    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    padding: var(--ss-space-28) var(--ss-space-20) var(--ss-space-40); border-radius: 2px; background: rgba(252, 243, 233, 0.88);
     box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
     scrollbar-width: thin; scrollbar-color: rgba(161, 135, 101, 0.42) transparent; -webkit-overflow-scrolling: touch;
@@ -631,34 +631,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ss-menu-list { margin: 0; padding: 0; list-style: none; }
   .ss-menu-list li { margin: 0; padding: 0; }
   .ss-menu-list a {
-    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
-    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    width: 100%; min-height: 45px; padding: var(--ss-space-12) var(--ss-space-8); display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 410;
     line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
     transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
   .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
   .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
 
-  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-wrap { margin: var(--ss-space-20) 0 var(--ss-space-2); display: flex; justify-content: center; align-items: center; gap: 10px; }
   .ss-language-circle {
     width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
     border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
-    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+    font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; letter-spacing: .08em; transition: .3s;
   }
   .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
   .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
 
   .ss-menu-section-title {
-    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+    margin: var(--ss-space-28) 0 var(--ss-space-18); color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: var(--ss-text-14); font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
   }
   .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
   .ss-menu-reservation {
-    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    width: 100%; min-height: 42px; padding: 0 var(--ss-space-18); border: 1px solid var(--ss-gold); border-radius: 0;
     display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
     text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
-  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
   .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
   .ss-menu-reservation:active { transform: scale(0.985); }
 
@@ -666,12 +666,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 380px) {
-  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
-  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
-  .ss-menu-list a { min-height: 49px; font-size: 11px; }
-  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
-  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
-  .ss-menu-reservation span { font-size: 11px; }
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: var(--ss-text-15); letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: var(--ss-space-28) var(--ss-space-16) var(--ss-space-40); }
+  .ss-menu-list a { min-height: 49px; font-size: var(--ss-text-11); }
+  .ss-menu-section-title { margin-top: var(--ss-space-22); font-size: var(--ss-text-13); }
+  .ss-menu-reservation { min-height: 44px; padding: 0 var(--ss-space-14); }
+  .ss-menu-reservation span { font-size: var(--ss-text-11); }
 }
 
 html.ss-sub-page .ss-pc-logo,
@@ -684,8 +684,8 @@ html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important
 html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
 html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
 html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
-html.ss-sub-page body { padding-top: 96px; }
-@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+html.ss-sub-page body { padding-top: var(--ss-space-96); }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: var(--ss-space-64); } }
 </style>
 
 <script>
@@ -1159,10 +1159,10 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-reservation-eyebrow {
-  margin: 0 0 24px;
+  margin: 0 0 var(--ss-space-24);
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 14px;
+  font-size: var(--ss-text-14);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.25em;
@@ -1174,7 +1174,7 @@ html.ss-sub-page body { padding-top: 96px; }
   margin: 0;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(40px, 5.5vw, 50px);
+  font-size: clamp(var(--ss-text-40), 5.5vw, var(--ss-text-50));
   font-weight: 500;
   line-height: 0.93;
   letter-spacing: -0.035em;
@@ -1187,10 +1187,10 @@ html.ss-sub-page body { padding-top: 96px; }
 }
 
 .ss-reservation-subtitle {
-  margin: 18px 0 0;
+  margin: var(--ss-space-18) 0 0;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 15px;
+  font-size: var(--ss-text-15);
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: 0.02em;
@@ -1206,8 +1206,8 @@ html.ss-sub-page body { padding-top: 96px; }
   width: fit-content;
   min-height: 49px;
 
-  margin-top: 31px;
-  padding: 0 22px;
+  margin-top: var(--ss-space-32);
+  padding: 0 var(--ss-space-22);
 
   display: inline-flex;
   align-items: center;
@@ -1236,7 +1236,7 @@ html.ss-sub-page body { padding-top: 96px; }
   z-index: 1;
 
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 12px;
+  font-size: var(--ss-text-12);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.16em;
@@ -1253,7 +1253,7 @@ html.ss-sub-page body { padding-top: 96px; }
   display: inline-block;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 21px;
+  font-size: var(--ss-text-21);
   font-weight: 400;
   line-height: 1;
 
@@ -1316,7 +1316,7 @@ html.ss-sub-page body { padding-top: 96px; }
   }
 
   .ss-reservation-title {
-    font-size: clamp(40px, 6vw, 50px);
+    font-size: clamp(var(--ss-text-40), 6vw, var(--ss-text-50));
   }
 }
 
@@ -1329,8 +1329,8 @@ html.ss-sub-page body { padding-top: 96px; }
     min-height: 640px;
     max-height: 760px;
 
-    margin: 30px 0 0 !important;
-    padding: 72px 0 0 !important;
+    margin: var(--ss-space-28) 0 0 !important;
+    padding: var(--ss-space-72) 0 0 !important;
 
     align-items: flex-start;
     justify-content: center;
@@ -1373,28 +1373,28 @@ html.ss-sub-page body { padding-top: 96px; }
   }
 
   .ss-reservation-eyebrow {
-    margin-bottom: 19px;
+    margin-bottom: var(--ss-space-18);
 
-    font-size: 12px;
+    font-size: var(--ss-text-12);
     letter-spacing: 0.22em;
   }
 
   .ss-reservation-title {
-    font-size: clamp(35px, 10vw, 40px);
+    font-size: clamp(var(--ss-text-35), 10vw, var(--ss-text-40));
     line-height: 0.94;
   }
 
   .ss-reservation-subtitle {
-    margin-top: 20px;
-    font-size: 13px;
+    margin-top: var(--ss-space-20);
+    font-size: var(--ss-text-13);
     line-height: 1.7;
   }
 
   .ss-reservation-text-link {
     min-height: 48px;
 
-    margin-top: 23px;
-    padding: 0 18px;
+    margin-top: var(--ss-space-22);
+    padding: 0 var(--ss-space-18);
 
     gap: 15px;
 
@@ -1403,12 +1403,12 @@ html.ss-sub-page body { padding-top: 96px; }
   }
 
   .ss-reservation-text-link-label {
-    font-size: 11.5px;
+    font-size: var(--ss-text-11);
     letter-spacing: 0.15em;
   }
 
   .ss-reservation-text-link-arrow {
-    font-size: 19px;
+    font-size: var(--ss-text-19);
   }
 }
 

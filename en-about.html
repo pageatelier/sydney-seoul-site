@@ -146,7 +146,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-logo {
   justify-self: start; color: #ffffff !important; font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 23px; font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
+  font-size: var(--ss-text-23); font-weight: 500; line-height: 1; letter-spacing: 0.18em; white-space: nowrap;
   opacity: 0; transform: translateY(-5px); animation: ssHeaderReveal 0.8s ease 0.08s forwards;
 }
 .ss-pc-menu {
@@ -154,8 +154,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
   opacity: 0; animation: ssHeaderReveal 0.8s ease 0.22s forwards;
 }
 .ss-pc-menu a {
-  position: relative; padding: 14px 0; color: inherit; font-family: "Pretendard", sans-serif;
-  font-size: 12px; font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
+  position: relative; padding: var(--ss-space-14) 0; color: inherit; font-family: "Pretendard", sans-serif;
+  font-size: var(--ss-text-12); font-weight: 500; line-height: 1; letter-spacing: 0.12em; text-transform: uppercase;
   white-space: nowrap; transition: color 0.25s ease, opacity 0.25s ease;
 }
 .ss-pc-menu a::after {
@@ -171,7 +171,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 .ss-pc-language {
   display: inline-flex; align-items: center; gap: 8px; color: rgba(255, 255, 255, 0.42);
-  font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; line-height: 1; letter-spacing: 0.08em;
+  font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; line-height: 1; letter-spacing: 0.08em;
 }
 .ss-pc-language-link {
   width: 32px; height: 32px; display: inline-flex; align-items: center; justify-content: center;
@@ -193,23 +193,23 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .ss-mobile-header, .ss-mobile-nav { display: none; }
 
 @media (min-width: 768px) and (max-width: 1100px) {
-  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 28px; }
-  .ss-pc-logo { font-size: 17px; letter-spacing: 0.16em; }
+  .ss-pc-header { grid-template-columns: 170px auto 238px; padding: 0 var(--ss-space-28); }
+  .ss-pc-logo { font-size: var(--ss-text-17); letter-spacing: 0.16em; }
   .ss-pc-menu { gap: 22px; }
-  .ss-pc-menu a { font-size: 10px; letter-spacing: 0.1em; }
+  .ss-pc-menu a { font-size: var(--ss-text-10); letter-spacing: 0.1em; }
   .ss-pc-actions { gap: 14px; }
-  .ss-pc-language { gap: 6px; font-size: 9px; }
+  .ss-pc-language { gap: 6px; font-size: var(--ss-text-9); }
 }
 
 @media (max-width: 767px) {
   .ss-pc-header { display: none; }
   .ss-mobile-header {
-    width: 100%; height: 68px; padding: 0 70px 0 20px; display: flex; align-items: center; justify-content: center;
+    width: 100%; height: 68px; padding: 0 var(--ss-space-72) 0 var(--ss-space-20); display: flex; align-items: center; justify-content: center;
     transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
   }
 .ss-mobile-logo {
   position: absolute; top: 50%; left: 50%; max-width: calc(100% - 150px); color: #ffffff !important;
-  font-family: "Cormorant Garamond", Georgia, serif; font-size: 18px; font-weight: 600; line-height: 1;
+  font-family: "Cormorant Garamond", Georgia, serif; font-size: var(--ss-text-18); font-weight: 600; line-height: 1;
   letter-spacing: 0.17em; white-space: nowrap; transform: translate(-50%, -35%);
 }
   .ss-mobile-nav { display: block; }
@@ -268,7 +268,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
 
   .ss-menu-panel {
     position: absolute; top: 50%; left: 50%; width: calc(100% - 72px); max-width: 390px; max-height: calc(100% - 100px);
-    padding: 30px 20px 42px; border-radius: 2px; background: rgba(252, 243, 233, 0.88);
+    padding: var(--ss-space-28) var(--ss-space-20) var(--ss-space-40); border-radius: 2px; background: rgba(252, 243, 233, 0.88);
     box-shadow: 0 22px 54px rgba(111, 86, 54, 0.12); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px);
     overflow-y: auto; overscroll-behavior: contain; transform: translate(-50%, -50%);
     scrollbar-width: thin; scrollbar-color: rgba(161, 135, 101, 0.42) transparent; -webkit-overflow-scrolling: touch;
@@ -280,34 +280,34 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .ss-menu-list { margin: 0; padding: 0; list-style: none; }
   .ss-menu-list li { margin: 0; padding: 0; }
   .ss-menu-list a {
-    width: 100%; min-height: 45px; padding: 13px 8px; display: flex; align-items: center; justify-content: center;
-    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 410;
+    width: 100%; min-height: 45px; padding: var(--ss-space-12) var(--ss-space-8); display: flex; align-items: center; justify-content: center;
+    color: var(--ss-espresso); font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 410;
     line-height: 1.2; letter-spacing: 0.12em; text-align: center; text-transform: uppercase;
     transition: background-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
   .ss-menu-list a:hover { color: var(--ss-deep-bronze); background: rgba(226, 214, 204, 0.42); }
   .ss-menu-list a:active { background: rgba(226, 214, 204, 0.62); transform: scale(0.985); }
 
-  .ss-language-wrap { margin: 20px 0 2px; display: flex; justify-content: center; align-items: center; gap: 10px; }
+  .ss-language-wrap { margin: var(--ss-space-20) 0 var(--ss-space-2); display: flex; justify-content: center; align-items: center; gap: 10px; }
   .ss-language-circle {
     width: 36px; height: 36px; border-radius: 50%; display: flex; justify-content: center; align-items: center;
     border: 1px solid rgba(161,135,101,.7); background: rgba(255,255,255,.25); color: var(--ss-deep-bronze);
-    font-family: "Pretendard", sans-serif; font-size: 10px; font-weight: 500; letter-spacing: .08em; transition: .3s;
+    font-family: "Pretendard", sans-serif; font-size: var(--ss-text-10); font-weight: 500; letter-spacing: .08em; transition: .3s;
   }
   .ss-language-circle:hover { transform: translateY(-2px); background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
   .ss-language-circle.active { background: var(--ss-gold); color: #fff; border-color: var(--ss-gold); }
 
   .ss-menu-section-title {
-    margin: 30px 0 18px; color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
-    font-size: 14px; font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
+    margin: var(--ss-space-28) 0 var(--ss-space-18); color: var(--ss-gold); font-family: "Cormorant Garamond", Georgia, serif;
+    font-size: var(--ss-text-14); font-weight: 700; line-height: 1; letter-spacing: 0.16em; text-align: center; text-transform: uppercase;
   }
   .ss-menu-reservation-wrap { display: flex; flex-direction: column; gap: 10px; }
   .ss-menu-reservation {
-    width: 100%; min-height: 42px; padding: 0 18px; border: 1px solid var(--ss-gold); border-radius: 0;
+    width: 100%; min-height: 42px; padding: 0 var(--ss-space-18); border: 1px solid var(--ss-gold); border-radius: 0;
     display: flex; align-items: center; justify-content: center; color: var(--ss-deep-bronze); background: transparent;
     text-align: center; transition: background-color 0.25s ease, border-color 0.25s ease, color 0.25s ease, transform 0.25s ease;
   }
-  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
+  .ss-menu-reservation span { font-family: "Pretendard", sans-serif; font-size: var(--ss-text-13); font-weight: 500; line-height: 1.35; letter-spacing: 0.07em; }
   .ss-menu-reservation:hover { border-color: var(--ss-gold); background: var(--ss-gold); color: var(--ss-soft-ivory); }
   .ss-menu-reservation:active { transform: scale(0.985); }
 
@@ -315,12 +315,12 @@ button, a { -webkit-tap-highlight-color: transparent; }
 }
 
 @media (max-width: 380px) {
-  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: 15px; letter-spacing: 0.15em; }
-  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: 28px 17px 41px; }
-  .ss-menu-list a { min-height: 49px; font-size: 11px; }
-  .ss-menu-section-title { margin-top: 22px; font-size: 13px; }
-  .ss-menu-reservation { min-height: 44px; padding: 0 14px; }
-  .ss-menu-reservation span { font-size: 11px; }
+  .ss-mobile-logo { max-width: calc(100% - 135px); font-size: var(--ss-text-15); letter-spacing: 0.15em; }
+  .ss-menu-panel { max-height: calc(100% - 76px); width: calc(100% - 44px); padding: var(--ss-space-28) var(--ss-space-16) var(--ss-space-40); }
+  .ss-menu-list a { min-height: 49px; font-size: var(--ss-text-11); }
+  .ss-menu-section-title { margin-top: var(--ss-space-22); font-size: var(--ss-text-13); }
+  .ss-menu-reservation { min-height: 44px; padding: 0 var(--ss-space-14); }
+  .ss-menu-reservation span { font-size: var(--ss-text-11); }
 }
 
 html.ss-sub-page .ss-pc-logo,
@@ -333,8 +333,8 @@ html.ss-sub-page .ss-pc-language-link { color: rgba(40, 35, 31, 0.46) !important
 html.ss-sub-page .ss-pc-language-link.active { color: #ffffff !important; background: var(--ss-gold); border-color: var(--ss-gold); }
 html.ss-sub-page .ss-pc-menu a:hover, html.ss-sub-page .ss-pc-language-link:hover { color: var(--ss-deep-bronze) !important; }
 html.ss-sub-page .ss-pc-language-link.active:hover { color: #ffffff !important; }
-html.ss-sub-page body { padding-top: 96px; }
-@media (max-width: 767px) { html.ss-sub-page body { padding-top: 68px; } }
+html.ss-sub-page body { padding-top: var(--ss-space-96); }
+@media (max-width: 767px) { html.ss-sub-page body { padding-top: var(--ss-space-64); } }
 </style>
 
 <script>
@@ -535,22 +535,22 @@ html.ss-sub-page body { padding-top: 96px; }
   margin: 0 auto;
 
   padding:
-    clamp(20px, 3vw, 32px)
-    clamp(24px, 6vw, 60px)
-    clamp(90px, 9vw, 130px);
+    clamp(var(--ss-space-20), 3vw, var(--ss-space-32))
+    clamp(var(--ss-space-24), 6vw, var(--ss-space-56))
+    clamp(var(--ss-space-90), 9vw, var(--ss-space-135));
 
   text-align: center;
 }
 
 .ss-brand-story .ss-brand-story-heading {
   padding-top: 0;
-  margin-bottom: clamp(26px, 4vw, 38px);
+  margin-bottom: clamp(var(--ss-space-24), 4vw, var(--ss-space-36));
 }
 
 .ss-brand-story .ss-brand-story-eyebrow {
-  margin: 0 0 20px;
+  margin: 0 0 var(--ss-space-20);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 14px;
+  font-size: var(--ss-text-14);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.3em;
@@ -561,7 +561,7 @@ html.ss-sub-page body { padding-top: 96px; }
   margin: 0;
   padding-right: 0.05em; /* 이탤릭 기울기가 넘치는 만큼 여유 공간 확보 */
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(32px, 3.1vw, 42px);
+  font-size: clamp(var(--ss-text-32), 3.1vw, var(--ss-text-42));
   font-weight: 500;
   font-style: italic;
   line-height: 1.08;
@@ -583,7 +583,7 @@ html.ss-sub-page body { padding-top: 96px; }
 .ss-brand-story .ss-brand-story-description p {
   margin: 0;
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  font-size: 16px;
+  font-size: var(--ss-text-16);
   font-weight: 300;
   line-height: 1.95;
   letter-spacing: -0.005em;
@@ -594,7 +594,7 @@ html.ss-sub-page body { padding-top: 96px; }
 
 .ss-brand-story .ss-brand-story-illustration {
   width: min(100%, 480px);
-  margin: clamp(30px, 4vw, 48px) auto 0;
+  margin: clamp(var(--ss-space-28), 4vw, var(--ss-space-48)) auto 0;
   pointer-events: none;
 }
 
@@ -626,30 +626,30 @@ html.ss-sub-page body { padding-top: 96px; }
 @media (max-width: 767px) {
   .ss-brand-story .ss-brand-story-inner {
     padding:
-      16px
-      22px
-      76px;
+      var(--ss-space-16)
+      var(--ss-space-22)
+      var(--ss-space-72);
   }
 
   .ss-brand-story .ss-brand-story-heading {
-    margin-bottom: 30px;
+    margin-bottom: var(--ss-space-28);
   }
 
   .ss-brand-story .ss-brand-story-eyebrow {
-    margin-bottom: 16px;
-    font-size: 12px;
+    margin-bottom: var(--ss-space-16);
+    font-size: var(--ss-text-12);
     font-weight: 500;
     line-height: 1;
     letter-spacing: 0.26em;
   }
 
   .ss-brand-story .ss-brand-story-en-title {
-    font-size: 28px;
+    font-size: var(--ss-text-28);
     line-height: 1.1;
   }
 
   .ss-brand-story .ss-brand-story-description p {
-    font-size: 14px;
+    font-size: var(--ss-text-14);
     font-weight: 300;
     line-height: 1.85;
     letter-spacing: -0.005em;
@@ -665,7 +665,7 @@ html.ss-sub-page body { padding-top: 96px; }
 
   .ss-brand-story .ss-brand-story-illustration {
     width: min(100%, 280px);
-    margin-top: 30px;
+    margin-top: var(--ss-space-28);
   }
 
   .ss-brand-story .ss-brand-story-illustration-image {
@@ -675,12 +675,12 @@ html.ss-sub-page body { padding-top: 96px; }
 
 @media (max-width: 374px) {
   .ss-brand-story .ss-brand-story-inner {
-    padding-left: 18px;
-    padding-right: 18px;
+    padding-left: var(--ss-space-18);
+    padding-right: var(--ss-space-18);
   }
 
   .ss-brand-story .ss-brand-story-en-title {
-    font-size: 26px;
+    font-size: var(--ss-text-26);
   }
 
   .ss-brand-story .ss-brand-story-illustration {
@@ -818,18 +818,18 @@ html.ss-sub-page body { padding-top: 96px; }
 .ss-chef-profile-inner {
   width: min(100%, 980px);
   margin: 0 auto;
-  padding: clamp(40px, 5vw, 60px) clamp(32px, 6.5vw, 105px) clamp(70px, 8vw, 90px);
+  padding: clamp(var(--ss-space-40), 5vw, var(--ss-space-56)) clamp(var(--ss-space-32), 6.5vw, var(--ss-space-105)) clamp(var(--ss-space-72), 8vw, var(--ss-space-90));
 }
 
 .ss-chef-profile-header {
-    margin-bottom: clamp(36px, 5vw, 56px);
+    margin-bottom: clamp(var(--ss-space-36), 5vw, var(--ss-space-56));
 }
 
 
 .ss-chef-profile-en-title {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(32px, 3.1vw, 42px);
+  font-size: clamp(var(--ss-text-32), 3.1vw, var(--ss-text-42));
   font-weight: 500;
   font-style: italic;
   line-height: 1.08;
@@ -933,7 +933,7 @@ display: grid;
 
 .ss-chef-profile-placeholder span {
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 10px;
+  font-size: var(--ss-text-10);
   font-weight: 500;
   letter-spacing: 0.2em;
   color: rgba(40, 35, 31, 0.38);
@@ -954,7 +954,7 @@ display: grid;
 
 .ss-chef-profile-name strong {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(25px, 2.4vw, 34px);
+  font-size: clamp(var(--ss-text-25), 2.4vw, var(--ss-text-34));
   font-weight: 500;
   line-height: 1;
   letter-spacing: -0.01em;
@@ -963,7 +963,7 @@ display: grid;
 
 .ss-chef-profile-name span {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 16px;
+  font-size: var(--ss-text-16);
   font-weight: 500;
   font-style: italic;
   line-height: 1.2;
@@ -972,14 +972,14 @@ display: grid;
 }
 
 .ss-chef-profile-description {
-  margin-top: clamp(24px, 3.2vw, 32px);
+  margin-top: clamp(var(--ss-space-24), 3.2vw, var(--ss-space-32));
   padding-top: 0;
 }
 
 .ss-chef-profile-description p {
   margin: 0;
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
+  font-size: var(--ss-text-16);
   font-weight: 300;
   line-height: 1.85;
   letter-spacing: -0.005em;
@@ -988,7 +988,7 @@ display: grid;
 }
 
 .ss-chef-profile-description p + p {
-  margin-top: 16px;
+  margin-top: var(--ss-space-16);
 }
 
 .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal {
@@ -1008,7 +1008,7 @@ display: grid;
 }
 
 @media (max-width: 1050px) and (min-width: 901px) {
-  .ss-chef-profile-inner { padding: 48px 48px 90px; }
+  .ss-chef-profile-inner { padding: var(--ss-space-48) var(--ss-space-48) var(--ss-space-90); }
   .ss-chef-profile-grid {
     grid-template-columns: minmax(370px, 0.95fr) minmax(390px, 1.05fr);
     column-gap: 75px;
@@ -1016,7 +1016,7 @@ display: grid;
 }
 
 @media (max-width: 900px) and (min-width: 768px) {
-  .ss-chef-profile-inner { padding: 42px 48px 90px; }
+  .ss-chef-profile-inner { padding: var(--ss-space-40) var(--ss-space-48) var(--ss-space-90); }
   .ss-chef-profile-grid {
     grid-template-columns: 1fr;
     row-gap: 52px;
@@ -1030,33 +1030,33 @@ display: grid;
   }
   .ss-chef-profile-content { width: 100%; margin: 0; }
   .ss-chef-profile-name { gap: 6px; }
-  .ss-chef-profile-name strong { font-size: 24px; }
-  .ss-chef-profile-name span { font-size: 15px; }
+  .ss-chef-profile-name strong { font-size: var(--ss-text-24); }
+  .ss-chef-profile-name span { font-size: var(--ss-text-15); }
 }
 
 @media (max-width: 767px) {
-  .ss-chef-profile-inner { width: 100%; padding: 24px 22px 76px !important; }
-  .ss-chef-profile-header { margin-bottom: 38px; }
-  .ss-chef-profile-en-title { font-size: 30px; }
+  .ss-chef-profile-inner { width: 100%; padding: var(--ss-space-24) var(--ss-space-22) var(--ss-space-72) !important; }
+  .ss-chef-profile-header { margin-bottom: var(--ss-space-36); }
+  .ss-chef-profile-en-title { font-size: var(--ss-text-30); }
   .ss-chef-profile-grid { display: grid; grid-template-columns: 1fr; row-gap: 36px; justify-items: center; }
   .ss-chef-profile-visual { width: min(88%, 420px); margin: 0 auto; justify-self: center; }
   .ss-chef-profile-image-wrap { aspect-ratio: 4 / 5.15; }
   .ss-chef-profile-content { width: 100%; max-width: none; margin: 0; }
   .ss-chef-profile-name { gap: 6px; }
-  .ss-chef-profile-name strong { font-size: 24px; }
-  .ss-chef-profile-name span { font-size: 15px; }
-  .ss-chef-profile-description { margin-top: 20px; padding-top: 23px; }
-  .ss-chef-profile-description p { font-size: 14px; line-height: 1.85; letter-spacing: -0.005em; text-align: center;}
-  .ss-chef-profile-description p + p { margin-top: 20px; }
+  .ss-chef-profile-name strong { font-size: var(--ss-text-24); }
+  .ss-chef-profile-name span { font-size: var(--ss-text-15); }
+  .ss-chef-profile-description { margin-top: var(--ss-space-20); padding-top: var(--ss-space-22); }
+  .ss-chef-profile-description p { font-size: var(--ss-text-14); line-height: 1.85; letter-spacing: -0.005em; text-align: center;}
+  .ss-chef-profile-description p + p { margin-top: var(--ss-space-20); }
   .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal { transform: translate3d(0, 26px, 0); }
   .ss-chef-profile.is-scroll-reveal-ready .ss-chef-reveal.is-visible { transform: translate3d(0, 0, 0); }
 }
 
 @media (max-width: 374px) {
-  .ss-chef-profile-inner { padding: 20px 19px 68px !important; }
-  .ss-chef-profile-header { margin-bottom: 34px; }
-  .ss-chef-profile-en-title { font-size: 28px; }
-  .ss-chef-profile-name strong { font-size: 23px; }
+  .ss-chef-profile-inner { padding: var(--ss-space-20) var(--ss-space-18) var(--ss-space-64) !important; }
+  .ss-chef-profile-header { margin-bottom: var(--ss-space-32); }
+  .ss-chef-profile-en-title { font-size: var(--ss-text-28); }
+  .ss-chef-profile-name strong { font-size: var(--ss-text-23); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1260,7 +1260,7 @@ display: grid;
 .ss-about-philosophy .ss-about-philosophy-inner {
   width: min(100%, 1080px);
   margin: 0 auto;
-  padding: clamp(95px, 8vw, 135px) clamp(32px, 6.5vw, 105px) clamp(135px, 12vw, 195px);
+  padding: clamp(var(--ss-space-96), 8vw, var(--ss-space-135)) clamp(var(--ss-space-32), 6.5vw, var(--ss-space-105)) clamp(var(--ss-space-135), 12vw, var(--ss-space-195));
 }
 
 .ss-about-philosophy .ss-about-philosophy-header {
@@ -1268,18 +1268,18 @@ display: grid;
   grid-template-columns: minmax(220px, 0.72fr) minmax(540px, 1.28fr);
   align-items: start;
   column-gap: clamp(90px, 11vw, 190px);
-  margin-bottom: clamp(85px, 9vw, 130px);
+  margin-bottom: clamp(var(--ss-space-80), 9vw, var(--ss-space-135));
 }
 
 .ss-about-philosophy .ss-about-philosophy-heading {
-  padding-top: 7px;
+  padding-top: var(--ss-space-6);
 }
 
 
 .ss-about-philosophy .ss-about-philosophy-en-title {
   margin: 0;
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: clamp(32px, 3.1vw, 42px);
+  font-size: clamp(var(--ss-text-32), 3.1vw, var(--ss-text-42));
   font-weight: 500;
   font-style: italic;
   line-height: 1.08;
@@ -1295,14 +1295,14 @@ display: grid;
 
 .ss-about-philosophy .ss-about-philosophy-description {
   max-width: 650px;
-  margin-top: clamp(20px, 3vw, 25px);
-  padding-top: 20px;
+  margin-top: clamp(var(--ss-space-20), 3vw, var(--ss-space-24));
+  padding-top: var(--ss-space-20);
 }
 
 .ss-about-philosophy .ss-about-philosophy-description p {
   margin: 0;
   font-family: "Pretendard", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  font-size: 16px;
+  font-size: var(--ss-text-16);
   font-weight: 300;
   line-height: 1.85;
   letter-spacing: -0.005em;
@@ -1311,7 +1311,7 @@ display: grid;
 }
 
 .ss-about-philosophy .ss-about-philosophy-description p + p {
-  margin-top: 20px;
+  margin-top: var(--ss-space-20);
 }
 
 .ss-about-philosophy .ss-about-philosophy-gallery {
@@ -1327,8 +1327,8 @@ display: grid;
 }
 
 .ss-about-philosophy .ss-about-philosophy-item-main { margin-top: 0; }
-.ss-about-philosophy .ss-about-philosophy-item-small { margin-top: clamp(100px, 11vw, 165px); }
-.ss-about-philosophy .ss-about-philosophy-item-tall { margin-top: clamp(35px, 4.5vw, 72px); }
+.ss-about-philosophy .ss-about-philosophy-item-small { margin-top: clamp(var(--ss-space-96), 11vw, var(--ss-space-165)); }
+.ss-about-philosophy .ss-about-philosophy-item-tall { margin-top: clamp(var(--ss-space-36), 4.5vw, var(--ss-space-72)); }
 
 .ss-about-philosophy .ss-about-philosophy-image-wrap {
   position: relative;
@@ -1393,10 +1393,10 @@ display: grid;
   align-items: center;
   justify-content: space-between;
   gap: 15px;
-  margin-top: 4px;
-  padding-top: 6px;
+  margin-top: var(--ss-space-4);
+  padding-top: var(--ss-space-6);
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 11px;
+  font-size: var(--ss-text-11);
   font-weight: 500;
   line-height: 1.2;
   letter-spacing: 0.02em;
@@ -1405,7 +1405,7 @@ display: grid;
 
 .ss-about-philosophy .ss-about-philosophy-caption span:first-child {
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 13px !important;
+  font-size: var(--ss-text-13) !important;
   font-weight: 500;
   letter-spacing: 0.02em;
   color: #6F5636;
@@ -1428,20 +1428,20 @@ display: grid;
 }
 
 @media (max-width: 991px) {
-  .ss-about-philosophy .ss-about-philosophy-inner { padding: 95px 48px 130px; }
+  .ss-about-philosophy .ss-about-philosophy-inner { padding: var(--ss-space-96) var(--ss-space-48) var(--ss-space-135); }
   .ss-about-philosophy .ss-about-philosophy-header {
     grid-template-columns: 1fr;
     row-gap: 56px;
-    margin-bottom: 90px;
+    margin-bottom: var(--ss-space-90);
   }
   .ss-about-philosophy .ss-about-philosophy-heading { padding-top: 0; }
   .ss-about-philosophy .ss-about-philosophy-copy { max-width: 720px; margin-left: auto; }
-  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 34px; }
+  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: var(--ss-text-34); }
   .ss-about-philosophy .ss-about-philosophy-gallery {
     grid-template-columns: 1.1fr 0.75fr;
     gap: 58px 40px;
   }
-  .ss-about-philosophy .ss-about-philosophy-item-small { margin-top: 90px; }
+  .ss-about-philosophy .ss-about-philosophy-item-small { margin-top: var(--ss-space-90); }
   .ss-about-philosophy .ss-about-philosophy-item-tall {
     grid-column: 2 / 3;
     width: 70%;
@@ -1453,18 +1453,18 @@ display: grid;
 @media (max-width: 767px) {
   .ss-about-philosophy.is-content-reveal-ready .ss-philosophy-reveal-up { transform: translate3d(0, 26px, 0); }
   .ss-about-philosophy.is-content-reveal-ready .ss-philosophy-reveal-up.is-content-visible { transform: translate3d(0, 0, 0); }
-  .ss-about-philosophy .ss-about-philosophy-inner { padding: 85px 22px 100px; }
-  .ss-about-philosophy .ss-about-philosophy-header { display: block; margin-bottom: 68px; }
-  .ss-about-philosophy .ss-about-philosophy-heading { margin-bottom: 20px; }
-  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: 30px; line-height: 1.1; }
-  .ss-about-philosophy .ss-about-philosophy-description { margin-top: 0px; padding-top: 15px; }
+  .ss-about-philosophy .ss-about-philosophy-inner { padding: var(--ss-space-80) var(--ss-space-22) var(--ss-space-96); }
+  .ss-about-philosophy .ss-about-philosophy-header { display: block; margin-bottom: var(--ss-space-64); }
+  .ss-about-philosophy .ss-about-philosophy-heading { margin-bottom: var(--ss-space-20); }
+  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: var(--ss-text-30); line-height: 1.1; }
+  .ss-about-philosophy .ss-about-philosophy-description { margin-top: 0px; padding-top: var(--ss-space-14); }
   .ss-about-philosophy .ss-about-philosophy-description p {
-    font-size: 14px;
+    font-size: var(--ss-text-14);
     line-height: 1.7;
     letter-spacing: -0.005em;
     text-align: center;
   }
-  .ss-about-philosophy .ss-about-philosophy-description p + p { margin-top: 15px; }
+  .ss-about-philosophy .ss-about-philosophy-description p + p { margin-top: var(--ss-space-14); }
   .ss-about-philosophy .ss-about-philosophy-gallery {
     display: grid;
     grid-template-columns: 1fr 0.68fr;
@@ -1486,22 +1486,22 @@ display: grid;
   .ss-about-philosophy .ss-about-philosophy-item-tall {
     grid-column: 2 / 3;
     width: 100%;
-    margin: 52px 0 0;
+    margin: var(--ss-space-48) 0 0;
   }
   .ss-about-philosophy .ss-about-philosophy-caption {
-    margin-top: 4px;
-    padding-top: 6px;
-    font-size: 11px;
+    margin-top: var(--ss-space-4);
+    padding-top: var(--ss-space-6);
+    font-size: var(--ss-text-11);
     letter-spacing: 0.02em;
   }
   .ss-about-philosophy .ss-about-philosophy-caption span:first-child {
-    font-size: 11px;
+    font-size: var(--ss-text-11);
     letter-spacing: 0.02em;
   }
 }
 
 @media (max-width: 374px) {
-  .ss-about-philosophy .ss-about-philosophy-inner { padding-left: 19px; padding-right: 19px; }
+  .ss-about-philosophy .ss-about-philosophy-inner { padding-left: var(--ss-space-18); padding-right: var(--ss-space-18); }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -1744,10 +1744,10 @@ display: grid;
 }
 
 .ss-reservation-eyebrow {
-  margin: 0 0 24px;
+  margin: 0 0 var(--ss-space-24);
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 14px;
+  font-size: var(--ss-text-14);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.25em;
@@ -1763,7 +1763,7 @@ margin: 0;
     Georgia,
     serif;
 
-  font-size: clamp(40px, 5.5vw, 50px);
+  font-size: clamp(var(--ss-text-40), 5.5vw, var(--ss-text-50));
   font-weight: 500;
   line-height: 0.93;
   letter-spacing: -0.035em;
@@ -1777,7 +1777,7 @@ margin: 0;
 
 .ss-reservation-title-en {
   font-family: "Noto Serif KR", "Cormorant Garamond", serif;
-  font-size: clamp(34px, 3.6vw, 48px);
+  font-size: clamp(var(--ss-text-34), 3.6vw, var(--ss-text-48));
   font-weight: 500;
   font-style: normal;
   line-height: 1.35;
@@ -1785,7 +1785,7 @@ margin: 0;
 }
 
 .ss-reservation-description {
-  margin: 31px 0 0;
+  margin: var(--ss-space-32) 0 0;
 
   font-family:
     Pretendard,
@@ -1795,7 +1795,7 @@ margin: 0;
     "Noto Sans KR",
     sans-serif;
 
-  font-size: 15px;
+  font-size: var(--ss-text-15);
   font-weight: 300;
   line-height: 1.85;
   letter-spacing: -0.02em;
@@ -1806,10 +1806,10 @@ margin: 0;
 }
 
 .ss-reservation-subtitle {
-  margin: 18px 0 0;
+  margin: var(--ss-space-18) 0 0;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 15px;
+  font-size: var(--ss-text-15);
   font-weight: 400;
   line-height: 1.55;
   letter-spacing: 0.02em;
@@ -1821,7 +1821,7 @@ margin: 0;
 
 .ss-reservation-subtitle-en {
   font-family: "Noto Serif KR", "Cormorant Garamond", serif;
-  font-size: 16px;
+  font-size: var(--ss-text-16);
   font-weight: 400;
   line-height: 1.65;
   letter-spacing: -0.005em;
@@ -1833,8 +1833,8 @@ margin: 0;
   width: fit-content;
   min-height: 49px;
 
-  margin-top: 31px;
-  padding: 0 22px;
+  margin-top: var(--ss-space-32);
+  padding: 0 var(--ss-space-22);
 
   display: inline-flex;
   align-items: center;
@@ -1863,7 +1863,7 @@ margin: 0;
   z-index: 1;
 
   font-family: Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  font-size: 12px;
+  font-size: var(--ss-text-12);
   font-weight: 500;
   line-height: 1;
   letter-spacing: 0.16em;
@@ -1880,7 +1880,7 @@ margin: 0;
   display: inline-block;
 
   font-family: "Cormorant Garamond", Georgia, serif;
-  font-size: 21px;
+  font-size: var(--ss-text-21);
   font-weight: 400;
   line-height: 1;
 
@@ -1943,7 +1943,7 @@ margin: 0;
   }
 
   .ss-reservation-title {
-    font-size: clamp(40px, 6vw, 50px);
+    font-size: clamp(var(--ss-text-40), 6vw, var(--ss-text-50));
   }
 }
 
@@ -1956,8 +1956,8 @@ margin: 0;
     min-height: 640px;
     max-height: 760px;
 
-    margin: 30px 0 0 !important;
-    padding: 72px 0 0 !important;
+    margin: var(--ss-space-28) 0 0 !important;
+    padding: var(--ss-space-72) 0 0 !important;
 
     align-items: flex-start;
     justify-content: center;
@@ -2000,39 +2000,39 @@ margin: 0;
   }
 
   .ss-reservation-eyebrow {
-    margin-bottom: 19px;
+    margin-bottom: var(--ss-space-18);
 
-    font-size: 12px;
+    font-size: var(--ss-text-12);
     letter-spacing: 0.22em;
   }
 
   .ss-reservation-title {
-    font-size: clamp(35px, 10vw, 40px);
+    font-size: clamp(var(--ss-text-35), 10vw, var(--ss-text-40));
     line-height: 0.94;
   }
 
   .ss-reservation-title-en {
-    font-size: clamp(25px, 6vw, 30px);
+    font-size: clamp(var(--ss-text-25), 6vw, var(--ss-text-30));
     line-height: 1.4;
   }
 
   .ss-reservation-description {
-    margin-top: 25px;
+    margin-top: var(--ss-space-24);
 
-    font-size: 14px;
+    font-size: var(--ss-text-14);
     line-height: 1.85;
   }
 
   .ss-reservation-subtitle-en {
-    font-size: 13px;
+    font-size: var(--ss-text-13);
     line-height: 1.6;
   }
 
   .ss-reservation-text-link {
     min-height: 48px;
 
-    margin-top: 23px;
-    padding: 0 18px;
+    margin-top: var(--ss-space-22);
+    padding: 0 var(--ss-space-18);
 
     gap: 15px;
 
@@ -2041,12 +2041,12 @@ margin: 0;
   }
 
   .ss-reservation-text-link-label {
-    font-size: 11.5px;
+    font-size: var(--ss-text-11);
     letter-spacing: 0.15em;
   }
 
   .ss-reservation-text-link-arrow {
-    font-size: 19px;
+    font-size: var(--ss-text-19);
   }
 }
 
