@@ -422,6 +422,7 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
 
+    window.addEventListener("resize", requestSizeUpdate, { passive: true });
 
     window.addEventListener("orientationchange", function () {
       window.setTimeout(setStableSliderSize, 500);
