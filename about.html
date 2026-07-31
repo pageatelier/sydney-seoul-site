@@ -850,7 +850,7 @@ display: grid;
   width: 100%;
   aspect-ratio: 4 / 5.25;
   overflow: hidden;
-  background: #a18765;
+  background: #f7f0ea;
 }
 
 .ss-chef-profile-image-wrap::before {
@@ -859,7 +859,7 @@ display: grid;
   inset: 0;
   z-index: 1;
   pointer-events: none;
-  background: #a18765;
+  background: #f7f0ea;
 }
 
 .ss-chef-profile-image-wrap::after {
@@ -1166,7 +1166,7 @@ display: grid;
       <div class="ss-about-philosophy-copy">
 
         <div class="ss-about-philosophy-description">
-          <p class="ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.16s;">
+          <p class="ss-philosophy-reveal-up" style="--ss-reveal-delay: 0.16s;" >
               직접 기른 제철 채소와 호주산 소고기,<br>
               캥거루, 바라문디 등 다양한 식재료를 사용합니다.<br><br>
 
@@ -1251,13 +1251,14 @@ display: grid;
 
 .ss-about-philosophy .ss-about-philosophy-header {
   display: grid;
-  grid-template-columns: minmax(220px, 0.72fr) minmax(540px, 1.28fr);
+  grid-template-columns: minmax(540px, 1.28fr) minmax(220px, 0.72fr);
   align-items: start;
   column-gap: clamp(90px, 11vw, 190px);
   margin-bottom: clamp(var(--ss-space-80), 9vw, var(--ss-space-135));
 }
 
 .ss-about-philosophy .ss-about-philosophy-heading {
+  order: 2;
   padding-top: var(--ss-space-6);
 }
 
@@ -1271,10 +1272,12 @@ display: grid;
   line-height: 1.08;
   letter-spacing: -0.01em;
   color: #28231f;
-  white-space: nowrap; 
+  text-align: right;
+  white-space: nowrap;
 }
 
 .ss-about-philosophy .ss-about-philosophy-copy {
+  order: 1;
   width: 100%;
   min-width: 0;
 }
@@ -1420,9 +1423,9 @@ display: grid;
     row-gap: 56px;
     margin-bottom: var(--ss-space-90);
   }
-  .ss-about-philosophy .ss-about-philosophy-heading { padding-top: 0; }
-  .ss-about-philosophy .ss-about-philosophy-copy { max-width: 720px; margin-left: auto; }
-  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: var(--ss-text-34); }
+  .ss-about-philosophy .ss-about-philosophy-heading { order: 0; padding-top: 0; }
+  .ss-about-philosophy .ss-about-philosophy-copy { order: 0; max-width: 720px; margin-left: auto; }
+  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: var(--ss-text-34); text-align: left; }
   .ss-about-philosophy .ss-about-philosophy-gallery {
     grid-template-columns: 1.1fr 0.75fr;
     gap: 58px 40px;
@@ -1442,7 +1445,7 @@ display: grid;
   .ss-about-philosophy .ss-about-philosophy-inner { padding: var(--ss-space-80) var(--ss-space-22) var(--ss-space-96); }
   .ss-about-philosophy .ss-about-philosophy-header { display: block; margin-bottom: var(--ss-space-64); }
   .ss-about-philosophy .ss-about-philosophy-heading { margin-bottom: var(--ss-space-20); }
-  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: var(--ss-text-30); line-height: 1.1; }
+  .ss-about-philosophy .ss-about-philosophy-en-title { font-size: var(--ss-text-30); line-height: 1.1; text-align: right; }
   .ss-about-philosophy .ss-about-philosophy-description { margin-top: 0px; padding-top: var(--ss-space-14); }
   .ss-about-philosophy .ss-about-philosophy-description p {
     font-size: var(--ss-text-14);
