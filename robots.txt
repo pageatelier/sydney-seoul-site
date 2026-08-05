@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /privacy
-Disallow: /en-privacy
 
 Sitemap: https://sydneyseoul.com/sitemap.xml
