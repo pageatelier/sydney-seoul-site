@@ -223,7 +223,7 @@ html.ss-sub-page .ss-site-header {
   margin: 0;
 
   font-family: var(--footer-serif);
-  font-size: clamp(44px, 5vw, 72px);
+  font-size: clamp(20px, 5vw, 30px);
   font-weight: 400;
   line-height: 0.85;
   letter-spacing: -0.04em;
@@ -410,7 +410,7 @@ html.ss-sub-page .ss-site-header {
     grid-column: auto;
     margin-bottom: 8px;
 
-    font-size: clamp(46px, 15vw, 64px);
+    font-size: clamp(20px, 15vw, 30px);
   }
 
   .footer-column h2 {
