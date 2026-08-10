@@ -1,5 +1,4 @@
-<!-- footer.html: fetch()로 각 페이지에 삽입되는 component 파일. 직접 URL로 접근 시 색인되지 않도록 noindex 처리 -->
-<meta name="robots" content="noindex, nofollow">
+<!-- footer.html: fetch()로 각 페이지에 삽입되는 component 파일. 직접 URL 접근 시 색인 방지는 _headers의 X-Robots-Tag로 처리 -->
 <footer class="site-footer">
   <div class="footer-inner">
     <div class="footer-top">
@@ -20,7 +19,7 @@
       </div>
       <div class="footer-column">
         <h2>Hours & Contact</h2>
-        <p>12:00–22:00<br><span data-i18n-ko="월·화 휴무" data-i18n-en="Closed Mon & Tue">월·화 휴무</span></p>
+        <p>12:00–22:00<br><span data-i18n-ko="월·화 휴무" data-i18n-en="Closed Mon & Tue">Closed Mon & Tue</span></p>
         <a href="tel:025457772">02 545 7772</a>
       </div>
       <div class="footer-column">

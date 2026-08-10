@@ -1,10 +1,8 @@
 <!-- ==================================================
      header.html
      (fetch()로 각 페이지에 삽입되는 component 파일.
-      직접 URL로 접근 시 색인되지 않도록 noindex 처리)
+      직접 URL 접근 시 색인 방지는 _headers의 X-Robots-Tag로 처리)
 ================================================== -->
-
-<meta name="robots" content="noindex, nofollow">
 
 <script>
 (function () {
@@ -344,21 +342,48 @@ html.ss-sub-page body { padding-top: var(--ss-space-96); }
 
   const currentPageKey = findCurrentPageKey(currentPath);
 
-  document.querySelectorAll("[data-ss-page]").forEach(function (link) {
-    const pageKey = link.getAttribute("data-ss-page");
-    const destination = routes[currentLanguage][pageKey];
-    if (destination) link.setAttribute("href", destination);
-  });
+  function applyRoutes() {
+    document.querySelectorAll("[data-ss-page]").forEach(function (link) {
+      const pageKey = link.getAttribute("data-ss-page");
+      const destination = routes[currentLanguage][pageKey];
+      if (destination) link.setAttribute("href", destination);
+    });
 
-  document.querySelectorAll("[data-ss-language]").forEach(function (link) {
-    const language = link.getAttribute("data-ss-language");
-    const destination = routes[language][currentPageKey];
-    link.setAttribute("href", destination);
-    const isActive = language === currentLanguage;
-    link.classList.toggle("active", isActive);
-    if (isActive) link.setAttribute("aria-current", "page");
-    else link.removeAttribute("aria-current");
-  });
+    document.querySelectorAll("[data-ss-language]").forEach(function (link) {
+      const language = link.getAttribute("data-ss-language");
+      const destination = routes[language][currentPageKey];
+      link.setAttribute("href", destination);
+      const isActive = language === currentLanguage;
+      link.classList.toggle("active", isActive);
+      if (isActive) link.setAttribute("aria-current", "page");
+      else link.removeAttribute("aria-current");
+    });
+  }
+
+  applyRoutes();
+
+  // footer.html은 fetch()로 비동기 삽입되므로, 위 applyRoutes() 시점에
+  // footer의 data-ss-page 링크(로고)가 아직 DOM에 없어 언어별 경로로
+  // 바뀌지 못할 수 있다. 이미 삽입돼 있으면 바로, 아니면 삽입되는
+  // 순간을 감지해 한 번 더 적용한다.
+  (function () {
+    function footerHasContent() {
+      const footerPlaceholder = document.getElementById("footer-placeholder");
+      return !!(footerPlaceholder && footerPlaceholder.children.length > 0);
+    }
+    if (footerHasContent()) {
+      applyRoutes();
+      return;
+    }
+    if (!window.MutationObserver) return;
+    const footerRouteObserver = new MutationObserver(function () {
+      if (footerHasContent()) {
+        applyRoutes();
+        footerRouteObserver.disconnect();
+      }
+    });
+    footerRouteObserver.observe(document.body, { childList: true, subtree: true });
+  })();
 
   const header = document.getElementById("ssSiteHeader");
   const toggleButton = document.querySelector(".ss-menu-open");
