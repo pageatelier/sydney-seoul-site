@@ -212,7 +212,7 @@ export default function RestaurantPage({ locale }: { locale: Locale }) {
           <div className="press-meta">
             <span>{t.diningIssue}</span>
             <a href="/images/bar-and-dining-june-2026.jpg" target="_blank" rel="noreferrer">
-              <span>{t.diningCta}</span><span aria-hidden="true">↗</span>
+              <span>{t.diningCta}</span><span aria-hidden="true">&#8599;&#65038;</span>
             </a>
           </div>
         </div>
@@ -225,7 +225,7 @@ export default function RestaurantPage({ locale }: { locale: Locale }) {
           data-reveal
         >
           <img src="/images/bar-and-dining-june-2026.jpg" alt={t.diningAlt} loading="lazy" />
-          <span className="press-zoom" aria-hidden="true">{t.diningCta} ↗</span>
+          <span className="press-zoom" aria-hidden="true">{t.diningCta}&#8599;&#65038;</span>
         </a>
       </section>
 
@@ -235,7 +235,7 @@ export default function RestaurantPage({ locale }: { locale: Locale }) {
           <h2 id="menu-title">{t.menuTitle}</h2>
           <p>{t.menuBody}</p>
           <a className="text-button" href="/sydney-seoul-menu.pdf" target="_blank" rel="noreferrer" type="application/pdf">
-            <span>{t.viewMenu}</span><span aria-hidden="true">↗</span>
+            <span>{t.viewMenu}</span><span aria-hidden="true">&#8599;&#65038;</span>
           </a>
           <small>{t.pdfNote}</small>
         </div>
@@ -285,7 +285,7 @@ export default function RestaurantPage({ locale }: { locale: Locale }) {
           <h2 id="reservation-title" className={locale === "ko" ? "ko-title" : undefined}>{t.reservationTitle}</h2>
           <p className="reservation-lead">{t.reservationBody}</p>
           <a className="reservation-cta" href={t.primaryReserve} target="_blank" rel="noreferrer">
-            <span>{t.reserveTable}</span><span aria-hidden="true">↗</span>
+            <span>{t.reserveTable}</span><span aria-hidden="true">&#8599;&#65038;</span>
           </a>
         </div>
         <div className="visit-info">
