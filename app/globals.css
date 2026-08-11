@@ -251,8 +251,9 @@ main[lang="ko"] {
 
 main[lang="ko"] .ko-title {
   font-family: "Pretendard", "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
-  font-weight: 300;
+  font-weight: 400;
   letter-spacing: -0.025em;
+  -webkit-font-smoothing: auto;
 }
 
 main[lang="ko"] .story .ko-title { font-size: clamp(30px, 3.5vw, 52px); line-height: 1.42; }
