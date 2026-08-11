@@ -3,12 +3,14 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://sydneyseoul.com/</loc>
+    <lastmod>2026-08-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://sydneyseoul.com/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://sydneyseoul.com/ko" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sydneyseoul.com/" />
   </url>
   <url>
     <loc>https://sydneyseoul.com/ko</loc>
+    <lastmod>2026-08-11</lastmod>
     <xhtml:link rel="alternate" hreflang="en" href="https://sydneyseoul.com/" />
     <xhtml:link rel="alternate" hreflang="ko" href="https://sydneyseoul.com/ko" />
     <xhtml:link rel="alternate" hreflang="x-default" href="https://sydneyseoul.com/" />
