@@ -77,7 +77,7 @@ const copy = {
     diningEyebrow: "Press",
     diningTitle: <>호주의 에너지,<br />서울에서 융합되다.</>,
     diningBody:
-      "Bar & Dining 2026년 6월호에서 김민후 셰프의 호주 생활, 직접 가꾸는 텃밭, 캥거루와 바라문디 등 시드니서울의 재료 이야기를 소개했습니다.",
+      "Bar & Dining 2026년 8월호에서 김민후 셰프의 호주 생활, 직접 가꾸는 텃밭, 캥거루와 바라문디 등 시드니서울의 재료 이야기를 소개했습니다.",
     diningIssue: "Bar & Dining · 2026년 8월호",
     diningCta: "잡지 지면 보기",
     diningAlt: "Bar & Dining 2026년 8월호(Vol. 271)에 소개된 시드니서울 기사 지면",
