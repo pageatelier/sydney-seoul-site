@@ -251,7 +251,7 @@ export default function RestaurantPage({ locale }: { locale: Locale }) {
 
       <section className="chef" id="chef" aria-labelledby="chef-title" data-header-theme="light">
         <figure className="chef-portrait" data-reveal>
-          <div className="media-frame"><img src="/images/chef-portrait-old.webp" alt="Owner-Chef Minhoo Kim in the Sydney Seoul kitchen" loading="lazy" /></div>
+          <div className="media-frame"><img src="/images/chef-portrait-new.webp" alt="Owner-Chef Minhoo Kim in the Sydney Seoul kitchen" loading="lazy" /></div>
         </figure>
         <div className="chef-copy" data-reveal>
           <p className="eyebrow">{t.chefEyebrow}</p>
