@@ -15,7 +15,7 @@ const copy = {
     navIds: ["story", "dining", "menu", "chef", "farm"],
     reserve: "Reserve",
     primaryReserve: internationalReserve,
-    heroKicker: "Seasonal tasting menu",
+  
     location: "Cheongdam, Seoul",
     discover: "Explore",
     storyEyebrow: "Sydney Seoul · Cheongdam",
@@ -26,10 +26,10 @@ const copy = {
     diningEyebrow: "Press",
     diningTitle: <>Where Australian<br />energy meets Seoul.</>,
     diningBody:
-      "Bar & Dining's June 2026 issue visits Sydney Seoul to speak with Minhoo Kim about his years in Australia, the restaurant's own garden and ingredients including kangaroo and barramundi.",
-    diningIssue: "Bar & Dining · June 2026",
+      "Bar & Dining's August 2026 issue visits Sydney Seoul to speak with Minhoo Kim about his years in Australia, the restaurant's own garden and ingredients including kangaroo and barramundi.",
+    diningIssue: "Bar & Dining · August 2026",
     diningCta: "Open magazine spread",
-    diningAlt: "Sydney Seoul feature in the June 2026 issue of Bar & Dining magazine",
+    diningAlt: "Sydney Seoul feature in the August 2026 issue of Bar & Dining magazine",
     menuEyebrow: "Current tasting menu",
     menuTitle: "The Menu",
     menuBody:
@@ -66,7 +66,7 @@ const copy = {
     navIds: ["story", "dining", "menu", "chef", "farm"],
     reserve: "Reserve",
     primaryReserve: koreanReserve,
-    heroKicker: "시즌 테이스팅 메뉴",
+
     location: "서울, 청담",
     discover: "둘러보기",
     storyEyebrow: "Sydney Seoul · Cheongdam",
@@ -78,9 +78,9 @@ const copy = {
     diningTitle: <>호주의 에너지,<br />서울에서 융합되다.</>,
     diningBody:
       "Bar & Dining 2026년 6월호에서 김민후 셰프의 호주 생활, 직접 가꾸는 텃밭, 캥거루와 바라문디 등 시드니서울의 재료 이야기를 소개했습니다.",
-    diningIssue: "Bar & Dining · 2026년 6월호",
+    diningIssue: "Bar & Dining · 2026년 8월호",
     diningCta: "잡지 지면 보기",
-    diningAlt: "Bar & Dining 2026년 6월호에 소개된 시드니서울 기사 지면",
+    diningAlt: "Bar & Dining 2026년 8월호(Vol. 271)에 소개된 시드니서울 기사 지면",
     menuEyebrow: "Current tasting menu",
     menuTitle: "The Menu",
     menuBody:
@@ -91,11 +91,11 @@ const copy = {
     chefEyebrow: "The Chef",
     chefRole: "Owner-Chef",
     chefBody:
-      "김민후 셰프는 호주 르 코르동 블루에서 요리를 배웠습니다. 시드니의 편안한 다이닝 문화와 다양한 식재료에 대한 경험은 지금도 서울에서 이어집니다. 호주 식재료를 한국의 계절 안에서 한 코스로 풀어냅니다.",
+      "김민후 셰프는 호주 르 코르동 블루에서 요리를 배웠습니다. 시드니의 편안한 다이닝 문화와 다양한 식재료에 대한 경험이 지금도 서울에서 이어지고 있습니다. 호주 식재료를 한국의 계절 안에서 한 코스로 풀어냅니다.",
     farmEyebrow: "Farm to table",
     farmTitle: <>직접 기른 채소를<br />주방으로.</>,
     farmBody:
-      "직접 가꾼 텃밭에서 제철 채소를 수확하고 호주산 소고기, 캥거루, 바라문디와 함께 사용합니다. 그날 수확한 재료가 주방에서 메뉴의 방향을 정합니다.",
+      "직접 가꾼 텃밭에서 제철 채소를 수확하고 호주산 소고기, 캥거루, 바라문디와 함께 사용합니다. 계절마다 수확한 재료로 시즌별 메뉴의 방향을 정합니다.",
     farmCaptions: ["From our garden", "Harvested by hand", "On the table"],
     reservationEyebrow: "Reservation",
     reservationTitle: <>시드니서울,<br />청담.</>,
