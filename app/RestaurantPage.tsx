@@ -64,7 +64,7 @@ const copy = {
     otherHref: "/",
     nav: ["Story", "Feature", "Menu", "Chef", "Farm"],
     navIds: ["story", "dining", "menu", "chef", "farm"],
-    reserve: "예약하기",
+    reserve: "Reserve",
     primaryReserve: koreanReserve,
     heroKicker: "",
     location: "서울, 청담",
