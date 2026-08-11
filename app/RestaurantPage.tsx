@@ -15,7 +15,7 @@ const copy = {
     navIds: ["story", "dining", "menu", "chef", "farm"],
     reserve: "Reserve",
     primaryReserve: internationalReserve,
-  
+    heroKicker: "",
     location: "Cheongdam, Seoul",
     discover: "Explore",
     storyEyebrow: "Sydney Seoul · Cheongdam",
@@ -66,7 +66,7 @@ const copy = {
     navIds: ["story", "dining", "menu", "chef", "farm"],
     reserve: "Reserve",
     primaryReserve: koreanReserve,
-
+    heroKicker: "",
     location: "서울, 청담",
     discover: "둘러보기",
     storyEyebrow: "Sydney Seoul · Cheongdam",
