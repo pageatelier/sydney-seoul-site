@@ -93,7 +93,7 @@ const copy = {
     chefBody:
       "김민후 셰프는 호주 르 코르동 블루에서 요리를 배웠습니다. 시드니의 편안한 다이닝 문화와 다양한 식재료에 대한 경험이 지금도 서울에서 이어지고 있습니다. 호주 식재료를 한국의 계절 안에서 한 코스로 풀어냅니다.",
     farmEyebrow: "Farm to table",
-    farmTitle: <>직접 기른 채소로<br />건강하게, 맛있게.</>,
+    farmTitle: <>직접 기른 채소로<br />건강하게, 맛있게</>,
     farmBody:
       "직접 가꾼 텃밭에서 제철 채소를 수확하고 호주산 소고기, 캥거루, 바라문디와 함께 사용합니다. 계절마다 수확한 재료로 시즌별 메뉴의 방향을 정합니다.",
     farmCaptions: ["From our garden", "Harvested by hand", "On the table"],
@@ -251,7 +251,7 @@ export default function RestaurantPage({ locale }: { locale: Locale }) {
 
       <section className="chef" id="chef" aria-labelledby="chef-title" data-header-theme="light">
         <figure className="chef-portrait" data-reveal>
-          <div className="media-frame"><img src="/images/chef-portrait-new.webp" alt="Owner-Chef Minhoo Kim in the Sydney Seoul kitchen" loading="lazy" /></div>
+          <div className="media-frame"><img src="/images/chef-portrait-old.webp" alt="Owner-Chef Minhoo Kim in the Sydney Seoul kitchen" loading="lazy" /></div>
         </figure>
         <div className="chef-copy" data-reveal>
           <p className="eyebrow">{t.chefEyebrow}</p>
